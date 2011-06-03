@@ -3,7 +3,6 @@
 ### Implementation of iOS framework protocols (e.g. delegates) with blocks.
 [http://protocolblocks.org/](http://protocolblocks.org/)
 
----
 ## Features
 
 * **Easiest usage:**
@@ -13,7 +12,6 @@
 * **Standard naming:**
   block names are equivalent to protocol method names
 
----
 ## Implementation Status
 
 Currently, protocolblocks are provided for the following classes and protocols:
@@ -44,7 +42,6 @@ Currently, protocolblocks are provided for the following classes and protocols:
   * UIVideoEditorController delegate
   * UIWebView delegate
 
----
 ## Usage Example
 
 ### 1. Import the header
@@ -87,7 +84,6 @@ The created block delegate object is autoreleased due to Objective-C's [Associat
         // your code here
     }];
 
----
 ## Related Work
 ### in chronological order
 
@@ -99,7 +95,6 @@ The created block delegate object is autoreleased due to Objective-C's [Associat
 * 2011-02-15: [UIAlertView with Blocks](http://gkoreman.com/blog/2011/02/15/uialertview-with-blocks/) by Greg Koreman 
 * 2011-03-20: [EMKAssociateDelegate](http://benedictcohen.co.uk/blog/archives/189) by Benedict Cohen
 
----
 ## License
 ### protocolblocks is licensed under the [Simplified BSD License](https://secure.wikimedia.org/wikipedia/en/wiki/BSD_licenses):
 
