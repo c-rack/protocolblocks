@@ -1,5 +1,5 @@
 //
-// protocolblocks: UIKit/UIPickerView+DataSourceBlocks.h
+// protocolblocks: EventKitUI+Blocks.h
 // http://protocolblocks.org/
 //
 // Copyright (C) 2011 by Constantin Rack, VIGOS AG.
@@ -23,26 +23,6 @@
 // THE SOFTWARE.
 //
 
-#import <Foundation/Foundation.h>
-
-typedef NSInteger (^UIPickerViewNumberOfComponentsInPickerViewBlock)(UIPickerView* pickerView);
-typedef NSInteger (^UIPickerViewNumberOfRowsInComponentBlock)(UIPickerView* pickerView, NSInteger component);
-
-@interface UIPickerView (DataSourceBlocks)
-
--(id)datasourceblocks;
--(void)setNumberOfComponentsInPickerViewBlock:(UIPickerViewNumberOfComponentsInPickerViewBlock)block;
--(void)setNumberOfRowsInComponentBlock:(UIPickerViewNumberOfRowsInComponentBlock)block;
-
-@end
-
-@interface UIPickerViewDataSourceBlocks : NSObject <UIPickerViewDataSource> {
-    UIPickerViewNumberOfComponentsInPickerViewBlock _numberOfComponentsInPickerViewBlock;
-    UIPickerViewNumberOfRowsInComponentBlock _numberOfRowsInComponentBlock;
-}
-
-@property(nonatomic, copy) UIPickerViewNumberOfComponentsInPickerViewBlock numberOfComponentsInPickerViewBlock;
-@property(nonatomic, copy) UIPickerViewNumberOfRowsInComponentBlock numberOfRowsInComponentBlock;
-
-@end
+#import "EventKitUI/EKEventEditViewController+EditViewDelegateBlocks.h"
+#import "EventKitUI/EKEventViewController+DelegateBlocks.h"
 

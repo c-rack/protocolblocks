@@ -1,5 +1,5 @@
 //
-// protocolblocks: UIKit/UIPickerView+DataSourceBlocks.h
+// protocolblocks: MessageUI/MFMessageComposeViewController+MessageComposeDelegateBlocks.h
 // http://protocolblocks.org/
 //
 // Copyright (C) 2011 by Constantin Rack, VIGOS AG.
@@ -25,24 +25,20 @@
 
 #import <Foundation/Foundation.h>
 
-typedef NSInteger (^UIPickerViewNumberOfComponentsInPickerViewBlock)(UIPickerView* pickerView);
-typedef NSInteger (^UIPickerViewNumberOfRowsInComponentBlock)(UIPickerView* pickerView, NSInteger component);
+typedef void (^MFMessageComposeViewControllerDidFinishWithResultBlock)(MFMessageComposeViewController* controller, MessageComposeResult result);
 
-@interface UIPickerView (DataSourceBlocks)
+@interface MFMessageComposeViewController (MessageComposeDelegateBlocks)
 
--(id)datasourceblocks;
--(void)setNumberOfComponentsInPickerViewBlock:(UIPickerViewNumberOfComponentsInPickerViewBlock)block;
--(void)setNumberOfRowsInComponentBlock:(UIPickerViewNumberOfRowsInComponentBlock)block;
+-(id)messagecomposedelegateblocks;
+-(void)setDidFinishWithResultBlock:(MFMessageComposeViewControllerDidFinishWithResultBlock)block;
 
 @end
 
-@interface UIPickerViewDataSourceBlocks : NSObject <UIPickerViewDataSource> {
-    UIPickerViewNumberOfComponentsInPickerViewBlock _numberOfComponentsInPickerViewBlock;
-    UIPickerViewNumberOfRowsInComponentBlock _numberOfRowsInComponentBlock;
+@interface MFMessageComposeViewControllerMessageComposeDelegateBlocks : NSObject <MFMessageComposeViewControllerDelegate> {
+    MFMessageComposeViewControllerDidFinishWithResultBlock _didFinishWithResultBlock;
 }
 
-@property(nonatomic, copy) UIPickerViewNumberOfComponentsInPickerViewBlock numberOfComponentsInPickerViewBlock;
-@property(nonatomic, copy) UIPickerViewNumberOfRowsInComponentBlock numberOfRowsInComponentBlock;
+@property(nonatomic, copy) MFMessageComposeViewControllerDidFinishWithResultBlock didFinishWithResultBlock;
 
 @end
 

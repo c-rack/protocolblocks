@@ -1,5 +1,5 @@
 //
-// protocolblocks: UIKit/UIPickerView+DataSourceBlocks.h
+// protocolblocks: EventKitUI/EKEventViewController+DelegateBlocks.h
 // http://protocolblocks.org/
 //
 // Copyright (C) 2011 by Constantin Rack, VIGOS AG.
@@ -25,24 +25,20 @@
 
 #import <Foundation/Foundation.h>
 
-typedef NSInteger (^UIPickerViewNumberOfComponentsInPickerViewBlock)(UIPickerView* pickerView);
-typedef NSInteger (^UIPickerViewNumberOfRowsInComponentBlock)(UIPickerView* pickerView, NSInteger component);
+typedef void (^EKEventViewControllerDidCompleteWithActionBlock)(EKEventViewController* controller, EKEventViewAction action);
 
-@interface UIPickerView (DataSourceBlocks)
+@interface EKEventViewController (DelegateBlocks)
 
--(id)datasourceblocks;
--(void)setNumberOfComponentsInPickerViewBlock:(UIPickerViewNumberOfComponentsInPickerViewBlock)block;
--(void)setNumberOfRowsInComponentBlock:(UIPickerViewNumberOfRowsInComponentBlock)block;
+-(id)delegateblocks;
+-(void)setDidCompleteWithActionBlock:(EKEventViewControllerDidCompleteWithActionBlock)block;
 
 @end
 
-@interface UIPickerViewDataSourceBlocks : NSObject <UIPickerViewDataSource> {
-    UIPickerViewNumberOfComponentsInPickerViewBlock _numberOfComponentsInPickerViewBlock;
-    UIPickerViewNumberOfRowsInComponentBlock _numberOfRowsInComponentBlock;
+@interface EKEventViewControllerDelegateBlocks : NSObject <EKEventViewDelegate> {
+    EKEventViewControllerDidCompleteWithActionBlock _didCompleteWithActionBlock;
 }
 
-@property(nonatomic, copy) UIPickerViewNumberOfComponentsInPickerViewBlock numberOfComponentsInPickerViewBlock;
-@property(nonatomic, copy) UIPickerViewNumberOfRowsInComponentBlock numberOfRowsInComponentBlock;
+@property(nonatomic, copy) EKEventViewControllerDidCompleteWithActionBlock didCompleteWithActionBlock;
 
 @end
 

@@ -1,5 +1,5 @@
 //
-// protocolblocks: UIKit/UIPickerView+DataSourceBlocks.h
+// protocolblocks: MessageUI/MFMailComposeViewController+MailComposeDelegateBlocks.h
 // http://protocolblocks.org/
 //
 // Copyright (C) 2011 by Constantin Rack, VIGOS AG.
@@ -25,24 +25,20 @@
 
 #import <Foundation/Foundation.h>
 
-typedef NSInteger (^UIPickerViewNumberOfComponentsInPickerViewBlock)(UIPickerView* pickerView);
-typedef NSInteger (^UIPickerViewNumberOfRowsInComponentBlock)(UIPickerView* pickerView, NSInteger component);
+typedef void (^MFMailComposeViewControllerDidFinishWithResultBlock)(MFMailComposeViewController* controller, MFMailComposeResult result);
 
-@interface UIPickerView (DataSourceBlocks)
+@interface MFMailComposeViewController (MailComposeDelegateBlocks)
 
--(id)datasourceblocks;
--(void)setNumberOfComponentsInPickerViewBlock:(UIPickerViewNumberOfComponentsInPickerViewBlock)block;
--(void)setNumberOfRowsInComponentBlock:(UIPickerViewNumberOfRowsInComponentBlock)block;
+-(id)mailcomposedelegateblocks;
+-(void)setDidFinishWithResultBlock:(MFMailComposeViewControllerDidFinishWithResultBlock)block;
 
 @end
 
-@interface UIPickerViewDataSourceBlocks : NSObject <UIPickerViewDataSource> {
-    UIPickerViewNumberOfComponentsInPickerViewBlock _numberOfComponentsInPickerViewBlock;
-    UIPickerViewNumberOfRowsInComponentBlock _numberOfRowsInComponentBlock;
+@interface MFMailComposeViewControllerMailComposeDelegateBlocks : NSObject <MFMailComposeViewControllerDelegate> {
+    MFMailComposeViewControllerDidFinishWithResultBlock _didFinishWithResultBlock;
 }
 
-@property(nonatomic, copy) UIPickerViewNumberOfComponentsInPickerViewBlock numberOfComponentsInPickerViewBlock;
-@property(nonatomic, copy) UIPickerViewNumberOfRowsInComponentBlock numberOfRowsInComponentBlock;
+@property(nonatomic, copy) MFMailComposeViewControllerDidFinishWithResultBlock didFinishWithResultBlock;
 
 @end
 

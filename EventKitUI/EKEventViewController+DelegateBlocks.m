@@ -1,5 +1,5 @@
 //
-// protocolblocks: UIKit/UIAccelerometer+DelegateBlocks.m
+// protocolblocks: EventKitUI/EKEventViewController+DelegateBlocks.m
 // http://protocolblocks.org/
 //
 // Copyright (C) 2011 by Constantin Rack, VIGOS AG.
@@ -23,33 +23,33 @@
 // THE SOFTWARE.
 //
 
-#import "UIAccelerometer+DelegateBlocks.h"
+#import "EKEventViewController+DelegateBlocks.h"
 #import <objc/runtime.h>
 
-static NSString* UIAccelerometerDelegateBlocksKey = @"UIAccelerometerDelegateBlocksKey";
+static NSString* EKEventViewControllerDelegateBlocksKey = @"EKEventViewControllerDelegateBlocksKey";
 
-@implementation UIAccelerometer (DelegateBlocks)
+@implementation EKEventViewController (DelegateBlocks)
 
 -(id)delegateblocks {
-    UIAccelerometerDelegateBlocks* delegate = [[[UIAccelerometerDelegateBlocks alloc] init] autorelease];
-    objc_setAssociatedObject (self, &UIAccelerometerDelegateBlocksKey, delegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    EKEventViewControllerDelegateBlocks* delegate = [[[EKEventViewControllerDelegateBlocks alloc] init] autorelease];
+    objc_setAssociatedObject (self, &EKEventViewControllerDelegateBlocksKey, delegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     self.delegate = delegate;
     return self;
 }
 
--(void)setDidAccelerateBlock:(UIAccelerometerDidAccelerateBlock)block {
-    [((UIAccelerometerDelegateBlocks*)self.delegate) setDidAccelerateBlock:block];
+-(void)setDidCompleteWithActionBlock:(EKEventViewControllerDidCompleteWithActionBlock)block {
+    [((EKEventViewControllerDelegateBlocks*)self.delegate) setDidCompleteWithActionBlock:block];
 }
 
 @end
 
-@implementation UIAccelerometerDelegateBlocks
+@implementation EKEventViewControllerDelegateBlocks
 
-@synthesize didAccelerateBlock = _didAccelerateBlock;
+@synthesize didCompleteWithActionBlock = _didCompleteWithActionBlock;
 
--(void)accelerometer:(UIAccelerometer*)accelerometer didAccelerate:(UIAcceleration*)acceleration  {
-    UIAccelerometerDidAccelerateBlock block = [self.didAccelerateBlock copy];
-    block(accelerometer, acceleration);
+-(void)eventViewController:(EKEventViewController*)controller didCompleteWithAction:(EKEventViewAction)action  {
+    EKEventViewControllerDidCompleteWithActionBlock block = [self.didCompleteWithActionBlock copy];
+    block(controller, action);
     [block release];
 }
 
