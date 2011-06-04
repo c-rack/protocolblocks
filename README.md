@@ -1,7 +1,14 @@
 # protocolblocks
 
-### Backporting [blocks](http://developer.apple.com/library/ios/#documentation/cocoa/Conceptual/Blocks/Articles/00_Introduction.html) to iOS delegates.
-[http://protocolblocks.org/](http://protocolblocks.org/)
+### Backporting blocks to iOS delegates.
+
+## Motivation
+
+With iOS 4, Apple introduced [blocks](http://developer.apple.com/library/ios/#documentation/cocoa/Conceptual/Blocks/Articles/00_Introduction.html) (also known as [closures](https://secure.wikimedia.org/wikipedia/en/wiki/Closure_%28computer_science%29)) to Objective-C and iOS.
+
+Unfortunately, this leads to [some confusion](http://stackoverflow.com/questions/3940520/why-does-the-new-ios-gamekit-split-between-delegates-and-blocks), because newer callbacks are implemented as blocks, while older ones are implemented with delegates.
+
+To This projects aims to backport blocks for all *old* delegates of iOS.
 
 ## Features
 
@@ -60,7 +67,7 @@ Currently, blocks have been backported for the following delegates:
 ### 2. Initialize your object as usual
 
     UIActionSheet* actionSheet = [[UIActionSheet alloc]
-                                   initWithTitle:@"title"
+                                   initWithTitle:@"Title"
                                    delegate:nil // no need for self or similar
                                    cancelButtonTitle:@"Cancel"
                                    destructiveButtonTitle:@"Destruct"
@@ -70,7 +77,7 @@ Currently, blocks have been backported for the following delegates:
 
     [actionSheet useBlocksForDelegate];
 
-The created delegate object is autoreleased due to Objective-C's [Associate Reference](http://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/ObjectiveC/Chapters/ocAssociativeReferences.html) magic.
+The automatically created delegate object is autoreleased thanks to Objective-C's [Associate Reference](http://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/ObjectiveC/Chapters/ocAssociativeReferences.html) magic.
 
 ### 4. Implement delegate methods with blocks
 
@@ -106,7 +113,7 @@ The created delegate object is autoreleased due to Objective-C's [Associate Refe
 * 2011-03-22: [iOS Code: Block Based UIAlertView and UIActionSheet](http://blog.mugunthkumar.com/coding/ios-code-block-based-uialertview-and-uiactionsheet/) by Mugunth Kumar
 
 ## License
-### protocolblocks is licensed under the [MIT-License](http://www.opensource.org/licenses/mit-license.php):
+### protocolblocks is licensed under the [MIT License](http://www.opensource.org/licenses/mit-license.php):
 
 Copyright (C) 2011 by [Constantin Rack](http://www.constantin-rack.de/), [VIGOS AG](http://www.vigos.com/).
 
