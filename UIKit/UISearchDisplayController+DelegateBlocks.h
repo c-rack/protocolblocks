@@ -40,7 +40,7 @@ typedef void (^UISearchDisplayControllerWillEndSearchBlock)(UISearchDisplayContr
 
 @interface UISearchDisplayController (DelegateBlocks)
 
--(id)delegateBlocks;
+-(id)useBlocksForDelegate;
 -(void)onDidHideSearchResultsTableView:(UISearchDisplayControllerDidHideSearchResultsTableViewBlock)block;
 -(void)onDidLoadSearchResultsTableView:(UISearchDisplayControllerDidLoadSearchResultsTableViewBlock)block;
 -(void)onDidShowSearchResultsTableView:(UISearchDisplayControllerDidShowSearchResultsTableViewBlock)block;

@@ -30,7 +30,7 @@ typedef void (^UINavigationControllerWillShowViewControllerBlock)(UINavigationCo
 
 @interface UINavigationController (DelegateBlocks)
 
--(id)delegateBlocks;
+-(id)useBlocksForDelegate;
 -(void)onDidShowViewController:(UINavigationControllerDidShowViewControllerBlock)block;
 -(void)onWillShowViewController:(UINavigationControllerWillShowViewControllerBlock)block;
 

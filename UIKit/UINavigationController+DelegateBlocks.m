@@ -30,7 +30,7 @@ static NSString* UINavigationControllerDelegateBlocksKey = @"UINavigationControl
 
 @implementation UINavigationController (DelegateBlocks)
 
--(id)delegateBlocks {
+-(id)useBlocksForDelegate {
     UINavigationControllerDelegateBlocks* delegate = [[[UINavigationControllerDelegateBlocks alloc] init] autorelease];
     objc_setAssociatedObject (self, &UINavigationControllerDelegateBlocksKey, delegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     self.delegate = delegate;

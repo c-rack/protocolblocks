@@ -45,7 +45,7 @@ typedef NSIndexPath* (^UITableViewWillSelectRowAtIndexPathBlock)(UITableView* ta
 
 @interface UITableView (DelegateBlocks)
 
--(id)delegateBlocks;
+-(id)useBlocksForDelegate;
 -(void)onAccessoryButtonTappedForRowWithIndexPath:(UITableViewAccessoryButtonTappedForRowWithIndexPathBlock)block;
 -(void)onDidDeselectRowAtIndexPath:(UITableViewDidDeselectRowAtIndexPathBlock)block;
 -(void)onDidEndEditingRowAtIndexPath:(UITableViewDidEndEditingRowAtIndexPathBlock)block;

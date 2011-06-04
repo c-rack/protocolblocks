@@ -30,7 +30,7 @@ static NSString* MFMailComposeViewControllerMailComposeDelegateBlocksKey = @"MFM
 
 @implementation MFMailComposeViewController (MailComposeDelegateBlocks)
 
--(id)mailComposeDelegateBlocks {
+-(id)useBlocksForMailComposeDelegate {
     MFMailComposeViewControllerMailComposeDelegateBlocks* mailComposeDelegate = [[[MFMailComposeViewControllerMailComposeDelegateBlocks alloc] init] autorelease];
     objc_setAssociatedObject (self, &MFMailComposeViewControllerMailComposeDelegateBlocksKey, mailComposeDelegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     self.mailComposeDelegate = mailComposeDelegate;

@@ -30,7 +30,7 @@ static NSString* ADBannerViewDelegateBlocksKey = @"ADBannerViewDelegateBlocksKey
 
 @implementation ADBannerView (DelegateBlocks)
 
--(id)delegateBlocks {
+-(id)useBlocksForDelegate {
     ADBannerViewDelegateBlocks* delegate = [[[ADBannerViewDelegateBlocks alloc] init] autorelease];
     objc_setAssociatedObject (self, &ADBannerViewDelegateBlocksKey, delegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     self.delegate = delegate;

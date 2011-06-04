@@ -33,7 +33,7 @@ typedef void (^UITabBarWillEndCustomizingItemsBlock)(UITabBar* tabBar, NSArray* 
 
 @interface UITabBar (DelegateBlocks)
 
--(id)delegateBlocks;
+-(id)useBlocksForDelegate;
 -(void)onDidBeginCustomizingItems:(UITabBarDidBeginCustomizingItemsBlock)block;
 -(void)onDidEndCustomizingItems:(UITabBarDidEndCustomizingItemsBlock)block;
 -(void)onDidSelectItem:(UITabBarDidSelectItemBlock)block;

@@ -29,7 +29,7 @@ typedef void (^MFMessageComposeViewControllerDidFinishWithResultBlock)(MFMessage
 
 @interface MFMessageComposeViewController (MessageComposeDelegateBlocks)
 
--(id)messageComposeDelegateBlocks;
+-(id)useBlocksForMessageComposeDelegate;
 -(void)onDidFinishWithResult:(MFMessageComposeViewControllerDidFinishWithResultBlock)block;
 
 @end

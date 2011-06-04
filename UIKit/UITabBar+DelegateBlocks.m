@@ -30,7 +30,7 @@ static NSString* UITabBarDelegateBlocksKey = @"UITabBarDelegateBlocksKey";
 
 @implementation UITabBar (DelegateBlocks)
 
--(id)delegateBlocks {
+-(id)useBlocksForDelegate {
     UITabBarDelegateBlocks* delegate = [[[UITabBarDelegateBlocks alloc] init] autorelease];
     objc_setAssociatedObject (self, &UITabBarDelegateBlocksKey, delegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     self.delegate = delegate;

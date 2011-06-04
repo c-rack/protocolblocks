@@ -30,7 +30,7 @@ static NSString* EKEventViewControllerDelegateBlocksKey = @"EKEventViewControlle
 
 @implementation EKEventViewController (DelegateBlocks)
 
--(id)delegateBlocks {
+-(id)useBlocksForDelegate {
     EKEventViewControllerDelegateBlocks* delegate = [[[EKEventViewControllerDelegateBlocks alloc] init] autorelease];
     objc_setAssociatedObject (self, &EKEventViewControllerDelegateBlocksKey, delegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     self.delegate = delegate;

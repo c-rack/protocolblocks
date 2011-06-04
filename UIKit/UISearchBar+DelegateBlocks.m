@@ -30,7 +30,7 @@ static NSString* UISearchBarDelegateBlocksKey = @"UISearchBarDelegateBlocksKey";
 
 @implementation UISearchBar (DelegateBlocks)
 
--(id)delegateBlocks {
+-(id)useBlocksForDelegate {
     UISearchBarDelegateBlocks* delegate = [[[UISearchBarDelegateBlocks alloc] init] autorelease];
     objc_setAssociatedObject (self, &UISearchBarDelegateBlocksKey, delegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     self.delegate = delegate;

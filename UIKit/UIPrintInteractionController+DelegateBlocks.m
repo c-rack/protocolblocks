@@ -30,7 +30,7 @@ static NSString* UIPrintInteractionControllerDelegateBlocksKey = @"UIPrintIntera
 
 @implementation UIPrintInteractionController (DelegateBlocks)
 
--(id)delegateBlocks {
+-(id)useBlocksForDelegate {
     UIPrintInteractionControllerDelegateBlocks* delegate = [[[UIPrintInteractionControllerDelegateBlocks alloc] init] autorelease];
     objc_setAssociatedObject (self, &UIPrintInteractionControllerDelegateBlocksKey, delegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     self.delegate = delegate;

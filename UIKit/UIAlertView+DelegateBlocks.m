@@ -30,7 +30,7 @@ static NSString* UIAlertViewDelegateBlocksKey = @"UIAlertViewDelegateBlocksKey";
 
 @implementation UIAlertView (DelegateBlocks)
 
--(id)delegateBlocks {
+-(id)useBlocksForDelegate {
     UIAlertViewDelegateBlocks* delegate = [[[UIAlertViewDelegateBlocks alloc] init] autorelease];
     objc_setAssociatedObject (self, &UIAlertViewDelegateBlocksKey, delegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     self.delegate = delegate;

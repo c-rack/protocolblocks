@@ -30,7 +30,7 @@ typedef EKCalendar* (^EKEventEditViewControllerEventEditViewControllerDefaultCal
 
 @interface EKEventEditViewController (EditViewDelegateBlocks)
 
--(id)editViewDelegateBlocks;
+-(id)useBlocksForEditViewDelegate;
 -(void)onDidCompleteWithAction:(EKEventEditViewControllerDidCompleteWithActionBlock)block;
 -(void)onEventEditViewControllerDefaultCalendarForNewEvents:(EKEventEditViewControllerEventEditViewControllerDefaultCalendarForNewEventsBlock)block;
 

@@ -30,7 +30,7 @@ static NSString* UITextViewDelegateBlocksKey = @"UITextViewDelegateBlocksKey";
 
 @implementation UITextView (DelegateBlocks)
 
--(id)delegateBlocks {
+-(id)useBlocksForDelegate {
     UITextViewDelegateBlocks* delegate = [[[UITextViewDelegateBlocks alloc] init] autorelease];
     objc_setAssociatedObject (self, &UITextViewDelegateBlocksKey, delegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     self.delegate = delegate;

@@ -39,7 +39,7 @@ typedef void (^UISearchBarTextDidEndEditingBlock)(UISearchBar* searchBar);
 
 @interface UISearchBar (DelegateBlocks)
 
--(id)delegateBlocks;
+-(id)useBlocksForDelegate;
 -(void)onSelectedScopeButtonIndexDidChange:(UISearchBarSelectedScopeButtonIndexDidChangeBlock)block;
 -(void)onShouldChangeTextInRange:(UISearchBarShouldChangeTextInRangeBlock)block;
 -(void)onTextDidChange:(UISearchBarTextDidChangeBlock)block;

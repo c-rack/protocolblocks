@@ -33,7 +33,7 @@ typedef void (^UITabBarControllerWillEndCustomizingViewControllersBlock)(UITabBa
 
 @interface UITabBarController (DelegateBlocks)
 
--(id)delegateBlocks;
+-(id)useBlocksForDelegate;
 -(void)onDidEndCustomizingViewControllers:(UITabBarControllerDidEndCustomizingViewControllersBlock)block;
 -(void)onDidSelectViewController:(UITabBarControllerDidSelectViewControllerBlock)block;
 -(void)onShouldSelectViewController:(UITabBarControllerShouldSelectViewControllerBlock)block;

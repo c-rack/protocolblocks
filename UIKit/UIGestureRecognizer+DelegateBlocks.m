@@ -30,7 +30,7 @@ static NSString* UIGestureRecognizerDelegateBlocksKey = @"UIGestureRecognizerDel
 
 @implementation UIGestureRecognizer (DelegateBlocks)
 
--(id)delegateBlocks {
+-(id)useBlocksForDelegate {
     UIGestureRecognizerDelegateBlocks* delegate = [[[UIGestureRecognizerDelegateBlocks alloc] init] autorelease];
     objc_setAssociatedObject (self, &UIGestureRecognizerDelegateBlocksKey, delegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     self.delegate = delegate;

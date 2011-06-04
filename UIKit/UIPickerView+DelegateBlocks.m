@@ -30,7 +30,7 @@ static NSString* UIPickerViewDelegateBlocksKey = @"UIPickerViewDelegateBlocksKey
 
 @implementation UIPickerView (DelegateBlocks)
 
--(id)delegateBlocks {
+-(id)useBlocksForDelegate {
     UIPickerViewDelegateBlocks* delegate = [[[UIPickerViewDelegateBlocks alloc] init] autorelease];
     objc_setAssociatedObject (self, &UIPickerViewDelegateBlocksKey, delegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     self.delegate = delegate;

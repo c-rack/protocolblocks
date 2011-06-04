@@ -34,7 +34,7 @@ typedef void (^UIActionSheetWillPresentActionSheetBlock)(UIActionSheet* actionSh
 
 @interface UIActionSheet (DelegateBlocks)
 
--(id)delegateBlocks;
+-(id)useBlocksForDelegate;
 -(void)onClickedButtonAtIndex:(UIActionSheetClickedButtonAtIndexBlock)block;
 -(void)onDidDismissWithButtonIndex:(UIActionSheetDidDismissWithButtonIndexBlock)block;
 -(void)onWillDismissWithButtonIndex:(UIActionSheetWillDismissWithButtonIndexBlock)block;

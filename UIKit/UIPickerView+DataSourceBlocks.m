@@ -30,7 +30,7 @@ static NSString* UIPickerViewDataSourceBlocksKey = @"UIPickerViewDataSourceBlock
 
 @implementation UIPickerView (DataSourceBlocks)
 
--(id)dataSourceBlocks {
+-(id)useBlocksForDataSource {
     UIPickerViewDataSourceBlocks* dataSource = [[[UIPickerViewDataSourceBlocks alloc] init] autorelease];
     objc_setAssociatedObject (self, &UIPickerViewDataSourceBlocksKey, dataSource, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     self.dataSource = dataSource;

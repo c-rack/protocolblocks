@@ -30,7 +30,7 @@ static NSString* EKEventEditViewControllerEditViewDelegateBlocksKey = @"EKEventE
 
 @implementation EKEventEditViewController (EditViewDelegateBlocks)
 
--(id)editViewDelegateBlocks {
+-(id)useBlocksForEditViewDelegate {
     EKEventEditViewControllerEditViewDelegateBlocks* editViewDelegate = [[[EKEventEditViewControllerEditViewDelegateBlocks alloc] init] autorelease];
     objc_setAssociatedObject (self, &EKEventEditViewControllerEditViewDelegateBlocksKey, editViewDelegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     self.editViewDelegate = editViewDelegate;

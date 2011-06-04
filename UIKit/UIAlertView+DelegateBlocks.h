@@ -34,7 +34,7 @@ typedef void (^UIAlertViewWillPresentAlertViewBlock)(UIAlertView* alertView);
 
 @interface UIAlertView (DelegateBlocks)
 
--(id)delegateBlocks;
+-(id)useBlocksForDelegate;
 -(void)onClickedButtonAtIndex:(UIAlertViewClickedButtonAtIndexBlock)block;
 -(void)onDidDismissWithButtonIndex:(UIAlertViewDidDismissWithButtonIndexBlock)block;
 -(void)onWillDismissWithButtonIndex:(UIAlertViewWillDismissWithButtonIndexBlock)block;

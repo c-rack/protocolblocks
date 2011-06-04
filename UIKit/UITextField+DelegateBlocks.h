@@ -35,7 +35,7 @@ typedef BOOL (^UITextFieldShouldReturnBlock)(UITextField* textField);
 
 @interface UITextField (DelegateBlocks)
 
--(id)delegateBlocks;
+-(id)useBlocksForDelegate;
 -(void)onShouldChangeCharactersInRange:(UITextFieldShouldChangeCharactersInRangeBlock)block;
 -(void)onDidBeginEditing:(UITextFieldDidBeginEditingBlock)block;
 -(void)onDidEndEditing:(UITextFieldDidEndEditingBlock)block;

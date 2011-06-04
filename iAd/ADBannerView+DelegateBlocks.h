@@ -32,7 +32,7 @@ typedef void (^ADBannerViewBannerViewDidLoadAdBlock)(ADBannerView* banner);
 
 @interface ADBannerView (DelegateBlocks)
 
--(id)delegateBlocks;
+-(id)useBlocksForDelegate;
 -(void)onDidFailToReceiveAdWithError:(ADBannerViewDidFailToReceiveAdWithErrorBlock)block;
 -(void)onActionDidFinish:(ADBannerViewActionDidFinishBlock)block;
 -(void)onActionShouldBegin:(ADBannerViewActionShouldBeginBlock)block;

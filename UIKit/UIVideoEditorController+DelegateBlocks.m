@@ -30,7 +30,7 @@ static NSString* UIVideoEditorControllerDelegateBlocksKey = @"UIVideoEditorContr
 
 @implementation UIVideoEditorController (DelegateBlocks)
 
--(id)delegateBlocks {
+-(id)useBlocksForDelegate {
     UIVideoEditorControllerDelegateBlocks* delegate = [[[UIVideoEditorControllerDelegateBlocks alloc] init] autorelease];
     objc_setAssociatedObject (self, &UIVideoEditorControllerDelegateBlocksKey, delegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     self.delegate = delegate;

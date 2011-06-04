@@ -30,7 +30,7 @@ static NSString* UIScrollViewDelegateBlocksKey = @"UIScrollViewDelegateBlocksKey
 
 @implementation UIScrollView (DelegateBlocks)
 
--(id)delegateBlocks {
+-(id)useBlocksForDelegate {
     UIScrollViewDelegateBlocks* delegate = [[[UIScrollViewDelegateBlocks alloc] init] autorelease];
     objc_setAssociatedObject (self, &UIScrollViewDelegateBlocksKey, delegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     self.delegate = delegate;

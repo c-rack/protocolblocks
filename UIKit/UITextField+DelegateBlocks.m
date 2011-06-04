@@ -30,7 +30,7 @@ static NSString* UITextFieldDelegateBlocksKey = @"UITextFieldDelegateBlocksKey";
 
 @implementation UITextField (DelegateBlocks)
 
--(id)delegateBlocks {
+-(id)useBlocksForDelegate {
     UITextFieldDelegateBlocks* delegate = [[[UITextFieldDelegateBlocks alloc] init] autorelease];
     objc_setAssociatedObject (self, &UITextFieldDelegateBlocksKey, delegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     self.delegate = delegate;

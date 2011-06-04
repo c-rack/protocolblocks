@@ -32,7 +32,7 @@ typedef void (^UIWebViewDidStartLoadBlock)(UIWebView* webView);
 
 @interface UIWebView (DelegateBlocks)
 
--(id)delegateBlocks;
+-(id)useBlocksForDelegate;
 -(void)onDidFailLoadWithError:(UIWebViewDidFailLoadWithErrorBlock)block;
 -(void)onShouldStartLoadWithRequest:(UIWebViewShouldStartLoadWithRequestBlock)block;
 -(void)onDidFinishLoad:(UIWebViewDidFinishLoadBlock)block;

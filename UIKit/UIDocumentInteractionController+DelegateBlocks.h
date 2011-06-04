@@ -41,7 +41,7 @@ typedef void (^UIDocumentInteractionControllerWillPresentOptionsMenuBlock)(UIDoc
 
 @interface UIDocumentInteractionController (DelegateBlocks)
 
--(id)delegateBlocks;
+-(id)useBlocksForDelegate;
 -(void)onCanPerformAction:(UIDocumentInteractionControllerCanPerformActionBlock)block;
 -(void)onDidEndSendingToApplication:(UIDocumentInteractionControllerDidEndSendingToApplicationBlock)block;
 -(void)onPerformAction:(UIDocumentInteractionControllerPerformActionBlock)block;

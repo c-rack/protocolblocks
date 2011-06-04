@@ -30,7 +30,7 @@ static NSString* UIWebViewDelegateBlocksKey = @"UIWebViewDelegateBlocksKey";
 
 @implementation UIWebView (DelegateBlocks)
 
--(id)delegateBlocks {
+-(id)useBlocksForDelegate {
     UIWebViewDelegateBlocks* delegate = [[[UIWebViewDelegateBlocks alloc] init] autorelease];
     objc_setAssociatedObject (self, &UIWebViewDelegateBlocksKey, delegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     self.delegate = delegate;

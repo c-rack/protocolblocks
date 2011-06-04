@@ -30,7 +30,7 @@ static NSString* UIPopoverControllerDelegateBlocksKey = @"UIPopoverControllerDel
 
 @implementation UIPopoverController (DelegateBlocks)
 
--(id)delegateBlocks {
+-(id)useBlocksForDelegate {
     UIPopoverControllerDelegateBlocks* delegate = [[[UIPopoverControllerDelegateBlocks alloc] init] autorelease];
     objc_setAssociatedObject (self, &UIPopoverControllerDelegateBlocksKey, delegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     self.delegate = delegate;

@@ -30,7 +30,7 @@ static NSString* MFMessageComposeViewControllerMessageComposeDelegateBlocksKey =
 
 @implementation MFMessageComposeViewController (MessageComposeDelegateBlocks)
 
--(id)messageComposeDelegateBlocks {
+-(id)useBlocksForMessageComposeDelegate {
     MFMessageComposeViewControllerMessageComposeDelegateBlocks* messageComposeDelegate = [[[MFMessageComposeViewControllerMessageComposeDelegateBlocks alloc] init] autorelease];
     objc_setAssociatedObject (self, &MFMessageComposeViewControllerMessageComposeDelegateBlocksKey, messageComposeDelegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     self.messageComposeDelegate = messageComposeDelegate;

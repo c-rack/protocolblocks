@@ -31,7 +31,7 @@ typedef void (^UISplitViewControllerWillShowViewControllerBlock)(UISplitViewCont
 
 @interface UISplitViewController (DelegateBlocks)
 
--(id)delegateBlocks;
+-(id)useBlocksForDelegate;
 -(void)onWillPresentViewController:(UISplitViewControllerWillPresentViewControllerBlock)block;
 -(void)onWillHideViewController:(UISplitViewControllerWillHideViewControllerBlock)block;
 -(void)onWillShowViewController:(UISplitViewControllerWillShowViewControllerBlock)block;

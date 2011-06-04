@@ -1,6 +1,6 @@
 # protocolblocks
 
-### Implementation of iOS framework protocols (e.g. delegates) with blocks.
+### Backporting [blocks](http://developer.apple.com/library/ios/#documentation/cocoa/Conceptual/Blocks/Articles/00_Introduction.html) to iOS delegates.
 [http://protocolblocks.org/](http://protocolblocks.org/)
 
 ## Features
@@ -14,7 +14,7 @@
 
 ## Implementation Status
 
-Currently, protocolblocks are provided for the following classes and protocols:
+Currently, blocks have been backported for the following delegates:
 
 * **EventKitUI**
   * EKEventEditViewController delegate
@@ -66,9 +66,9 @@ Currently, protocolblocks are provided for the following classes and protocols:
                                    destructiveButtonTitle:@"Destruct"
                                    otherButtonTitles:nil];
 
-### 3. Enable delegate method blocks
+### 3. Enable blocks instead of providing a delegate
 
-    [actionSheet delegateBlocks];
+    [actionSheet useBlocksForDelegate];
 
 The created delegate object is autoreleased due to Objective-C's [Associate Reference](http://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/ObjectiveC/Chapters/ocAssociativeReferences.html) magic.
 
@@ -108,7 +108,7 @@ The created delegate object is autoreleased due to Objective-C's [Associate Refe
 ## License
 ### protocolblocks is licensed under the [MIT-License](http://www.opensource.org/licenses/mit-license.php):
 
-Copyright (C) 2011 by Constantin Rack, VIGOS AG.
+Copyright (C) 2011 by [Constantin Rack](http://www.constantin-rack.de/), [VIGOS AG](http://www.vigos.com/).
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

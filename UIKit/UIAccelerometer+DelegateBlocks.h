@@ -29,7 +29,7 @@ typedef void (^UIAccelerometerDidAccelerateBlock)(UIAccelerometer* accelerometer
 
 @interface UIAccelerometer (DelegateBlocks)
 
--(id)delegateBlocks;
+-(id)useBlocksForDelegate;
 -(void)onDidAccelerate:(UIAccelerometerDidAccelerateBlock)block;
 
 @end

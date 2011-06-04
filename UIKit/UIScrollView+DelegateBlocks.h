@@ -40,7 +40,7 @@ typedef UIView* (^UIScrollViewViewForZoomingInScrollViewBlock)(UIScrollView* scr
 
 @interface UIScrollView (DelegateBlocks)
 
--(id)delegateBlocks;
+-(id)useBlocksForDelegate;
 -(void)onDidEndDecelerating:(UIScrollViewDidEndDeceleratingBlock)block;
 -(void)onDidEndDragging:(UIScrollViewDidEndDraggingBlock)block;
 -(void)onDidEndScrollingAnimation:(UIScrollViewDidEndScrollingAnimationBlock)block;

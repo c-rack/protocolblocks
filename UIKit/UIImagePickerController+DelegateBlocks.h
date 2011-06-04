@@ -32,7 +32,7 @@ typedef void (^UIImagePickerControllerWillShowViewControllerBlock)(UINavigationC
 
 @interface UIImagePickerController (DelegateBlocks)
 
--(id)delegateBlocks;
+-(id)useBlocksForDelegate;
 -(void)onDidFinishPickingMediaWithInfo:(UIImagePickerControllerDidFinishPickingMediaWithInfoBlock)block;
 -(void)onDidCancel:(UIImagePickerControllerDidCancelBlock)block;
 -(void)onDidShowViewController:(UIImagePickerControllerDidShowViewControllerBlock)block;

@@ -33,7 +33,7 @@ typedef CGFloat (^UIPickerViewWidthForComponentBlock)(UIPickerView* pickerView, 
 
 @interface UIPickerView (DelegateBlocks)
 
--(id)delegateBlocks;
+-(id)useBlocksForDelegate;
 -(void)onDidSelectRow:(UIPickerViewDidSelectRowBlock)block;
 -(void)onRowHeightForComponent:(UIPickerViewRowHeightForComponentBlock)block;
 -(void)onTitleForRow:(UIPickerViewTitleForRowBlock)block;

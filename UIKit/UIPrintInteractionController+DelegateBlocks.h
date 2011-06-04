@@ -36,7 +36,7 @@ typedef void (^UIPrintInteractionControllerWillStartJobBlock)(UIPrintInteraction
 
 @interface UIPrintInteractionController (DelegateBlocks)
 
--(id)delegateBlocks;
+-(id)useBlocksForDelegate;
 -(void)onChoosePaper:(UIPrintInteractionControllerChoosePaperBlock)block;
 -(void)onDidDismissPrinterOptions:(UIPrintInteractionControllerDidDismissPrinterOptionsBlock)block;
 -(void)onDidFinishJob:(UIPrintInteractionControllerDidFinishJobBlock)block;

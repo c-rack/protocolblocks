@@ -30,7 +30,7 @@ static NSString* UIDocumentInteractionControllerDelegateBlocksKey = @"UIDocument
 
 @implementation UIDocumentInteractionController (DelegateBlocks)
 
--(id)delegateBlocks {
+-(id)useBlocksForDelegate {
     UIDocumentInteractionControllerDelegateBlocks* delegate = [[[UIDocumentInteractionControllerDelegateBlocks alloc] init] autorelease];
     objc_setAssociatedObject (self, &UIDocumentInteractionControllerDelegateBlocksKey, delegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     self.delegate = delegate;

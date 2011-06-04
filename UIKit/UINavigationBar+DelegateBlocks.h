@@ -32,7 +32,7 @@ typedef BOOL (^UINavigationBarShouldPushItemBlock)(UINavigationBar* navigationBa
 
 @interface UINavigationBar (DelegateBlocks)
 
--(id)delegateBlocks;
+-(id)useBlocksForDelegate;
 -(void)onDidPopItem:(UINavigationBarDidPopItemBlock)block;
 -(void)onDidPushItem:(UINavigationBarDidPushItemBlock)block;
 -(void)onShouldPopItem:(UINavigationBarShouldPopItemBlock)block;

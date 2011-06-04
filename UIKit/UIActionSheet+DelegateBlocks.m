@@ -30,7 +30,7 @@ static NSString* UIActionSheetDelegateBlocksKey = @"UIActionSheetDelegateBlocksK
 
 @implementation UIActionSheet (DelegateBlocks)
 
--(id)delegateBlocks {
+-(id)useBlocksForDelegate {
     UIActionSheetDelegateBlocks* delegate = [[[UIActionSheetDelegateBlocks alloc] init] autorelease];
     objc_setAssociatedObject (self, &UIActionSheetDelegateBlocksKey, delegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     self.delegate = delegate;

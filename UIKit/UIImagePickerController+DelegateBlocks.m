@@ -30,7 +30,7 @@ static NSString* UIImagePickerControllerDelegateBlocksKey = @"UIImagePickerContr
 
 @implementation UIImagePickerController (DelegateBlocks)
 
--(id)delegateBlocks {
+-(id)useBlocksForDelegate {
     UIImagePickerControllerDelegateBlocks* delegate = [[[UIImagePickerControllerDelegateBlocks alloc] init] autorelease];
     objc_setAssociatedObject (self, &UIImagePickerControllerDelegateBlocksKey, delegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     self.delegate = delegate;

@@ -35,7 +35,7 @@ typedef BOOL (^UITextViewShouldEndEditingBlock)(UITextView* textView);
 
 @interface UITextView (DelegateBlocks)
 
--(id)delegateBlocks;
+-(id)useBlocksForDelegate;
 -(void)onShouldChangeTextInRange:(UITextViewShouldChangeTextInRangeBlock)block;
 -(void)onDidBeginEditing:(UITextViewDidBeginEditingBlock)block;
 -(void)onDidChange:(UITextViewDidChangeBlock)block;

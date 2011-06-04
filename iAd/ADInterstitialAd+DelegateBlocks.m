@@ -30,7 +30,7 @@ static NSString* ADInterstitialAdDelegateBlocksKey = @"ADInterstitialAdDelegateB
 
 @implementation ADInterstitialAd (DelegateBlocks)
 
--(id)delegateBlocks {
+-(id)useBlocksForDelegate {
     ADInterstitialAdDelegateBlocks* delegate = [[[ADInterstitialAdDelegateBlocks alloc] init] autorelease];
     objc_setAssociatedObject (self, &ADInterstitialAdDelegateBlocksKey, delegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     self.delegate = delegate;

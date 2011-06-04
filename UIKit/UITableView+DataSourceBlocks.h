@@ -39,7 +39,7 @@ typedef NSString* (^UITableViewTitleForHeaderInSectionBlock)(UITableView* tableV
 
 @interface UITableView (DataSourceBlocks)
 
--(id)dataSourceBlocks;
+-(id)useBlocksForDataSource;
 -(void)onNumberOfSectionsInTableView:(UITableViewNumberOfSectionsInTableViewBlock)block;
 -(void)onSectionIndexTitlesForTableView:(UITableViewSectionIndexTitlesForTableViewBlock)block;
 -(void)onCanEditRowAtIndexPath:(UITableViewCanEditRowAtIndexPathBlock)block;

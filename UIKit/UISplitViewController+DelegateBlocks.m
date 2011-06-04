@@ -30,7 +30,7 @@ static NSString* UISplitViewControllerDelegateBlocksKey = @"UISplitViewControlle
 
 @implementation UISplitViewController (DelegateBlocks)
 
--(id)delegateBlocks {
+-(id)useBlocksForDelegate {
     UISplitViewControllerDelegateBlocks* delegate = [[[UISplitViewControllerDelegateBlocks alloc] init] autorelease];
     objc_setAssociatedObject (self, &UISplitViewControllerDelegateBlocksKey, delegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     self.delegate = delegate;

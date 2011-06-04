@@ -29,7 +29,7 @@ typedef void (^EKEventViewControllerDidCompleteWithActionBlock)(EKEventViewContr
 
 @interface EKEventViewController (DelegateBlocks)
 
--(id)delegateBlocks;
+-(id)useBlocksForDelegate;
 -(void)onDidCompleteWithAction:(EKEventViewControllerDidCompleteWithActionBlock)block;
 
 @end

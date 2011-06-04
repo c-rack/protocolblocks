@@ -31,7 +31,7 @@ typedef BOOL (^UIGestureRecognizerShouldBeginBlock)(UIGestureRecognizer* gesture
 
 @interface UIGestureRecognizer (DelegateBlocks)
 
--(id)delegateBlocks;
+-(id)useBlocksForDelegate;
 -(void)onShouldReceiveTouch:(UIGestureRecognizerShouldReceiveTouchBlock)block;
 -(void)onShouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizerShouldRecognizeSimultaneouslyWithGestureRecognizerBlock)block;
 -(void)onShouldBegin:(UIGestureRecognizerShouldBeginBlock)block;
