@@ -8,7 +8,7 @@ With iOS 4, Apple introduced [blocks](http://developer.apple.com/library/ios/#do
 
 Unfortunately, this leads to [some confusion](http://stackoverflow.com/questions/3940520/why-does-the-new-ios-gamekit-split-between-delegates-and-blocks), because newer callbacks are implemented as blocks, while older ones are implemented with delegates.
 
-To This projects aims to backport blocks for all *old* delegates of iOS.
+This projects aims to backport blocks for all *old* delegates of iOS.
 
 ## Features
 
