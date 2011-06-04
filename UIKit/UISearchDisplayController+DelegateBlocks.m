@@ -30,58 +30,58 @@ static NSString* UISearchDisplayControllerDelegateBlocksKey = @"UISearchDisplayC
 
 @implementation UISearchDisplayController (DelegateBlocks)
 
--(id)delegateblocks {
+-(id)delegateBlocks {
     UISearchDisplayControllerDelegateBlocks* delegate = [[[UISearchDisplayControllerDelegateBlocks alloc] init] autorelease];
     objc_setAssociatedObject (self, &UISearchDisplayControllerDelegateBlocksKey, delegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     self.delegate = delegate;
     return self;
 }
 
--(void)setDidHideSearchResultsTableViewBlock:(UISearchDisplayControllerDidHideSearchResultsTableViewBlock)block {
+-(void)onDidHideSearchResultsTableView:(UISearchDisplayControllerDidHideSearchResultsTableViewBlock)block {
     [((UISearchDisplayControllerDelegateBlocks*)self.delegate) setDidHideSearchResultsTableViewBlock:block];
 }
 
--(void)setDidLoadSearchResultsTableViewBlock:(UISearchDisplayControllerDidLoadSearchResultsTableViewBlock)block {
+-(void)onDidLoadSearchResultsTableView:(UISearchDisplayControllerDidLoadSearchResultsTableViewBlock)block {
     [((UISearchDisplayControllerDelegateBlocks*)self.delegate) setDidLoadSearchResultsTableViewBlock:block];
 }
 
--(void)setDidShowSearchResultsTableViewBlock:(UISearchDisplayControllerDidShowSearchResultsTableViewBlock)block {
+-(void)onDidShowSearchResultsTableView:(UISearchDisplayControllerDidShowSearchResultsTableViewBlock)block {
     [((UISearchDisplayControllerDelegateBlocks*)self.delegate) setDidShowSearchResultsTableViewBlock:block];
 }
 
--(void)setShouldReloadTableForSearchScopeBlock:(UISearchDisplayControllerShouldReloadTableForSearchScopeBlock)block {
+-(void)onShouldReloadTableForSearchScope:(UISearchDisplayControllerShouldReloadTableForSearchScopeBlock)block {
     [((UISearchDisplayControllerDelegateBlocks*)self.delegate) setShouldReloadTableForSearchScopeBlock:block];
 }
 
--(void)setShouldReloadTableForSearchStringBlock:(UISearchDisplayControllerShouldReloadTableForSearchStringBlock)block {
+-(void)onShouldReloadTableForSearchString:(UISearchDisplayControllerShouldReloadTableForSearchStringBlock)block {
     [((UISearchDisplayControllerDelegateBlocks*)self.delegate) setShouldReloadTableForSearchStringBlock:block];
 }
 
--(void)setWillHideSearchResultsTableViewBlock:(UISearchDisplayControllerWillHideSearchResultsTableViewBlock)block {
+-(void)onWillHideSearchResultsTableView:(UISearchDisplayControllerWillHideSearchResultsTableViewBlock)block {
     [((UISearchDisplayControllerDelegateBlocks*)self.delegate) setWillHideSearchResultsTableViewBlock:block];
 }
 
--(void)setWillShowSearchResultsTableViewBlock:(UISearchDisplayControllerWillShowSearchResultsTableViewBlock)block {
+-(void)onWillShowSearchResultsTableView:(UISearchDisplayControllerWillShowSearchResultsTableViewBlock)block {
     [((UISearchDisplayControllerDelegateBlocks*)self.delegate) setWillShowSearchResultsTableViewBlock:block];
 }
 
--(void)setWillUnloadSearchResultsTableViewBlock:(UISearchDisplayControllerWillUnloadSearchResultsTableViewBlock)block {
+-(void)onWillUnloadSearchResultsTableView:(UISearchDisplayControllerWillUnloadSearchResultsTableViewBlock)block {
     [((UISearchDisplayControllerDelegateBlocks*)self.delegate) setWillUnloadSearchResultsTableViewBlock:block];
 }
 
--(void)setDidBeginSearchBlock:(UISearchDisplayControllerDidBeginSearchBlock)block {
+-(void)onDidBeginSearch:(UISearchDisplayControllerDidBeginSearchBlock)block {
     [((UISearchDisplayControllerDelegateBlocks*)self.delegate) setDidBeginSearchBlock:block];
 }
 
--(void)setDidEndSearchBlock:(UISearchDisplayControllerDidEndSearchBlock)block {
+-(void)onDidEndSearch:(UISearchDisplayControllerDidEndSearchBlock)block {
     [((UISearchDisplayControllerDelegateBlocks*)self.delegate) setDidEndSearchBlock:block];
 }
 
--(void)setWillBeginSearchBlock:(UISearchDisplayControllerWillBeginSearchBlock)block {
+-(void)onWillBeginSearch:(UISearchDisplayControllerWillBeginSearchBlock)block {
     [((UISearchDisplayControllerDelegateBlocks*)self.delegate) setWillBeginSearchBlock:block];
 }
 
--(void)setWillEndSearchBlock:(UISearchDisplayControllerWillEndSearchBlock)block {
+-(void)onWillEndSearch:(UISearchDisplayControllerWillEndSearchBlock)block {
     [((UISearchDisplayControllerDelegateBlocks*)self.delegate) setWillEndSearchBlock:block];
 }
 

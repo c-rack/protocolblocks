@@ -30,38 +30,38 @@ static NSString* UITextFieldDelegateBlocksKey = @"UITextFieldDelegateBlocksKey";
 
 @implementation UITextField (DelegateBlocks)
 
--(id)delegateblocks {
+-(id)delegateBlocks {
     UITextFieldDelegateBlocks* delegate = [[[UITextFieldDelegateBlocks alloc] init] autorelease];
     objc_setAssociatedObject (self, &UITextFieldDelegateBlocksKey, delegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     self.delegate = delegate;
     return self;
 }
 
--(void)setShouldChangeCharactersInRangeBlock:(UITextFieldShouldChangeCharactersInRangeBlock)block {
+-(void)onShouldChangeCharactersInRange:(UITextFieldShouldChangeCharactersInRangeBlock)block {
     [((UITextFieldDelegateBlocks*)self.delegate) setShouldChangeCharactersInRangeBlock:block];
 }
 
--(void)setDidBeginEditingBlock:(UITextFieldDidBeginEditingBlock)block {
+-(void)onDidBeginEditing:(UITextFieldDidBeginEditingBlock)block {
     [((UITextFieldDelegateBlocks*)self.delegate) setDidBeginEditingBlock:block];
 }
 
--(void)setDidEndEditingBlock:(UITextFieldDidEndEditingBlock)block {
+-(void)onDidEndEditing:(UITextFieldDidEndEditingBlock)block {
     [((UITextFieldDelegateBlocks*)self.delegate) setDidEndEditingBlock:block];
 }
 
--(void)setShouldBeginEditingBlock:(UITextFieldShouldBeginEditingBlock)block {
+-(void)onShouldBeginEditing:(UITextFieldShouldBeginEditingBlock)block {
     [((UITextFieldDelegateBlocks*)self.delegate) setShouldBeginEditingBlock:block];
 }
 
--(void)setShouldClearBlock:(UITextFieldShouldClearBlock)block {
+-(void)onShouldClear:(UITextFieldShouldClearBlock)block {
     [((UITextFieldDelegateBlocks*)self.delegate) setShouldClearBlock:block];
 }
 
--(void)setShouldEndEditingBlock:(UITextFieldShouldEndEditingBlock)block {
+-(void)onShouldEndEditing:(UITextFieldShouldEndEditingBlock)block {
     [((UITextFieldDelegateBlocks*)self.delegate) setShouldEndEditingBlock:block];
 }
 
--(void)setShouldReturnBlock:(UITextFieldShouldReturnBlock)block {
+-(void)onShouldReturn:(UITextFieldShouldReturnBlock)block {
     [((UITextFieldDelegateBlocks*)self.delegate) setShouldReturnBlock:block];
 }
 

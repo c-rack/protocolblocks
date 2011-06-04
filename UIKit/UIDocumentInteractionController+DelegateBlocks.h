@@ -41,20 +41,20 @@ typedef void (^UIDocumentInteractionControllerWillPresentOptionsMenuBlock)(UIDoc
 
 @interface UIDocumentInteractionController (DelegateBlocks)
 
--(id)delegateblocks;
--(void)setCanPerformActionBlock:(UIDocumentInteractionControllerCanPerformActionBlock)block;
--(void)setDidEndSendingToApplicationBlock:(UIDocumentInteractionControllerDidEndSendingToApplicationBlock)block;
--(void)setPerformActionBlock:(UIDocumentInteractionControllerPerformActionBlock)block;
--(void)setWillBeginSendingToApplicationBlock:(UIDocumentInteractionControllerWillBeginSendingToApplicationBlock)block;
--(void)setDidDismissOpenInMenuBlock:(UIDocumentInteractionControllerDidDismissOpenInMenuBlock)block;
--(void)setDidDismissOptionsMenuBlock:(UIDocumentInteractionControllerDidDismissOptionsMenuBlock)block;
--(void)setDidEndPreviewBlock:(UIDocumentInteractionControllerDidEndPreviewBlock)block;
--(void)setRectForPreviewBlock:(UIDocumentInteractionControllerRectForPreviewBlock)block;
--(void)setViewControllerForPreviewBlock:(UIDocumentInteractionControllerViewControllerForPreviewBlock)block;
--(void)setViewForPreviewBlock:(UIDocumentInteractionControllerViewForPreviewBlock)block;
--(void)setWillBeginPreviewBlock:(UIDocumentInteractionControllerWillBeginPreviewBlock)block;
--(void)setWillPresentOpenInMenuBlock:(UIDocumentInteractionControllerWillPresentOpenInMenuBlock)block;
--(void)setWillPresentOptionsMenuBlock:(UIDocumentInteractionControllerWillPresentOptionsMenuBlock)block;
+-(id)delegateBlocks;
+-(void)onCanPerformAction:(UIDocumentInteractionControllerCanPerformActionBlock)block;
+-(void)onDidEndSendingToApplication:(UIDocumentInteractionControllerDidEndSendingToApplicationBlock)block;
+-(void)onPerformAction:(UIDocumentInteractionControllerPerformActionBlock)block;
+-(void)onWillBeginSendingToApplication:(UIDocumentInteractionControllerWillBeginSendingToApplicationBlock)block;
+-(void)onDidDismissOpenInMenu:(UIDocumentInteractionControllerDidDismissOpenInMenuBlock)block;
+-(void)onDidDismissOptionsMenu:(UIDocumentInteractionControllerDidDismissOptionsMenuBlock)block;
+-(void)onDidEndPreview:(UIDocumentInteractionControllerDidEndPreviewBlock)block;
+-(void)onRectForPreview:(UIDocumentInteractionControllerRectForPreviewBlock)block;
+-(void)onViewControllerForPreview:(UIDocumentInteractionControllerViewControllerForPreviewBlock)block;
+-(void)onViewForPreview:(UIDocumentInteractionControllerViewForPreviewBlock)block;
+-(void)onWillBeginPreview:(UIDocumentInteractionControllerWillBeginPreviewBlock)block;
+-(void)onWillPresentOpenInMenu:(UIDocumentInteractionControllerWillPresentOpenInMenuBlock)block;
+-(void)onWillPresentOptionsMenu:(UIDocumentInteractionControllerWillPresentOptionsMenuBlock)block;
 
 @end
 

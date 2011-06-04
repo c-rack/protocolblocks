@@ -32,11 +32,11 @@ typedef void (^ADInterstitialAdDidUnloadBlock)(ADInterstitialAd* interstitialAd)
 
 @interface ADInterstitialAd (DelegateBlocks)
 
--(id)delegateblocks;
--(void)setDidFailWithErrorBlock:(ADInterstitialAdDidFailWithErrorBlock)block;
--(void)setActionDidFinishBlock:(ADInterstitialAdActionDidFinishBlock)block;
--(void)setDidLoadBlock:(ADInterstitialAdDidLoadBlock)block;
--(void)setDidUnloadBlock:(ADInterstitialAdDidUnloadBlock)block;
+-(id)delegateBlocks;
+-(void)onDidFailWithError:(ADInterstitialAdDidFailWithErrorBlock)block;
+-(void)onActionDidFinish:(ADInterstitialAdActionDidFinishBlock)block;
+-(void)onDidLoad:(ADInterstitialAdDidLoadBlock)block;
+-(void)onDidUnload:(ADInterstitialAdDidUnloadBlock)block;
 
 @end
 

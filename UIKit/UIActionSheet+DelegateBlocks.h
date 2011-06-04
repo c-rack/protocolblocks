@@ -34,13 +34,13 @@ typedef void (^UIActionSheetWillPresentActionSheetBlock)(UIActionSheet* actionSh
 
 @interface UIActionSheet (DelegateBlocks)
 
--(id)delegateblocks;
--(void)setClickedButtonAtIndexBlock:(UIActionSheetClickedButtonAtIndexBlock)block;
--(void)setDidDismissWithButtonIndexBlock:(UIActionSheetDidDismissWithButtonIndexBlock)block;
--(void)setWillDismissWithButtonIndexBlock:(UIActionSheetWillDismissWithButtonIndexBlock)block;
--(void)setCancelBlock:(UIActionSheetCancelBlock)block;
--(void)setDidPresentActionSheetBlock:(UIActionSheetDidPresentActionSheetBlock)block;
--(void)setWillPresentActionSheetBlock:(UIActionSheetWillPresentActionSheetBlock)block;
+-(id)delegateBlocks;
+-(void)onClickedButtonAtIndex:(UIActionSheetClickedButtonAtIndexBlock)block;
+-(void)onDidDismissWithButtonIndex:(UIActionSheetDidDismissWithButtonIndexBlock)block;
+-(void)onWillDismissWithButtonIndex:(UIActionSheetWillDismissWithButtonIndexBlock)block;
+-(void)onCancel:(UIActionSheetCancelBlock)block;
+-(void)onDidPresentActionSheet:(UIActionSheetDidPresentActionSheetBlock)block;
+-(void)onWillPresentActionSheet:(UIActionSheetWillPresentActionSheetBlock)block;
 
 @end
 

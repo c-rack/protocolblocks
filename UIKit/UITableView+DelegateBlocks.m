@@ -30,78 +30,78 @@ static NSString* UITableViewDelegateBlocksKey = @"UITableViewDelegateBlocksKey";
 
 @implementation UITableView (DelegateBlocks)
 
--(id)delegateblocks {
+-(id)delegateBlocks {
     UITableViewDelegateBlocks* delegate = [[[UITableViewDelegateBlocks alloc] init] autorelease];
     objc_setAssociatedObject (self, &UITableViewDelegateBlocksKey, delegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     self.delegate = delegate;
     return self;
 }
 
--(void)setAccessoryButtonTappedForRowWithIndexPathBlock:(UITableViewAccessoryButtonTappedForRowWithIndexPathBlock)block {
+-(void)onAccessoryButtonTappedForRowWithIndexPath:(UITableViewAccessoryButtonTappedForRowWithIndexPathBlock)block {
     [((UITableViewDelegateBlocks*)self.delegate) setAccessoryButtonTappedForRowWithIndexPathBlock:block];
 }
 
--(void)setDidDeselectRowAtIndexPathBlock:(UITableViewDidDeselectRowAtIndexPathBlock)block {
+-(void)onDidDeselectRowAtIndexPath:(UITableViewDidDeselectRowAtIndexPathBlock)block {
     [((UITableViewDelegateBlocks*)self.delegate) setDidDeselectRowAtIndexPathBlock:block];
 }
 
--(void)setDidEndEditingRowAtIndexPathBlock:(UITableViewDidEndEditingRowAtIndexPathBlock)block {
+-(void)onDidEndEditingRowAtIndexPath:(UITableViewDidEndEditingRowAtIndexPathBlock)block {
     [((UITableViewDelegateBlocks*)self.delegate) setDidEndEditingRowAtIndexPathBlock:block];
 }
 
--(void)setDidSelectRowAtIndexPathBlock:(UITableViewDidSelectRowAtIndexPathBlock)block {
+-(void)onDidSelectRowAtIndexPath:(UITableViewDidSelectRowAtIndexPathBlock)block {
     [((UITableViewDelegateBlocks*)self.delegate) setDidSelectRowAtIndexPathBlock:block];
 }
 
--(void)setEditingStyleForRowAtIndexPathBlock:(UITableViewEditingStyleForRowAtIndexPathBlock)block {
+-(void)onEditingStyleForRowAtIndexPath:(UITableViewEditingStyleForRowAtIndexPathBlock)block {
     [((UITableViewDelegateBlocks*)self.delegate) setEditingStyleForRowAtIndexPathBlock:block];
 }
 
--(void)setHeightForFooterInSectionBlock:(UITableViewHeightForFooterInSectionBlock)block {
+-(void)onHeightForFooterInSection:(UITableViewHeightForFooterInSectionBlock)block {
     [((UITableViewDelegateBlocks*)self.delegate) setHeightForFooterInSectionBlock:block];
 }
 
--(void)setHeightForHeaderInSectionBlock:(UITableViewHeightForHeaderInSectionBlock)block {
+-(void)onHeightForHeaderInSection:(UITableViewHeightForHeaderInSectionBlock)block {
     [((UITableViewDelegateBlocks*)self.delegate) setHeightForHeaderInSectionBlock:block];
 }
 
--(void)setHeightForRowAtIndexPathBlock:(UITableViewHeightForRowAtIndexPathBlock)block {
+-(void)onHeightForRowAtIndexPath:(UITableViewHeightForRowAtIndexPathBlock)block {
     [((UITableViewDelegateBlocks*)self.delegate) setHeightForRowAtIndexPathBlock:block];
 }
 
--(void)setShouldIndentWhileEditingRowAtIndexPathBlock:(UITableViewShouldIndentWhileEditingRowAtIndexPathBlock)block {
+-(void)onShouldIndentWhileEditingRowAtIndexPath:(UITableViewShouldIndentWhileEditingRowAtIndexPathBlock)block {
     [((UITableViewDelegateBlocks*)self.delegate) setShouldIndentWhileEditingRowAtIndexPathBlock:block];
 }
 
--(void)setTargetIndexPathForMoveFromRowAtIndexPathBlock:(UITableViewTargetIndexPathForMoveFromRowAtIndexPathBlock)block {
+-(void)onTargetIndexPathForMoveFromRowAtIndexPath:(UITableViewTargetIndexPathForMoveFromRowAtIndexPathBlock)block {
     [((UITableViewDelegateBlocks*)self.delegate) setTargetIndexPathForMoveFromRowAtIndexPathBlock:block];
 }
 
--(void)setTitleForDeleteConfirmationButtonForRowAtIndexPathBlock:(UITableViewTitleForDeleteConfirmationButtonForRowAtIndexPathBlock)block {
+-(void)onTitleForDeleteConfirmationButtonForRowAtIndexPath:(UITableViewTitleForDeleteConfirmationButtonForRowAtIndexPathBlock)block {
     [((UITableViewDelegateBlocks*)self.delegate) setTitleForDeleteConfirmationButtonForRowAtIndexPathBlock:block];
 }
 
--(void)setViewForFooterInSectionBlock:(UITableViewViewForFooterInSectionBlock)block {
+-(void)onViewForFooterInSection:(UITableViewViewForFooterInSectionBlock)block {
     [((UITableViewDelegateBlocks*)self.delegate) setViewForFooterInSectionBlock:block];
 }
 
--(void)setViewForHeaderInSectionBlock:(UITableViewViewForHeaderInSectionBlock)block {
+-(void)onViewForHeaderInSection:(UITableViewViewForHeaderInSectionBlock)block {
     [((UITableViewDelegateBlocks*)self.delegate) setViewForHeaderInSectionBlock:block];
 }
 
--(void)setWillBeginEditingRowAtIndexPathBlock:(UITableViewWillBeginEditingRowAtIndexPathBlock)block {
+-(void)onWillBeginEditingRowAtIndexPath:(UITableViewWillBeginEditingRowAtIndexPathBlock)block {
     [((UITableViewDelegateBlocks*)self.delegate) setWillBeginEditingRowAtIndexPathBlock:block];
 }
 
--(void)setWillDeselectRowAtIndexPathBlock:(UITableViewWillDeselectRowAtIndexPathBlock)block {
+-(void)onWillDeselectRowAtIndexPath:(UITableViewWillDeselectRowAtIndexPathBlock)block {
     [((UITableViewDelegateBlocks*)self.delegate) setWillDeselectRowAtIndexPathBlock:block];
 }
 
--(void)setWillDisplayCellBlock:(UITableViewWillDisplayCellBlock)block {
+-(void)onWillDisplayCell:(UITableViewWillDisplayCellBlock)block {
     [((UITableViewDelegateBlocks*)self.delegate) setWillDisplayCellBlock:block];
 }
 
--(void)setWillSelectRowAtIndexPathBlock:(UITableViewWillSelectRowAtIndexPathBlock)block {
+-(void)onWillSelectRowAtIndexPath:(UITableViewWillSelectRowAtIndexPathBlock)block {
     [((UITableViewDelegateBlocks*)self.delegate) setWillSelectRowAtIndexPathBlock:block];
 }
 

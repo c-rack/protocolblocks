@@ -30,62 +30,62 @@ static NSString* UIDocumentInteractionControllerDelegateBlocksKey = @"UIDocument
 
 @implementation UIDocumentInteractionController (DelegateBlocks)
 
--(id)delegateblocks {
+-(id)delegateBlocks {
     UIDocumentInteractionControllerDelegateBlocks* delegate = [[[UIDocumentInteractionControllerDelegateBlocks alloc] init] autorelease];
     objc_setAssociatedObject (self, &UIDocumentInteractionControllerDelegateBlocksKey, delegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     self.delegate = delegate;
     return self;
 }
 
--(void)setCanPerformActionBlock:(UIDocumentInteractionControllerCanPerformActionBlock)block {
+-(void)onCanPerformAction:(UIDocumentInteractionControllerCanPerformActionBlock)block {
     [((UIDocumentInteractionControllerDelegateBlocks*)self.delegate) setCanPerformActionBlock:block];
 }
 
--(void)setDidEndSendingToApplicationBlock:(UIDocumentInteractionControllerDidEndSendingToApplicationBlock)block {
+-(void)onDidEndSendingToApplication:(UIDocumentInteractionControllerDidEndSendingToApplicationBlock)block {
     [((UIDocumentInteractionControllerDelegateBlocks*)self.delegate) setDidEndSendingToApplicationBlock:block];
 }
 
--(void)setPerformActionBlock:(UIDocumentInteractionControllerPerformActionBlock)block {
+-(void)onPerformAction:(UIDocumentInteractionControllerPerformActionBlock)block {
     [((UIDocumentInteractionControllerDelegateBlocks*)self.delegate) setPerformActionBlock:block];
 }
 
--(void)setWillBeginSendingToApplicationBlock:(UIDocumentInteractionControllerWillBeginSendingToApplicationBlock)block {
+-(void)onWillBeginSendingToApplication:(UIDocumentInteractionControllerWillBeginSendingToApplicationBlock)block {
     [((UIDocumentInteractionControllerDelegateBlocks*)self.delegate) setWillBeginSendingToApplicationBlock:block];
 }
 
--(void)setDidDismissOpenInMenuBlock:(UIDocumentInteractionControllerDidDismissOpenInMenuBlock)block {
+-(void)onDidDismissOpenInMenu:(UIDocumentInteractionControllerDidDismissOpenInMenuBlock)block {
     [((UIDocumentInteractionControllerDelegateBlocks*)self.delegate) setDidDismissOpenInMenuBlock:block];
 }
 
--(void)setDidDismissOptionsMenuBlock:(UIDocumentInteractionControllerDidDismissOptionsMenuBlock)block {
+-(void)onDidDismissOptionsMenu:(UIDocumentInteractionControllerDidDismissOptionsMenuBlock)block {
     [((UIDocumentInteractionControllerDelegateBlocks*)self.delegate) setDidDismissOptionsMenuBlock:block];
 }
 
--(void)setDidEndPreviewBlock:(UIDocumentInteractionControllerDidEndPreviewBlock)block {
+-(void)onDidEndPreview:(UIDocumentInteractionControllerDidEndPreviewBlock)block {
     [((UIDocumentInteractionControllerDelegateBlocks*)self.delegate) setDidEndPreviewBlock:block];
 }
 
--(void)setRectForPreviewBlock:(UIDocumentInteractionControllerRectForPreviewBlock)block {
+-(void)onRectForPreview:(UIDocumentInteractionControllerRectForPreviewBlock)block {
     [((UIDocumentInteractionControllerDelegateBlocks*)self.delegate) setRectForPreviewBlock:block];
 }
 
--(void)setViewControllerForPreviewBlock:(UIDocumentInteractionControllerViewControllerForPreviewBlock)block {
+-(void)onViewControllerForPreview:(UIDocumentInteractionControllerViewControllerForPreviewBlock)block {
     [((UIDocumentInteractionControllerDelegateBlocks*)self.delegate) setViewControllerForPreviewBlock:block];
 }
 
--(void)setViewForPreviewBlock:(UIDocumentInteractionControllerViewForPreviewBlock)block {
+-(void)onViewForPreview:(UIDocumentInteractionControllerViewForPreviewBlock)block {
     [((UIDocumentInteractionControllerDelegateBlocks*)self.delegate) setViewForPreviewBlock:block];
 }
 
--(void)setWillBeginPreviewBlock:(UIDocumentInteractionControllerWillBeginPreviewBlock)block {
+-(void)onWillBeginPreview:(UIDocumentInteractionControllerWillBeginPreviewBlock)block {
     [((UIDocumentInteractionControllerDelegateBlocks*)self.delegate) setWillBeginPreviewBlock:block];
 }
 
--(void)setWillPresentOpenInMenuBlock:(UIDocumentInteractionControllerWillPresentOpenInMenuBlock)block {
+-(void)onWillPresentOpenInMenu:(UIDocumentInteractionControllerWillPresentOpenInMenuBlock)block {
     [((UIDocumentInteractionControllerDelegateBlocks*)self.delegate) setWillPresentOpenInMenuBlock:block];
 }
 
--(void)setWillPresentOptionsMenuBlock:(UIDocumentInteractionControllerWillPresentOptionsMenuBlock)block {
+-(void)onWillPresentOptionsMenu:(UIDocumentInteractionControllerWillPresentOptionsMenuBlock)block {
     [((UIDocumentInteractionControllerDelegateBlocks*)self.delegate) setWillPresentOptionsMenuBlock:block];
 }
 

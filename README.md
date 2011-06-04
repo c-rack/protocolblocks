@@ -66,30 +66,30 @@ Currently, protocolblocks are provided for the following classes and protocols:
                                    destructiveButtonTitle:@"Destruct"
                                    otherButtonTitles:nil];
 
-### 3. Enable delegate blocks
+### 3. Enable delegate method blocks
 
-    [actionSheet delegateblocks];
+    [actionSheet delegateBlocks];
 
-The created block delegate object is autoreleased due to Objective-C's [Associate Reference](http://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/ObjectiveC/Chapters/ocAssociativeReferences.html) magic.
+The created delegate object is autoreleased due to Objective-C's [Associate Reference](http://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/ObjectiveC/Chapters/ocAssociativeReferences.html) magic.
 
-### 4. Implement delegate blocks
+### 4. Implement delegate methods with blocks
 
-    [actionSheet setCancelBlock:^(UIActionSheet *actionSheet) {
+    [actionSheet onCancel:^(UIActionSheet *actionSheet) {
         // your code here
     }];
-    [actionSheet setClickedButtonAtIndexBlock:^(UIActionSheet *actionSheet, NSInteger buttonIndex) {
+    [actionSheet onClickedButtonAtIndex:^(UIActionSheet *actionSheet, NSInteger buttonIndex) {
         // your code here
     }];
-    [actionSheet setDidDismissWithButtonIndexBlock:^(UIActionSheet *actionSheet, NSInteger buttonIndex) {
+    [actionSheet onDidDismissWithButtonIndex:^(UIActionSheet *actionSheet, NSInteger buttonIndex) {
         // your code here
     }];
-    [actionSheet setDidPresentActionSheetBlock:^(UIActionSheet *actionSheet) {
+    [actionSheet onDidPresentActionSheet:^(UIActionSheet *actionSheet) {
         // your code here
     }];
-    [actionSheet setWillDismissWithButtonIndexBlock:^(UIActionSheet *actionSheet, NSInteger buttonIndex) {
+    [actionSheet onWillDismissWithButtonIndex:^(UIActionSheet *actionSheet, NSInteger buttonIndex) {
         // your code here
     }];
-    [actionSheet setWillPresentActionSheetBlock:^(UIActionSheet *actionSheet) {
+    [actionSheet onWillPresentActionSheet:^(UIActionSheet *actionSheet) {
         // your code here
     }];
 
@@ -108,22 +108,22 @@ The created block delegate object is autoreleased due to Objective-C's [Associat
 ## License
 ### protocolblocks is licensed under the [MIT-License](http://www.opensource.org/licenses/mit-license.php):
 
-> Copyright (C) 2011 by Constantin Rack, VIGOS AG.
-> 
-> Permission is hereby granted, free of charge, to any person obtaining a copy
-> of this software and associated documentation files (the "Software"), to deal
-> in the Software without restriction, including without limitation the rights
-> to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-> copies of the Software, and to permit persons to whom the Software is
-> furnished to do so, subject to the following conditions:
-> 
-> The above copyright notice and this permission notice shall be included in
-> all copies or substantial portions of the Software.
-> 
-> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-> IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-> FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-> AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-> LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-> OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-> THE SOFTWARE.
+Copyright (C) 2011 by Constantin Rack, VIGOS AG.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.

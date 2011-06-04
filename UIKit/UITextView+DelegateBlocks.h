@@ -35,14 +35,14 @@ typedef BOOL (^UITextViewShouldEndEditingBlock)(UITextView* textView);
 
 @interface UITextView (DelegateBlocks)
 
--(id)delegateblocks;
--(void)setShouldChangeTextInRangeBlock:(UITextViewShouldChangeTextInRangeBlock)block;
--(void)setDidBeginEditingBlock:(UITextViewDidBeginEditingBlock)block;
--(void)setDidChangeBlock:(UITextViewDidChangeBlock)block;
--(void)setDidChangeSelectionBlock:(UITextViewDidChangeSelectionBlock)block;
--(void)setDidEndEditingBlock:(UITextViewDidEndEditingBlock)block;
--(void)setShouldBeginEditingBlock:(UITextViewShouldBeginEditingBlock)block;
--(void)setShouldEndEditingBlock:(UITextViewShouldEndEditingBlock)block;
+-(id)delegateBlocks;
+-(void)onShouldChangeTextInRange:(UITextViewShouldChangeTextInRangeBlock)block;
+-(void)onDidBeginEditing:(UITextViewDidBeginEditingBlock)block;
+-(void)onDidChange:(UITextViewDidChangeBlock)block;
+-(void)onDidChangeSelection:(UITextViewDidChangeSelectionBlock)block;
+-(void)onDidEndEditing:(UITextViewDidEndEditingBlock)block;
+-(void)onShouldBeginEditing:(UITextViewShouldBeginEditingBlock)block;
+-(void)onShouldEndEditing:(UITextViewShouldEndEditingBlock)block;
 
 @end
 

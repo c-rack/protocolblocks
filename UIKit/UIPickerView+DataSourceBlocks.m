@@ -30,18 +30,18 @@ static NSString* UIPickerViewDataSourceBlocksKey = @"UIPickerViewDataSourceBlock
 
 @implementation UIPickerView (DataSourceBlocks)
 
--(id)datasourceblocks {
+-(id)dataSourceBlocks {
     UIPickerViewDataSourceBlocks* dataSource = [[[UIPickerViewDataSourceBlocks alloc] init] autorelease];
     objc_setAssociatedObject (self, &UIPickerViewDataSourceBlocksKey, dataSource, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     self.dataSource = dataSource;
     return self;
 }
 
--(void)setNumberOfComponentsInPickerViewBlock:(UIPickerViewNumberOfComponentsInPickerViewBlock)block {
+-(void)onNumberOfComponentsInPickerView:(UIPickerViewNumberOfComponentsInPickerViewBlock)block {
     [((UIPickerViewDataSourceBlocks*)self.dataSource) setNumberOfComponentsInPickerViewBlock:block];
 }
 
--(void)setNumberOfRowsInComponentBlock:(UIPickerViewNumberOfRowsInComponentBlock)block {
+-(void)onNumberOfRowsInComponent:(UIPickerViewNumberOfRowsInComponentBlock)block {
     [((UIPickerViewDataSourceBlocks*)self.dataSource) setNumberOfRowsInComponentBlock:block];
 }
 

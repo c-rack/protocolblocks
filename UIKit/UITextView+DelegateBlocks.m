@@ -30,38 +30,38 @@ static NSString* UITextViewDelegateBlocksKey = @"UITextViewDelegateBlocksKey";
 
 @implementation UITextView (DelegateBlocks)
 
--(id)delegateblocks {
+-(id)delegateBlocks {
     UITextViewDelegateBlocks* delegate = [[[UITextViewDelegateBlocks alloc] init] autorelease];
     objc_setAssociatedObject (self, &UITextViewDelegateBlocksKey, delegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     self.delegate = delegate;
     return self;
 }
 
--(void)setShouldChangeTextInRangeBlock:(UITextViewShouldChangeTextInRangeBlock)block {
+-(void)onShouldChangeTextInRange:(UITextViewShouldChangeTextInRangeBlock)block {
     [((UITextViewDelegateBlocks*)self.delegate) setShouldChangeTextInRangeBlock:block];
 }
 
--(void)setDidBeginEditingBlock:(UITextViewDidBeginEditingBlock)block {
+-(void)onDidBeginEditing:(UITextViewDidBeginEditingBlock)block {
     [((UITextViewDelegateBlocks*)self.delegate) setDidBeginEditingBlock:block];
 }
 
--(void)setDidChangeBlock:(UITextViewDidChangeBlock)block {
+-(void)onDidChange:(UITextViewDidChangeBlock)block {
     [((UITextViewDelegateBlocks*)self.delegate) setDidChangeBlock:block];
 }
 
--(void)setDidChangeSelectionBlock:(UITextViewDidChangeSelectionBlock)block {
+-(void)onDidChangeSelection:(UITextViewDidChangeSelectionBlock)block {
     [((UITextViewDelegateBlocks*)self.delegate) setDidChangeSelectionBlock:block];
 }
 
--(void)setDidEndEditingBlock:(UITextViewDidEndEditingBlock)block {
+-(void)onDidEndEditing:(UITextViewDidEndEditingBlock)block {
     [((UITextViewDelegateBlocks*)self.delegate) setDidEndEditingBlock:block];
 }
 
--(void)setShouldBeginEditingBlock:(UITextViewShouldBeginEditingBlock)block {
+-(void)onShouldBeginEditing:(UITextViewShouldBeginEditingBlock)block {
     [((UITextViewDelegateBlocks*)self.delegate) setShouldBeginEditingBlock:block];
 }
 
--(void)setShouldEndEditingBlock:(UITextViewShouldEndEditingBlock)block {
+-(void)onShouldEndEditing:(UITextViewShouldEndEditingBlock)block {
     [((UITextViewDelegateBlocks*)self.delegate) setShouldEndEditingBlock:block];
 }
 

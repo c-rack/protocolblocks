@@ -30,9 +30,9 @@ typedef NSInteger (^UIPickerViewNumberOfRowsInComponentBlock)(UIPickerView* pick
 
 @interface UIPickerView (DataSourceBlocks)
 
--(id)datasourceblocks;
--(void)setNumberOfComponentsInPickerViewBlock:(UIPickerViewNumberOfComponentsInPickerViewBlock)block;
--(void)setNumberOfRowsInComponentBlock:(UIPickerViewNumberOfRowsInComponentBlock)block;
+-(id)dataSourceBlocks;
+-(void)onNumberOfComponentsInPickerView:(UIPickerViewNumberOfComponentsInPickerViewBlock)block;
+-(void)onNumberOfRowsInComponent:(UIPickerViewNumberOfRowsInComponentBlock)block;
 
 @end
 

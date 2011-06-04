@@ -30,30 +30,30 @@ static NSString* UIPickerViewDelegateBlocksKey = @"UIPickerViewDelegateBlocksKey
 
 @implementation UIPickerView (DelegateBlocks)
 
--(id)delegateblocks {
+-(id)delegateBlocks {
     UIPickerViewDelegateBlocks* delegate = [[[UIPickerViewDelegateBlocks alloc] init] autorelease];
     objc_setAssociatedObject (self, &UIPickerViewDelegateBlocksKey, delegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     self.delegate = delegate;
     return self;
 }
 
--(void)setDidSelectRowBlock:(UIPickerViewDidSelectRowBlock)block {
+-(void)onDidSelectRow:(UIPickerViewDidSelectRowBlock)block {
     [((UIPickerViewDelegateBlocks*)self.delegate) setDidSelectRowBlock:block];
 }
 
--(void)setRowHeightForComponentBlock:(UIPickerViewRowHeightForComponentBlock)block {
+-(void)onRowHeightForComponent:(UIPickerViewRowHeightForComponentBlock)block {
     [((UIPickerViewDelegateBlocks*)self.delegate) setRowHeightForComponentBlock:block];
 }
 
--(void)setTitleForRowBlock:(UIPickerViewTitleForRowBlock)block {
+-(void)onTitleForRow:(UIPickerViewTitleForRowBlock)block {
     [((UIPickerViewDelegateBlocks*)self.delegate) setTitleForRowBlock:block];
 }
 
--(void)setViewForRowBlock:(UIPickerViewViewForRowBlock)block {
+-(void)onViewForRow:(UIPickerViewViewForRowBlock)block {
     [((UIPickerViewDelegateBlocks*)self.delegate) setViewForRowBlock:block];
 }
 
--(void)setWidthForComponentBlock:(UIPickerViewWidthForComponentBlock)block {
+-(void)onWidthForComponent:(UIPickerViewWidthForComponentBlock)block {
     [((UIPickerViewDelegateBlocks*)self.delegate) setWidthForComponentBlock:block];
 }
 

@@ -39,18 +39,18 @@ typedef NSString* (^UITableViewTitleForHeaderInSectionBlock)(UITableView* tableV
 
 @interface UITableView (DataSourceBlocks)
 
--(id)datasourceblocks;
--(void)setNumberOfSectionsInTableViewBlock:(UITableViewNumberOfSectionsInTableViewBlock)block;
--(void)setSectionIndexTitlesForTableViewBlock:(UITableViewSectionIndexTitlesForTableViewBlock)block;
--(void)setCanEditRowAtIndexPathBlock:(UITableViewCanEditRowAtIndexPathBlock)block;
--(void)setCanMoveRowAtIndexPathBlock:(UITableViewCanMoveRowAtIndexPathBlock)block;
--(void)setCellForRowAtIndexPathBlock:(UITableViewCellForRowAtIndexPathBlock)block;
--(void)setCommitEditingStyleBlock:(UITableViewCommitEditingStyleBlock)block;
--(void)setMoveRowAtIndexPathBlock:(UITableViewMoveRowAtIndexPathBlock)block;
--(void)setNumberOfRowsInSectionBlock:(UITableViewNumberOfRowsInSectionBlock)block;
--(void)setSectionForSectionIndexTitleBlock:(UITableViewSectionForSectionIndexTitleBlock)block;
--(void)setTitleForFooterInSectionBlock:(UITableViewTitleForFooterInSectionBlock)block;
--(void)setTitleForHeaderInSectionBlock:(UITableViewTitleForHeaderInSectionBlock)block;
+-(id)dataSourceBlocks;
+-(void)onNumberOfSectionsInTableView:(UITableViewNumberOfSectionsInTableViewBlock)block;
+-(void)onSectionIndexTitlesForTableView:(UITableViewSectionIndexTitlesForTableViewBlock)block;
+-(void)onCanEditRowAtIndexPath:(UITableViewCanEditRowAtIndexPathBlock)block;
+-(void)onCanMoveRowAtIndexPath:(UITableViewCanMoveRowAtIndexPathBlock)block;
+-(void)onCellForRowAtIndexPath:(UITableViewCellForRowAtIndexPathBlock)block;
+-(void)onCommitEditingStyle:(UITableViewCommitEditingStyleBlock)block;
+-(void)onMoveRowAtIndexPath:(UITableViewMoveRowAtIndexPathBlock)block;
+-(void)onNumberOfRowsInSection:(UITableViewNumberOfRowsInSectionBlock)block;
+-(void)onSectionForSectionIndexTitle:(UITableViewSectionForSectionIndexTitleBlock)block;
+-(void)onTitleForFooterInSection:(UITableViewTitleForFooterInSectionBlock)block;
+-(void)onTitleForHeaderInSection:(UITableViewTitleForHeaderInSectionBlock)block;
 
 @end
 

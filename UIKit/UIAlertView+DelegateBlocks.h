@@ -34,13 +34,13 @@ typedef void (^UIAlertViewWillPresentAlertViewBlock)(UIAlertView* alertView);
 
 @interface UIAlertView (DelegateBlocks)
 
--(id)delegateblocks;
--(void)setClickedButtonAtIndexBlock:(UIAlertViewClickedButtonAtIndexBlock)block;
--(void)setDidDismissWithButtonIndexBlock:(UIAlertViewDidDismissWithButtonIndexBlock)block;
--(void)setWillDismissWithButtonIndexBlock:(UIAlertViewWillDismissWithButtonIndexBlock)block;
--(void)setCancelBlock:(UIAlertViewCancelBlock)block;
--(void)setDidPresentAlertViewBlock:(UIAlertViewDidPresentAlertViewBlock)block;
--(void)setWillPresentAlertViewBlock:(UIAlertViewWillPresentAlertViewBlock)block;
+-(id)delegateBlocks;
+-(void)onClickedButtonAtIndex:(UIAlertViewClickedButtonAtIndexBlock)block;
+-(void)onDidDismissWithButtonIndex:(UIAlertViewDidDismissWithButtonIndexBlock)block;
+-(void)onWillDismissWithButtonIndex:(UIAlertViewWillDismissWithButtonIndexBlock)block;
+-(void)onCancel:(UIAlertViewCancelBlock)block;
+-(void)onDidPresentAlertView:(UIAlertViewDidPresentAlertViewBlock)block;
+-(void)onWillPresentAlertView:(UIAlertViewWillPresentAlertViewBlock)block;
 
 @end
 

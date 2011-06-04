@@ -30,26 +30,26 @@ static NSString* ADInterstitialAdDelegateBlocksKey = @"ADInterstitialAdDelegateB
 
 @implementation ADInterstitialAd (DelegateBlocks)
 
--(id)delegateblocks {
+-(id)delegateBlocks {
     ADInterstitialAdDelegateBlocks* delegate = [[[ADInterstitialAdDelegateBlocks alloc] init] autorelease];
     objc_setAssociatedObject (self, &ADInterstitialAdDelegateBlocksKey, delegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     self.delegate = delegate;
     return self;
 }
 
--(void)setDidFailWithErrorBlock:(ADInterstitialAdDidFailWithErrorBlock)block {
+-(void)onDidFailWithError:(ADInterstitialAdDidFailWithErrorBlock)block {
     [((ADInterstitialAdDelegateBlocks*)self.delegate) setDidFailWithErrorBlock:block];
 }
 
--(void)setActionDidFinishBlock:(ADInterstitialAdActionDidFinishBlock)block {
+-(void)onActionDidFinish:(ADInterstitialAdActionDidFinishBlock)block {
     [((ADInterstitialAdDelegateBlocks*)self.delegate) setActionDidFinishBlock:block];
 }
 
--(void)setDidLoadBlock:(ADInterstitialAdDidLoadBlock)block {
+-(void)onDidLoad:(ADInterstitialAdDidLoadBlock)block {
     [((ADInterstitialAdDelegateBlocks*)self.delegate) setDidLoadBlock:block];
 }
 
--(void)setDidUnloadBlock:(ADInterstitialAdDidUnloadBlock)block {
+-(void)onDidUnload:(ADInterstitialAdDidUnloadBlock)block {
     [((ADInterstitialAdDelegateBlocks*)self.delegate) setDidUnloadBlock:block];
 }
 

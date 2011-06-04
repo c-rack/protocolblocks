@@ -33,12 +33,12 @@ typedef void (^UIVideoEditorControllerWillShowViewControllerBlock)(UINavigationC
 
 @interface UIVideoEditorController (DelegateBlocks)
 
--(id)delegateblocks;
--(void)setDidFailWithErrorBlock:(UIVideoEditorControllerDidFailWithErrorBlock)block;
--(void)setDidSaveEditedVideoToPathBlock:(UIVideoEditorControllerDidSaveEditedVideoToPathBlock)block;
--(void)setDidCancelBlock:(UIVideoEditorControllerDidCancelBlock)block;
--(void)setDidShowViewControllerBlock:(UIVideoEditorControllerDidShowViewControllerBlock)block;
--(void)setWillShowViewControllerBlock:(UIVideoEditorControllerWillShowViewControllerBlock)block;
+-(id)delegateBlocks;
+-(void)onDidFailWithError:(UIVideoEditorControllerDidFailWithErrorBlock)block;
+-(void)onDidSaveEditedVideoToPath:(UIVideoEditorControllerDidSaveEditedVideoToPathBlock)block;
+-(void)onDidCancel:(UIVideoEditorControllerDidCancelBlock)block;
+-(void)onDidShowViewController:(UIVideoEditorControllerDidShowViewControllerBlock)block;
+-(void)onWillShowViewController:(UIVideoEditorControllerWillShowViewControllerBlock)block;
 
 @end
 

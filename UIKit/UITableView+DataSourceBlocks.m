@@ -30,54 +30,54 @@ static NSString* UITableViewDataSourceBlocksKey = @"UITableViewDataSourceBlocksK
 
 @implementation UITableView (DataSourceBlocks)
 
--(id)datasourceblocks {
+-(id)dataSourceBlocks {
     UITableViewDataSourceBlocks* dataSource = [[[UITableViewDataSourceBlocks alloc] init] autorelease];
     objc_setAssociatedObject (self, &UITableViewDataSourceBlocksKey, dataSource, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     self.dataSource = dataSource;
     return self;
 }
 
--(void)setNumberOfSectionsInTableViewBlock:(UITableViewNumberOfSectionsInTableViewBlock)block {
+-(void)onNumberOfSectionsInTableView:(UITableViewNumberOfSectionsInTableViewBlock)block {
     [((UITableViewDataSourceBlocks*)self.dataSource) setNumberOfSectionsInTableViewBlock:block];
 }
 
--(void)setSectionIndexTitlesForTableViewBlock:(UITableViewSectionIndexTitlesForTableViewBlock)block {
+-(void)onSectionIndexTitlesForTableView:(UITableViewSectionIndexTitlesForTableViewBlock)block {
     [((UITableViewDataSourceBlocks*)self.dataSource) setSectionIndexTitlesForTableViewBlock:block];
 }
 
--(void)setCanEditRowAtIndexPathBlock:(UITableViewCanEditRowAtIndexPathBlock)block {
+-(void)onCanEditRowAtIndexPath:(UITableViewCanEditRowAtIndexPathBlock)block {
     [((UITableViewDataSourceBlocks*)self.dataSource) setCanEditRowAtIndexPathBlock:block];
 }
 
--(void)setCanMoveRowAtIndexPathBlock:(UITableViewCanMoveRowAtIndexPathBlock)block {
+-(void)onCanMoveRowAtIndexPath:(UITableViewCanMoveRowAtIndexPathBlock)block {
     [((UITableViewDataSourceBlocks*)self.dataSource) setCanMoveRowAtIndexPathBlock:block];
 }
 
--(void)setCellForRowAtIndexPathBlock:(UITableViewCellForRowAtIndexPathBlock)block {
+-(void)onCellForRowAtIndexPath:(UITableViewCellForRowAtIndexPathBlock)block {
     [((UITableViewDataSourceBlocks*)self.dataSource) setCellForRowAtIndexPathBlock:block];
 }
 
--(void)setCommitEditingStyleBlock:(UITableViewCommitEditingStyleBlock)block {
+-(void)onCommitEditingStyle:(UITableViewCommitEditingStyleBlock)block {
     [((UITableViewDataSourceBlocks*)self.dataSource) setCommitEditingStyleBlock:block];
 }
 
--(void)setMoveRowAtIndexPathBlock:(UITableViewMoveRowAtIndexPathBlock)block {
+-(void)onMoveRowAtIndexPath:(UITableViewMoveRowAtIndexPathBlock)block {
     [((UITableViewDataSourceBlocks*)self.dataSource) setMoveRowAtIndexPathBlock:block];
 }
 
--(void)setNumberOfRowsInSectionBlock:(UITableViewNumberOfRowsInSectionBlock)block {
+-(void)onNumberOfRowsInSection:(UITableViewNumberOfRowsInSectionBlock)block {
     [((UITableViewDataSourceBlocks*)self.dataSource) setNumberOfRowsInSectionBlock:block];
 }
 
--(void)setSectionForSectionIndexTitleBlock:(UITableViewSectionForSectionIndexTitleBlock)block {
+-(void)onSectionForSectionIndexTitle:(UITableViewSectionForSectionIndexTitleBlock)block {
     [((UITableViewDataSourceBlocks*)self.dataSource) setSectionForSectionIndexTitleBlock:block];
 }
 
--(void)setTitleForFooterInSectionBlock:(UITableViewTitleForFooterInSectionBlock)block {
+-(void)onTitleForFooterInSection:(UITableViewTitleForFooterInSectionBlock)block {
     [((UITableViewDataSourceBlocks*)self.dataSource) setTitleForFooterInSectionBlock:block];
 }
 
--(void)setTitleForHeaderInSectionBlock:(UITableViewTitleForHeaderInSectionBlock)block {
+-(void)onTitleForHeaderInSection:(UITableViewTitleForHeaderInSectionBlock)block {
     [((UITableViewDataSourceBlocks*)self.dataSource) setTitleForHeaderInSectionBlock:block];
 }
 

@@ -35,14 +35,14 @@ typedef BOOL (^UITextFieldShouldReturnBlock)(UITextField* textField);
 
 @interface UITextField (DelegateBlocks)
 
--(id)delegateblocks;
--(void)setShouldChangeCharactersInRangeBlock:(UITextFieldShouldChangeCharactersInRangeBlock)block;
--(void)setDidBeginEditingBlock:(UITextFieldDidBeginEditingBlock)block;
--(void)setDidEndEditingBlock:(UITextFieldDidEndEditingBlock)block;
--(void)setShouldBeginEditingBlock:(UITextFieldShouldBeginEditingBlock)block;
--(void)setShouldClearBlock:(UITextFieldShouldClearBlock)block;
--(void)setShouldEndEditingBlock:(UITextFieldShouldEndEditingBlock)block;
--(void)setShouldReturnBlock:(UITextFieldShouldReturnBlock)block;
+-(id)delegateBlocks;
+-(void)onShouldChangeCharactersInRange:(UITextFieldShouldChangeCharactersInRangeBlock)block;
+-(void)onDidBeginEditing:(UITextFieldDidBeginEditingBlock)block;
+-(void)onDidEndEditing:(UITextFieldDidEndEditingBlock)block;
+-(void)onShouldBeginEditing:(UITextFieldShouldBeginEditingBlock)block;
+-(void)onShouldClear:(UITextFieldShouldClearBlock)block;
+-(void)onShouldEndEditing:(UITextFieldShouldEndEditingBlock)block;
+-(void)onShouldReturn:(UITextFieldShouldReturnBlock)block;
 
 @end
 

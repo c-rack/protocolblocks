@@ -30,26 +30,26 @@ static NSString* ADBannerViewDelegateBlocksKey = @"ADBannerViewDelegateBlocksKey
 
 @implementation ADBannerView (DelegateBlocks)
 
--(id)delegateblocks {
+-(id)delegateBlocks {
     ADBannerViewDelegateBlocks* delegate = [[[ADBannerViewDelegateBlocks alloc] init] autorelease];
     objc_setAssociatedObject (self, &ADBannerViewDelegateBlocksKey, delegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     self.delegate = delegate;
     return self;
 }
 
--(void)setDidFailToReceiveAdWithErrorBlock:(ADBannerViewDidFailToReceiveAdWithErrorBlock)block {
+-(void)onDidFailToReceiveAdWithError:(ADBannerViewDidFailToReceiveAdWithErrorBlock)block {
     [((ADBannerViewDelegateBlocks*)self.delegate) setDidFailToReceiveAdWithErrorBlock:block];
 }
 
--(void)setActionDidFinishBlock:(ADBannerViewActionDidFinishBlock)block {
+-(void)onActionDidFinish:(ADBannerViewActionDidFinishBlock)block {
     [((ADBannerViewDelegateBlocks*)self.delegate) setActionDidFinishBlock:block];
 }
 
--(void)setActionShouldBeginBlock:(ADBannerViewActionShouldBeginBlock)block {
+-(void)onActionShouldBegin:(ADBannerViewActionShouldBeginBlock)block {
     [((ADBannerViewDelegateBlocks*)self.delegate) setActionShouldBeginBlock:block];
 }
 
--(void)setBannerViewDidLoadAdBlock:(ADBannerViewBannerViewDidLoadAdBlock)block {
+-(void)onBannerViewDidLoadAd:(ADBannerViewBannerViewDidLoadAdBlock)block {
     [((ADBannerViewDelegateBlocks*)self.delegate) setBannerViewDidLoadAdBlock:block];
 }
 

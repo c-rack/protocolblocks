@@ -30,58 +30,58 @@ static NSString* UIScrollViewDelegateBlocksKey = @"UIScrollViewDelegateBlocksKey
 
 @implementation UIScrollView (DelegateBlocks)
 
--(id)delegateblocks {
+-(id)delegateBlocks {
     UIScrollViewDelegateBlocks* delegate = [[[UIScrollViewDelegateBlocks alloc] init] autorelease];
     objc_setAssociatedObject (self, &UIScrollViewDelegateBlocksKey, delegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     self.delegate = delegate;
     return self;
 }
 
--(void)setDidEndDeceleratingBlock:(UIScrollViewDidEndDeceleratingBlock)block {
+-(void)onDidEndDecelerating:(UIScrollViewDidEndDeceleratingBlock)block {
     [((UIScrollViewDelegateBlocks*)self.delegate) setDidEndDeceleratingBlock:block];
 }
 
--(void)setDidEndDraggingBlock:(UIScrollViewDidEndDraggingBlock)block {
+-(void)onDidEndDragging:(UIScrollViewDidEndDraggingBlock)block {
     [((UIScrollViewDelegateBlocks*)self.delegate) setDidEndDraggingBlock:block];
 }
 
--(void)setDidEndScrollingAnimationBlock:(UIScrollViewDidEndScrollingAnimationBlock)block {
+-(void)onDidEndScrollingAnimation:(UIScrollViewDidEndScrollingAnimationBlock)block {
     [((UIScrollViewDelegateBlocks*)self.delegate) setDidEndScrollingAnimationBlock:block];
 }
 
--(void)setDidEndZoomingBlock:(UIScrollViewDidEndZoomingBlock)block {
+-(void)onDidEndZooming:(UIScrollViewDidEndZoomingBlock)block {
     [((UIScrollViewDelegateBlocks*)self.delegate) setDidEndZoomingBlock:block];
 }
 
--(void)setDidScrollBlock:(UIScrollViewDidScrollBlock)block {
+-(void)onDidScroll:(UIScrollViewDidScrollBlock)block {
     [((UIScrollViewDelegateBlocks*)self.delegate) setDidScrollBlock:block];
 }
 
--(void)setDidScrollToTopBlock:(UIScrollViewDidScrollToTopBlock)block {
+-(void)onDidScrollToTop:(UIScrollViewDidScrollToTopBlock)block {
     [((UIScrollViewDelegateBlocks*)self.delegate) setDidScrollToTopBlock:block];
 }
 
--(void)setDidZoomBlock:(UIScrollViewDidZoomBlock)block {
+-(void)onDidZoom:(UIScrollViewDidZoomBlock)block {
     [((UIScrollViewDelegateBlocks*)self.delegate) setDidZoomBlock:block];
 }
 
--(void)setShouldScrollToTopBlock:(UIScrollViewShouldScrollToTopBlock)block {
+-(void)onShouldScrollToTop:(UIScrollViewShouldScrollToTopBlock)block {
     [((UIScrollViewDelegateBlocks*)self.delegate) setShouldScrollToTopBlock:block];
 }
 
--(void)setWillBeginDeceleratingBlock:(UIScrollViewWillBeginDeceleratingBlock)block {
+-(void)onWillBeginDecelerating:(UIScrollViewWillBeginDeceleratingBlock)block {
     [((UIScrollViewDelegateBlocks*)self.delegate) setWillBeginDeceleratingBlock:block];
 }
 
--(void)setWillBeginDraggingBlock:(UIScrollViewWillBeginDraggingBlock)block {
+-(void)onWillBeginDragging:(UIScrollViewWillBeginDraggingBlock)block {
     [((UIScrollViewDelegateBlocks*)self.delegate) setWillBeginDraggingBlock:block];
 }
 
--(void)setWillBeginZoomingBlock:(UIScrollViewWillBeginZoomingBlock)block {
+-(void)onWillBeginZooming:(UIScrollViewWillBeginZoomingBlock)block {
     [((UIScrollViewDelegateBlocks*)self.delegate) setWillBeginZoomingBlock:block];
 }
 
--(void)setViewForZoomingInScrollViewBlock:(UIScrollViewViewForZoomingInScrollViewBlock)block {
+-(void)onViewForZoomingInScrollView:(UIScrollViewViewForZoomingInScrollViewBlock)block {
     [((UIScrollViewDelegateBlocks*)self.delegate) setViewForZoomingInScrollViewBlock:block];
 }
 

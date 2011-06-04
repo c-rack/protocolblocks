@@ -30,22 +30,22 @@ static NSString* UISplitViewControllerDelegateBlocksKey = @"UISplitViewControlle
 
 @implementation UISplitViewController (DelegateBlocks)
 
--(id)delegateblocks {
+-(id)delegateBlocks {
     UISplitViewControllerDelegateBlocks* delegate = [[[UISplitViewControllerDelegateBlocks alloc] init] autorelease];
     objc_setAssociatedObject (self, &UISplitViewControllerDelegateBlocksKey, delegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     self.delegate = delegate;
     return self;
 }
 
--(void)setWillPresentViewControllerBlock:(UISplitViewControllerWillPresentViewControllerBlock)block {
+-(void)onWillPresentViewController:(UISplitViewControllerWillPresentViewControllerBlock)block {
     [((UISplitViewControllerDelegateBlocks*)self.delegate) setWillPresentViewControllerBlock:block];
 }
 
--(void)setWillHideViewControllerBlock:(UISplitViewControllerWillHideViewControllerBlock)block {
+-(void)onWillHideViewController:(UISplitViewControllerWillHideViewControllerBlock)block {
     [((UISplitViewControllerDelegateBlocks*)self.delegate) setWillHideViewControllerBlock:block];
 }
 
--(void)setWillShowViewControllerBlock:(UISplitViewControllerWillShowViewControllerBlock)block {
+-(void)onWillShowViewController:(UISplitViewControllerWillShowViewControllerBlock)block {
     [((UISplitViewControllerDelegateBlocks*)self.delegate) setWillShowViewControllerBlock:block];
 }
 

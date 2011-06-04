@@ -30,18 +30,18 @@ static NSString* UINavigationControllerDelegateBlocksKey = @"UINavigationControl
 
 @implementation UINavigationController (DelegateBlocks)
 
--(id)delegateblocks {
+-(id)delegateBlocks {
     UINavigationControllerDelegateBlocks* delegate = [[[UINavigationControllerDelegateBlocks alloc] init] autorelease];
     objc_setAssociatedObject (self, &UINavigationControllerDelegateBlocksKey, delegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     self.delegate = delegate;
     return self;
 }
 
--(void)setDidShowViewControllerBlock:(UINavigationControllerDidShowViewControllerBlock)block {
+-(void)onDidShowViewController:(UINavigationControllerDidShowViewControllerBlock)block {
     [((UINavigationControllerDelegateBlocks*)self.delegate) setDidShowViewControllerBlock:block];
 }
 
--(void)setWillShowViewControllerBlock:(UINavigationControllerWillShowViewControllerBlock)block {
+-(void)onWillShowViewController:(UINavigationControllerWillShowViewControllerBlock)block {
     [((UINavigationControllerDelegateBlocks*)self.delegate) setWillShowViewControllerBlock:block];
 }
 

@@ -30,14 +30,14 @@ static NSString* EKEventViewControllerDelegateBlocksKey = @"EKEventViewControlle
 
 @implementation EKEventViewController (DelegateBlocks)
 
--(id)delegateblocks {
+-(id)delegateBlocks {
     EKEventViewControllerDelegateBlocks* delegate = [[[EKEventViewControllerDelegateBlocks alloc] init] autorelease];
     objc_setAssociatedObject (self, &EKEventViewControllerDelegateBlocksKey, delegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     self.delegate = delegate;
     return self;
 }
 
--(void)setDidCompleteWithActionBlock:(EKEventViewControllerDidCompleteWithActionBlock)block {
+-(void)onDidCompleteWithAction:(EKEventViewControllerDidCompleteWithActionBlock)block {
     [((EKEventViewControllerDelegateBlocks*)self.delegate) setDidCompleteWithActionBlock:block];
 }
 

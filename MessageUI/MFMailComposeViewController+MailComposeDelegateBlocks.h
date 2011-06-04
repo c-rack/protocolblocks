@@ -29,8 +29,8 @@ typedef void (^MFMailComposeViewControllerDidFinishWithResultBlock)(MFMailCompos
 
 @interface MFMailComposeViewController (MailComposeDelegateBlocks)
 
--(id)mailcomposedelegateblocks;
--(void)setDidFinishWithResultBlock:(MFMailComposeViewControllerDidFinishWithResultBlock)block;
+-(id)mailComposeDelegateBlocks;
+-(void)onDidFinishWithResult:(MFMailComposeViewControllerDidFinishWithResultBlock)block;
 
 @end
 

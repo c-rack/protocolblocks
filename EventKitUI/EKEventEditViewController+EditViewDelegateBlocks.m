@@ -30,18 +30,18 @@ static NSString* EKEventEditViewControllerEditViewDelegateBlocksKey = @"EKEventE
 
 @implementation EKEventEditViewController (EditViewDelegateBlocks)
 
--(id)editviewdelegateblocks {
+-(id)editViewDelegateBlocks {
     EKEventEditViewControllerEditViewDelegateBlocks* editViewDelegate = [[[EKEventEditViewControllerEditViewDelegateBlocks alloc] init] autorelease];
     objc_setAssociatedObject (self, &EKEventEditViewControllerEditViewDelegateBlocksKey, editViewDelegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     self.editViewDelegate = editViewDelegate;
     return self;
 }
 
--(void)setDidCompleteWithActionBlock:(EKEventEditViewControllerDidCompleteWithActionBlock)block {
+-(void)onDidCompleteWithAction:(EKEventEditViewControllerDidCompleteWithActionBlock)block {
     [((EKEventEditViewControllerEditViewDelegateBlocks*)self.editViewDelegate) setDidCompleteWithActionBlock:block];
 }
 
--(void)setEventEditViewControllerDefaultCalendarForNewEventsBlock:(EKEventEditViewControllerEventEditViewControllerDefaultCalendarForNewEventsBlock)block {
+-(void)onEventEditViewControllerDefaultCalendarForNewEvents:(EKEventEditViewControllerEventEditViewControllerDefaultCalendarForNewEventsBlock)block {
     [((EKEventEditViewControllerEditViewDelegateBlocks*)self.editViewDelegate) setEventEditViewControllerDefaultCalendarForNewEventsBlock:block];
 }
 

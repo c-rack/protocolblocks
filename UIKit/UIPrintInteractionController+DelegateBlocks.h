@@ -36,15 +36,15 @@ typedef void (^UIPrintInteractionControllerWillStartJobBlock)(UIPrintInteraction
 
 @interface UIPrintInteractionController (DelegateBlocks)
 
--(id)delegateblocks;
--(void)setChoosePaperBlock:(UIPrintInteractionControllerChoosePaperBlock)block;
--(void)setDidDismissPrinterOptionsBlock:(UIPrintInteractionControllerDidDismissPrinterOptionsBlock)block;
--(void)setDidFinishJobBlock:(UIPrintInteractionControllerDidFinishJobBlock)block;
--(void)setDidPresentPrinterOptionsBlock:(UIPrintInteractionControllerDidPresentPrinterOptionsBlock)block;
--(void)setParentViewControllerBlock:(UIPrintInteractionControllerParentViewControllerBlock)block;
--(void)setWillDismissPrinterOptionsBlock:(UIPrintInteractionControllerWillDismissPrinterOptionsBlock)block;
--(void)setWillPresentPrinterOptionsBlock:(UIPrintInteractionControllerWillPresentPrinterOptionsBlock)block;
--(void)setWillStartJobBlock:(UIPrintInteractionControllerWillStartJobBlock)block;
+-(id)delegateBlocks;
+-(void)onChoosePaper:(UIPrintInteractionControllerChoosePaperBlock)block;
+-(void)onDidDismissPrinterOptions:(UIPrintInteractionControllerDidDismissPrinterOptionsBlock)block;
+-(void)onDidFinishJob:(UIPrintInteractionControllerDidFinishJobBlock)block;
+-(void)onDidPresentPrinterOptions:(UIPrintInteractionControllerDidPresentPrinterOptionsBlock)block;
+-(void)onParentViewController:(UIPrintInteractionControllerParentViewControllerBlock)block;
+-(void)onWillDismissPrinterOptions:(UIPrintInteractionControllerWillDismissPrinterOptionsBlock)block;
+-(void)onWillPresentPrinterOptions:(UIPrintInteractionControllerWillPresentPrinterOptionsBlock)block;
+-(void)onWillStartJob:(UIPrintInteractionControllerWillStartJobBlock)block;
 
 @end
 

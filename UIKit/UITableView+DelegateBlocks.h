@@ -45,24 +45,24 @@ typedef NSIndexPath* (^UITableViewWillSelectRowAtIndexPathBlock)(UITableView* ta
 
 @interface UITableView (DelegateBlocks)
 
--(id)delegateblocks;
--(void)setAccessoryButtonTappedForRowWithIndexPathBlock:(UITableViewAccessoryButtonTappedForRowWithIndexPathBlock)block;
--(void)setDidDeselectRowAtIndexPathBlock:(UITableViewDidDeselectRowAtIndexPathBlock)block;
--(void)setDidEndEditingRowAtIndexPathBlock:(UITableViewDidEndEditingRowAtIndexPathBlock)block;
--(void)setDidSelectRowAtIndexPathBlock:(UITableViewDidSelectRowAtIndexPathBlock)block;
--(void)setEditingStyleForRowAtIndexPathBlock:(UITableViewEditingStyleForRowAtIndexPathBlock)block;
--(void)setHeightForFooterInSectionBlock:(UITableViewHeightForFooterInSectionBlock)block;
--(void)setHeightForHeaderInSectionBlock:(UITableViewHeightForHeaderInSectionBlock)block;
--(void)setHeightForRowAtIndexPathBlock:(UITableViewHeightForRowAtIndexPathBlock)block;
--(void)setShouldIndentWhileEditingRowAtIndexPathBlock:(UITableViewShouldIndentWhileEditingRowAtIndexPathBlock)block;
--(void)setTargetIndexPathForMoveFromRowAtIndexPathBlock:(UITableViewTargetIndexPathForMoveFromRowAtIndexPathBlock)block;
--(void)setTitleForDeleteConfirmationButtonForRowAtIndexPathBlock:(UITableViewTitleForDeleteConfirmationButtonForRowAtIndexPathBlock)block;
--(void)setViewForFooterInSectionBlock:(UITableViewViewForFooterInSectionBlock)block;
--(void)setViewForHeaderInSectionBlock:(UITableViewViewForHeaderInSectionBlock)block;
--(void)setWillBeginEditingRowAtIndexPathBlock:(UITableViewWillBeginEditingRowAtIndexPathBlock)block;
--(void)setWillDeselectRowAtIndexPathBlock:(UITableViewWillDeselectRowAtIndexPathBlock)block;
--(void)setWillDisplayCellBlock:(UITableViewWillDisplayCellBlock)block;
--(void)setWillSelectRowAtIndexPathBlock:(UITableViewWillSelectRowAtIndexPathBlock)block;
+-(id)delegateBlocks;
+-(void)onAccessoryButtonTappedForRowWithIndexPath:(UITableViewAccessoryButtonTappedForRowWithIndexPathBlock)block;
+-(void)onDidDeselectRowAtIndexPath:(UITableViewDidDeselectRowAtIndexPathBlock)block;
+-(void)onDidEndEditingRowAtIndexPath:(UITableViewDidEndEditingRowAtIndexPathBlock)block;
+-(void)onDidSelectRowAtIndexPath:(UITableViewDidSelectRowAtIndexPathBlock)block;
+-(void)onEditingStyleForRowAtIndexPath:(UITableViewEditingStyleForRowAtIndexPathBlock)block;
+-(void)onHeightForFooterInSection:(UITableViewHeightForFooterInSectionBlock)block;
+-(void)onHeightForHeaderInSection:(UITableViewHeightForHeaderInSectionBlock)block;
+-(void)onHeightForRowAtIndexPath:(UITableViewHeightForRowAtIndexPathBlock)block;
+-(void)onShouldIndentWhileEditingRowAtIndexPath:(UITableViewShouldIndentWhileEditingRowAtIndexPathBlock)block;
+-(void)onTargetIndexPathForMoveFromRowAtIndexPath:(UITableViewTargetIndexPathForMoveFromRowAtIndexPathBlock)block;
+-(void)onTitleForDeleteConfirmationButtonForRowAtIndexPath:(UITableViewTitleForDeleteConfirmationButtonForRowAtIndexPathBlock)block;
+-(void)onViewForFooterInSection:(UITableViewViewForFooterInSectionBlock)block;
+-(void)onViewForHeaderInSection:(UITableViewViewForHeaderInSectionBlock)block;
+-(void)onWillBeginEditingRowAtIndexPath:(UITableViewWillBeginEditingRowAtIndexPathBlock)block;
+-(void)onWillDeselectRowAtIndexPath:(UITableViewWillDeselectRowAtIndexPathBlock)block;
+-(void)onWillDisplayCell:(UITableViewWillDisplayCellBlock)block;
+-(void)onWillSelectRowAtIndexPath:(UITableViewWillSelectRowAtIndexPathBlock)block;
 
 @end
 

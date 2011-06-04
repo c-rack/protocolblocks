@@ -30,54 +30,54 @@ static NSString* UISearchBarDelegateBlocksKey = @"UISearchBarDelegateBlocksKey";
 
 @implementation UISearchBar (DelegateBlocks)
 
--(id)delegateblocks {
+-(id)delegateBlocks {
     UISearchBarDelegateBlocks* delegate = [[[UISearchBarDelegateBlocks alloc] init] autorelease];
     objc_setAssociatedObject (self, &UISearchBarDelegateBlocksKey, delegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     self.delegate = delegate;
     return self;
 }
 
--(void)setSelectedScopeButtonIndexDidChangeBlock:(UISearchBarSelectedScopeButtonIndexDidChangeBlock)block {
+-(void)onSelectedScopeButtonIndexDidChange:(UISearchBarSelectedScopeButtonIndexDidChangeBlock)block {
     [((UISearchBarDelegateBlocks*)self.delegate) setSelectedScopeButtonIndexDidChangeBlock:block];
 }
 
--(void)setShouldChangeTextInRangeBlock:(UISearchBarShouldChangeTextInRangeBlock)block {
+-(void)onShouldChangeTextInRange:(UISearchBarShouldChangeTextInRangeBlock)block {
     [((UISearchBarDelegateBlocks*)self.delegate) setShouldChangeTextInRangeBlock:block];
 }
 
--(void)setTextDidChangeBlock:(UISearchBarTextDidChangeBlock)block {
+-(void)onTextDidChange:(UISearchBarTextDidChangeBlock)block {
     [((UISearchBarDelegateBlocks*)self.delegate) setTextDidChangeBlock:block];
 }
 
--(void)setBookmarkButtonClickedBlock:(UISearchBarBookmarkButtonClickedBlock)block {
+-(void)onBookmarkButtonClicked:(UISearchBarBookmarkButtonClickedBlock)block {
     [((UISearchBarDelegateBlocks*)self.delegate) setBookmarkButtonClickedBlock:block];
 }
 
--(void)setCancelButtonClickedBlock:(UISearchBarCancelButtonClickedBlock)block {
+-(void)onCancelButtonClicked:(UISearchBarCancelButtonClickedBlock)block {
     [((UISearchBarDelegateBlocks*)self.delegate) setCancelButtonClickedBlock:block];
 }
 
--(void)setResultsListButtonClickedBlock:(UISearchBarResultsListButtonClickedBlock)block {
+-(void)onResultsListButtonClicked:(UISearchBarResultsListButtonClickedBlock)block {
     [((UISearchBarDelegateBlocks*)self.delegate) setResultsListButtonClickedBlock:block];
 }
 
--(void)setSearchButtonClickedBlock:(UISearchBarSearchButtonClickedBlock)block {
+-(void)onSearchButtonClicked:(UISearchBarSearchButtonClickedBlock)block {
     [((UISearchBarDelegateBlocks*)self.delegate) setSearchButtonClickedBlock:block];
 }
 
--(void)setShouldBeginEditingBlock:(UISearchBarShouldBeginEditingBlock)block {
+-(void)onShouldBeginEditing:(UISearchBarShouldBeginEditingBlock)block {
     [((UISearchBarDelegateBlocks*)self.delegate) setShouldBeginEditingBlock:block];
 }
 
--(void)setShouldEndEditingBlock:(UISearchBarShouldEndEditingBlock)block {
+-(void)onShouldEndEditing:(UISearchBarShouldEndEditingBlock)block {
     [((UISearchBarDelegateBlocks*)self.delegate) setShouldEndEditingBlock:block];
 }
 
--(void)setTextDidBeginEditingBlock:(UISearchBarTextDidBeginEditingBlock)block {
+-(void)onTextDidBeginEditing:(UISearchBarTextDidBeginEditingBlock)block {
     [((UISearchBarDelegateBlocks*)self.delegate) setTextDidBeginEditingBlock:block];
 }
 
--(void)setTextDidEndEditingBlock:(UISearchBarTextDidEndEditingBlock)block {
+-(void)onTextDidEndEditing:(UISearchBarTextDidEndEditingBlock)block {
     [((UISearchBarDelegateBlocks*)self.delegate) setTextDidEndEditingBlock:block];
 }
 

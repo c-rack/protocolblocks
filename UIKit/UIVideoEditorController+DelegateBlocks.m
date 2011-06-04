@@ -30,30 +30,30 @@ static NSString* UIVideoEditorControllerDelegateBlocksKey = @"UIVideoEditorContr
 
 @implementation UIVideoEditorController (DelegateBlocks)
 
--(id)delegateblocks {
+-(id)delegateBlocks {
     UIVideoEditorControllerDelegateBlocks* delegate = [[[UIVideoEditorControllerDelegateBlocks alloc] init] autorelease];
     objc_setAssociatedObject (self, &UIVideoEditorControllerDelegateBlocksKey, delegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     self.delegate = delegate;
     return self;
 }
 
--(void)setDidFailWithErrorBlock:(UIVideoEditorControllerDidFailWithErrorBlock)block {
+-(void)onDidFailWithError:(UIVideoEditorControllerDidFailWithErrorBlock)block {
     [((UIVideoEditorControllerDelegateBlocks*)self.delegate) setDidFailWithErrorBlock:block];
 }
 
--(void)setDidSaveEditedVideoToPathBlock:(UIVideoEditorControllerDidSaveEditedVideoToPathBlock)block {
+-(void)onDidSaveEditedVideoToPath:(UIVideoEditorControllerDidSaveEditedVideoToPathBlock)block {
     [((UIVideoEditorControllerDelegateBlocks*)self.delegate) setDidSaveEditedVideoToPathBlock:block];
 }
 
--(void)setDidCancelBlock:(UIVideoEditorControllerDidCancelBlock)block {
+-(void)onDidCancel:(UIVideoEditorControllerDidCancelBlock)block {
     [((UIVideoEditorControllerDelegateBlocks*)self.delegate) setDidCancelBlock:block];
 }
 
--(void)setDidShowViewControllerBlock:(UIVideoEditorControllerDidShowViewControllerBlock)block {
+-(void)onDidShowViewController:(UIVideoEditorControllerDidShowViewControllerBlock)block {
     [((UIVideoEditorControllerDelegateBlocks*)self.delegate) setDidShowViewControllerBlock:block];
 }
 
--(void)setWillShowViewControllerBlock:(UIVideoEditorControllerWillShowViewControllerBlock)block {
+-(void)onWillShowViewController:(UIVideoEditorControllerWillShowViewControllerBlock)block {
     [((UIVideoEditorControllerDelegateBlocks*)self.delegate) setWillShowViewControllerBlock:block];
 }
 

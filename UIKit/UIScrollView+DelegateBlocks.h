@@ -40,19 +40,19 @@ typedef UIView* (^UIScrollViewViewForZoomingInScrollViewBlock)(UIScrollView* scr
 
 @interface UIScrollView (DelegateBlocks)
 
--(id)delegateblocks;
--(void)setDidEndDeceleratingBlock:(UIScrollViewDidEndDeceleratingBlock)block;
--(void)setDidEndDraggingBlock:(UIScrollViewDidEndDraggingBlock)block;
--(void)setDidEndScrollingAnimationBlock:(UIScrollViewDidEndScrollingAnimationBlock)block;
--(void)setDidEndZoomingBlock:(UIScrollViewDidEndZoomingBlock)block;
--(void)setDidScrollBlock:(UIScrollViewDidScrollBlock)block;
--(void)setDidScrollToTopBlock:(UIScrollViewDidScrollToTopBlock)block;
--(void)setDidZoomBlock:(UIScrollViewDidZoomBlock)block;
--(void)setShouldScrollToTopBlock:(UIScrollViewShouldScrollToTopBlock)block;
--(void)setWillBeginDeceleratingBlock:(UIScrollViewWillBeginDeceleratingBlock)block;
--(void)setWillBeginDraggingBlock:(UIScrollViewWillBeginDraggingBlock)block;
--(void)setWillBeginZoomingBlock:(UIScrollViewWillBeginZoomingBlock)block;
--(void)setViewForZoomingInScrollViewBlock:(UIScrollViewViewForZoomingInScrollViewBlock)block;
+-(id)delegateBlocks;
+-(void)onDidEndDecelerating:(UIScrollViewDidEndDeceleratingBlock)block;
+-(void)onDidEndDragging:(UIScrollViewDidEndDraggingBlock)block;
+-(void)onDidEndScrollingAnimation:(UIScrollViewDidEndScrollingAnimationBlock)block;
+-(void)onDidEndZooming:(UIScrollViewDidEndZoomingBlock)block;
+-(void)onDidScroll:(UIScrollViewDidScrollBlock)block;
+-(void)onDidScrollToTop:(UIScrollViewDidScrollToTopBlock)block;
+-(void)onDidZoom:(UIScrollViewDidZoomBlock)block;
+-(void)onShouldScrollToTop:(UIScrollViewShouldScrollToTopBlock)block;
+-(void)onWillBeginDecelerating:(UIScrollViewWillBeginDeceleratingBlock)block;
+-(void)onWillBeginDragging:(UIScrollViewWillBeginDraggingBlock)block;
+-(void)onWillBeginZooming:(UIScrollViewWillBeginZoomingBlock)block;
+-(void)onViewForZoomingInScrollView:(UIScrollViewViewForZoomingInScrollViewBlock)block;
 
 @end
 

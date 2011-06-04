@@ -30,9 +30,9 @@ typedef BOOL (^UIPopoverControllerShouldDismissPopoverBlock)(UIPopoverController
 
 @interface UIPopoverController (DelegateBlocks)
 
--(id)delegateblocks;
--(void)setDidDismissPopoverBlock:(UIPopoverControllerDidDismissPopoverBlock)block;
--(void)setShouldDismissPopoverBlock:(UIPopoverControllerShouldDismissPopoverBlock)block;
+-(id)delegateBlocks;
+-(void)onDidDismissPopover:(UIPopoverControllerDidDismissPopoverBlock)block;
+-(void)onShouldDismissPopover:(UIPopoverControllerShouldDismissPopoverBlock)block;
 
 @end
 

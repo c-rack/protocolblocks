@@ -30,26 +30,26 @@ static NSString* UIImagePickerControllerDelegateBlocksKey = @"UIImagePickerContr
 
 @implementation UIImagePickerController (DelegateBlocks)
 
--(id)delegateblocks {
+-(id)delegateBlocks {
     UIImagePickerControllerDelegateBlocks* delegate = [[[UIImagePickerControllerDelegateBlocks alloc] init] autorelease];
     objc_setAssociatedObject (self, &UIImagePickerControllerDelegateBlocksKey, delegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     self.delegate = delegate;
     return self;
 }
 
--(void)setDidFinishPickingMediaWithInfoBlock:(UIImagePickerControllerDidFinishPickingMediaWithInfoBlock)block {
+-(void)onDidFinishPickingMediaWithInfo:(UIImagePickerControllerDidFinishPickingMediaWithInfoBlock)block {
     [((UIImagePickerControllerDelegateBlocks*)self.delegate) setDidFinishPickingMediaWithInfoBlock:block];
 }
 
--(void)setDidCancelBlock:(UIImagePickerControllerDidCancelBlock)block {
+-(void)onDidCancel:(UIImagePickerControllerDidCancelBlock)block {
     [((UIImagePickerControllerDelegateBlocks*)self.delegate) setDidCancelBlock:block];
 }
 
--(void)setDidShowViewControllerBlock:(UIImagePickerControllerDidShowViewControllerBlock)block {
+-(void)onDidShowViewController:(UIImagePickerControllerDidShowViewControllerBlock)block {
     [((UIImagePickerControllerDelegateBlocks*)self.delegate) setDidShowViewControllerBlock:block];
 }
 
--(void)setWillShowViewControllerBlock:(UIImagePickerControllerWillShowViewControllerBlock)block {
+-(void)onWillShowViewController:(UIImagePickerControllerWillShowViewControllerBlock)block {
     [((UIImagePickerControllerDelegateBlocks*)self.delegate) setWillShowViewControllerBlock:block];
 }
 

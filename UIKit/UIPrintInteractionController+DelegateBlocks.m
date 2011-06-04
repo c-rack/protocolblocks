@@ -30,42 +30,42 @@ static NSString* UIPrintInteractionControllerDelegateBlocksKey = @"UIPrintIntera
 
 @implementation UIPrintInteractionController (DelegateBlocks)
 
--(id)delegateblocks {
+-(id)delegateBlocks {
     UIPrintInteractionControllerDelegateBlocks* delegate = [[[UIPrintInteractionControllerDelegateBlocks alloc] init] autorelease];
     objc_setAssociatedObject (self, &UIPrintInteractionControllerDelegateBlocksKey, delegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     self.delegate = delegate;
     return self;
 }
 
--(void)setChoosePaperBlock:(UIPrintInteractionControllerChoosePaperBlock)block {
+-(void)onChoosePaper:(UIPrintInteractionControllerChoosePaperBlock)block {
     [((UIPrintInteractionControllerDelegateBlocks*)self.delegate) setChoosePaperBlock:block];
 }
 
--(void)setDidDismissPrinterOptionsBlock:(UIPrintInteractionControllerDidDismissPrinterOptionsBlock)block {
+-(void)onDidDismissPrinterOptions:(UIPrintInteractionControllerDidDismissPrinterOptionsBlock)block {
     [((UIPrintInteractionControllerDelegateBlocks*)self.delegate) setDidDismissPrinterOptionsBlock:block];
 }
 
--(void)setDidFinishJobBlock:(UIPrintInteractionControllerDidFinishJobBlock)block {
+-(void)onDidFinishJob:(UIPrintInteractionControllerDidFinishJobBlock)block {
     [((UIPrintInteractionControllerDelegateBlocks*)self.delegate) setDidFinishJobBlock:block];
 }
 
--(void)setDidPresentPrinterOptionsBlock:(UIPrintInteractionControllerDidPresentPrinterOptionsBlock)block {
+-(void)onDidPresentPrinterOptions:(UIPrintInteractionControllerDidPresentPrinterOptionsBlock)block {
     [((UIPrintInteractionControllerDelegateBlocks*)self.delegate) setDidPresentPrinterOptionsBlock:block];
 }
 
--(void)setParentViewControllerBlock:(UIPrintInteractionControllerParentViewControllerBlock)block {
+-(void)onParentViewController:(UIPrintInteractionControllerParentViewControllerBlock)block {
     [((UIPrintInteractionControllerDelegateBlocks*)self.delegate) setParentViewControllerBlock:block];
 }
 
--(void)setWillDismissPrinterOptionsBlock:(UIPrintInteractionControllerWillDismissPrinterOptionsBlock)block {
+-(void)onWillDismissPrinterOptions:(UIPrintInteractionControllerWillDismissPrinterOptionsBlock)block {
     [((UIPrintInteractionControllerDelegateBlocks*)self.delegate) setWillDismissPrinterOptionsBlock:block];
 }
 
--(void)setWillPresentPrinterOptionsBlock:(UIPrintInteractionControllerWillPresentPrinterOptionsBlock)block {
+-(void)onWillPresentPrinterOptions:(UIPrintInteractionControllerWillPresentPrinterOptionsBlock)block {
     [((UIPrintInteractionControllerDelegateBlocks*)self.delegate) setWillPresentPrinterOptionsBlock:block];
 }
 
--(void)setWillStartJobBlock:(UIPrintInteractionControllerWillStartJobBlock)block {
+-(void)onWillStartJob:(UIPrintInteractionControllerWillStartJobBlock)block {
     [((UIPrintInteractionControllerDelegateBlocks*)self.delegate) setWillStartJobBlock:block];
 }
 

@@ -30,26 +30,26 @@ static NSString* UIWebViewDelegateBlocksKey = @"UIWebViewDelegateBlocksKey";
 
 @implementation UIWebView (DelegateBlocks)
 
--(id)delegateblocks {
+-(id)delegateBlocks {
     UIWebViewDelegateBlocks* delegate = [[[UIWebViewDelegateBlocks alloc] init] autorelease];
     objc_setAssociatedObject (self, &UIWebViewDelegateBlocksKey, delegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     self.delegate = delegate;
     return self;
 }
 
--(void)setDidFailLoadWithErrorBlock:(UIWebViewDidFailLoadWithErrorBlock)block {
+-(void)onDidFailLoadWithError:(UIWebViewDidFailLoadWithErrorBlock)block {
     [((UIWebViewDelegateBlocks*)self.delegate) setDidFailLoadWithErrorBlock:block];
 }
 
--(void)setShouldStartLoadWithRequestBlock:(UIWebViewShouldStartLoadWithRequestBlock)block {
+-(void)onShouldStartLoadWithRequest:(UIWebViewShouldStartLoadWithRequestBlock)block {
     [((UIWebViewDelegateBlocks*)self.delegate) setShouldStartLoadWithRequestBlock:block];
 }
 
--(void)setDidFinishLoadBlock:(UIWebViewDidFinishLoadBlock)block {
+-(void)onDidFinishLoad:(UIWebViewDidFinishLoadBlock)block {
     [((UIWebViewDelegateBlocks*)self.delegate) setDidFinishLoadBlock:block];
 }
 
--(void)setDidStartLoadBlock:(UIWebViewDidStartLoadBlock)block {
+-(void)onDidStartLoad:(UIWebViewDidStartLoadBlock)block {
     [((UIWebViewDelegateBlocks*)self.delegate) setDidStartLoadBlock:block];
 }
 

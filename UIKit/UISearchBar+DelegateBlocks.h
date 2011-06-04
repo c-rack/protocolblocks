@@ -39,18 +39,18 @@ typedef void (^UISearchBarTextDidEndEditingBlock)(UISearchBar* searchBar);
 
 @interface UISearchBar (DelegateBlocks)
 
--(id)delegateblocks;
--(void)setSelectedScopeButtonIndexDidChangeBlock:(UISearchBarSelectedScopeButtonIndexDidChangeBlock)block;
--(void)setShouldChangeTextInRangeBlock:(UISearchBarShouldChangeTextInRangeBlock)block;
--(void)setTextDidChangeBlock:(UISearchBarTextDidChangeBlock)block;
--(void)setBookmarkButtonClickedBlock:(UISearchBarBookmarkButtonClickedBlock)block;
--(void)setCancelButtonClickedBlock:(UISearchBarCancelButtonClickedBlock)block;
--(void)setResultsListButtonClickedBlock:(UISearchBarResultsListButtonClickedBlock)block;
--(void)setSearchButtonClickedBlock:(UISearchBarSearchButtonClickedBlock)block;
--(void)setShouldBeginEditingBlock:(UISearchBarShouldBeginEditingBlock)block;
--(void)setShouldEndEditingBlock:(UISearchBarShouldEndEditingBlock)block;
--(void)setTextDidBeginEditingBlock:(UISearchBarTextDidBeginEditingBlock)block;
--(void)setTextDidEndEditingBlock:(UISearchBarTextDidEndEditingBlock)block;
+-(id)delegateBlocks;
+-(void)onSelectedScopeButtonIndexDidChange:(UISearchBarSelectedScopeButtonIndexDidChangeBlock)block;
+-(void)onShouldChangeTextInRange:(UISearchBarShouldChangeTextInRangeBlock)block;
+-(void)onTextDidChange:(UISearchBarTextDidChangeBlock)block;
+-(void)onBookmarkButtonClicked:(UISearchBarBookmarkButtonClickedBlock)block;
+-(void)onCancelButtonClicked:(UISearchBarCancelButtonClickedBlock)block;
+-(void)onResultsListButtonClicked:(UISearchBarResultsListButtonClickedBlock)block;
+-(void)onSearchButtonClicked:(UISearchBarSearchButtonClickedBlock)block;
+-(void)onShouldBeginEditing:(UISearchBarShouldBeginEditingBlock)block;
+-(void)onShouldEndEditing:(UISearchBarShouldEndEditingBlock)block;
+-(void)onTextDidBeginEditing:(UISearchBarTextDidBeginEditingBlock)block;
+-(void)onTextDidEndEditing:(UISearchBarTextDidEndEditingBlock)block;
 
 @end
 

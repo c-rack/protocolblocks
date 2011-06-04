@@ -30,30 +30,30 @@ static NSString* UITabBarControllerDelegateBlocksKey = @"UITabBarControllerDeleg
 
 @implementation UITabBarController (DelegateBlocks)
 
--(id)delegateblocks {
+-(id)delegateBlocks {
     UITabBarControllerDelegateBlocks* delegate = [[[UITabBarControllerDelegateBlocks alloc] init] autorelease];
     objc_setAssociatedObject (self, &UITabBarControllerDelegateBlocksKey, delegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     self.delegate = delegate;
     return self;
 }
 
--(void)setDidEndCustomizingViewControllersBlock:(UITabBarControllerDidEndCustomizingViewControllersBlock)block {
+-(void)onDidEndCustomizingViewControllers:(UITabBarControllerDidEndCustomizingViewControllersBlock)block {
     [((UITabBarControllerDelegateBlocks*)self.delegate) setDidEndCustomizingViewControllersBlock:block];
 }
 
--(void)setDidSelectViewControllerBlock:(UITabBarControllerDidSelectViewControllerBlock)block {
+-(void)onDidSelectViewController:(UITabBarControllerDidSelectViewControllerBlock)block {
     [((UITabBarControllerDelegateBlocks*)self.delegate) setDidSelectViewControllerBlock:block];
 }
 
--(void)setShouldSelectViewControllerBlock:(UITabBarControllerShouldSelectViewControllerBlock)block {
+-(void)onShouldSelectViewController:(UITabBarControllerShouldSelectViewControllerBlock)block {
     [((UITabBarControllerDelegateBlocks*)self.delegate) setShouldSelectViewControllerBlock:block];
 }
 
--(void)setWillBeginCustomizingViewControllersBlock:(UITabBarControllerWillBeginCustomizingViewControllersBlock)block {
+-(void)onWillBeginCustomizingViewControllers:(UITabBarControllerWillBeginCustomizingViewControllersBlock)block {
     [((UITabBarControllerDelegateBlocks*)self.delegate) setWillBeginCustomizingViewControllersBlock:block];
 }
 
--(void)setWillEndCustomizingViewControllersBlock:(UITabBarControllerWillEndCustomizingViewControllersBlock)block {
+-(void)onWillEndCustomizingViewControllers:(UITabBarControllerWillEndCustomizingViewControllersBlock)block {
     [((UITabBarControllerDelegateBlocks*)self.delegate) setWillEndCustomizingViewControllersBlock:block];
 }
 

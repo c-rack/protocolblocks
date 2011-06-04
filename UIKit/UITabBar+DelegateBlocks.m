@@ -30,30 +30,30 @@ static NSString* UITabBarDelegateBlocksKey = @"UITabBarDelegateBlocksKey";
 
 @implementation UITabBar (DelegateBlocks)
 
--(id)delegateblocks {
+-(id)delegateBlocks {
     UITabBarDelegateBlocks* delegate = [[[UITabBarDelegateBlocks alloc] init] autorelease];
     objc_setAssociatedObject (self, &UITabBarDelegateBlocksKey, delegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     self.delegate = delegate;
     return self;
 }
 
--(void)setDidBeginCustomizingItemsBlock:(UITabBarDidBeginCustomizingItemsBlock)block {
+-(void)onDidBeginCustomizingItems:(UITabBarDidBeginCustomizingItemsBlock)block {
     [((UITabBarDelegateBlocks*)self.delegate) setDidBeginCustomizingItemsBlock:block];
 }
 
--(void)setDidEndCustomizingItemsBlock:(UITabBarDidEndCustomizingItemsBlock)block {
+-(void)onDidEndCustomizingItems:(UITabBarDidEndCustomizingItemsBlock)block {
     [((UITabBarDelegateBlocks*)self.delegate) setDidEndCustomizingItemsBlock:block];
 }
 
--(void)setDidSelectItemBlock:(UITabBarDidSelectItemBlock)block {
+-(void)onDidSelectItem:(UITabBarDidSelectItemBlock)block {
     [((UITabBarDelegateBlocks*)self.delegate) setDidSelectItemBlock:block];
 }
 
--(void)setWillBeginCustomizingItemsBlock:(UITabBarWillBeginCustomizingItemsBlock)block {
+-(void)onWillBeginCustomizingItems:(UITabBarWillBeginCustomizingItemsBlock)block {
     [((UITabBarDelegateBlocks*)self.delegate) setWillBeginCustomizingItemsBlock:block];
 }
 
--(void)setWillEndCustomizingItemsBlock:(UITabBarWillEndCustomizingItemsBlock)block {
+-(void)onWillEndCustomizingItems:(UITabBarWillEndCustomizingItemsBlock)block {
     [((UITabBarDelegateBlocks*)self.delegate) setWillEndCustomizingItemsBlock:block];
 }
 
