@@ -1,6 +1,6 @@
 # protocolblocks
 
-### Backporting blocks to iOS delegates.
+### Replacing delegates in iOS with blocks..
 
 ## Motivation
 
@@ -101,7 +101,8 @@ The automatically created delegate object is autoreleased thanks to Objective-C'
     }];
 
 ## Related Work
-### in chronological order
+
+### in chronological order:
 
 * 2009-10-18: [How blocks are implemented (and the consequences)](http://cocoawithlove.com/2009/10/how-blocks-are-implemented-and.html) by Matt Gallagher
 * 2010-07-07: [Programming with C Blocks On Apple Devices](http://thirdcog.eu/pwcblocks/) by Joachim Bengtsson
@@ -113,7 +114,8 @@ The automatically created delegate object is autoreleased thanks to Objective-C'
 * 2011-03-22: [iOS Code: Block Based UIAlertView and UIActionSheet](http://blog.mugunthkumar.com/coding/ios-code-block-based-uialertview-and-uiactionsheet/) by Mugunth Kumar
 
 ## License
-### protocolblocks is licensed under the [MIT License](http://www.opensource.org/licenses/mit-license.php):
+
+### This project is licensed under the [MIT License](http://www.opensource.org/licenses/mit-license.php):
 
 Copyright (C) 2011 by [Constantin Rack](http://www.constantin-rack.de/), [VIGOS AG](http://www.vigos.com/).
 
