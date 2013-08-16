@@ -97,6 +97,33 @@ static NSString* UITableViewDataSourceBlocksKey = @"UITableViewDataSourceBlocksK
 @synthesize titleForFooterInSectionBlock = _titleForFooterInSectionBlock;
 @synthesize titleForHeaderInSectionBlock = _titleForHeaderInSectionBlock;
 
+-(BOOL)respondsToSelector:(SEL)aSelector {
+    if ( aSelector == @selector(numberOfSectionsInTableView:) ) {
+        return !!self.numberOfSectionsInTableViewBlock;
+    } else if ( aSelector == @selector(sectionIndexTitlesForTableView:) ) {
+        return !!self.sectionIndexTitlesForTableViewBlock;
+    } else if ( aSelector == @selector(tableView:canEditRowAtIndexPath:) ) {
+        return !!self.canEditRowAtIndexPathBlock;
+    } else if ( aSelector == @selector(tableView:canMoveRowAtIndexPath:) ) {
+        return !!self.canMoveRowAtIndexPathBlock;
+    } else if ( aSelector == @selector(tableView:cellForRowAtIndexPath:) ) {
+        return !!self.cellForRowAtIndexPathBlock;
+    } else if ( aSelector == @selector(tableView:commitEditingStyle:forRowAtIndexPath:) ) {
+        return !!self.commitEditingStyleBlock;
+    } else if ( aSelector == @selector(tableView:moveRowAtIndexPath:toIndexPath:) ) {
+        return !!self.moveRowAtIndexPathBlock;
+    } else if ( aSelector == @selector(tableView:numberOfRowsInSection:) ) {
+        return !!self.numberOfRowsInSectionBlock;
+    } else if ( aSelector == @selector(tableView:sectionForSectionIndexTitle:atIndex:) ) {
+        return !!self.sectionForSectionIndexTitleBlock;
+    } else if ( aSelector == @selector(tableView:titleForFooterInSection:) ) {
+        return !!self.titleForFooterInSectionBlock;
+    } else if ( aSelector == @selector(tableView:titleForHeaderInSection:) ) {
+        return !!self.titleForHeaderInSectionBlock;
+    }
+    return [super respondsToSelector:aSelector];
+}
+
 -(NSInteger)numberOfSectionsInTableView:(UITableView*)tableView  {
     UITableViewNumberOfSectionsInTableViewBlock block = [self.numberOfSectionsInTableViewBlock copy];
     NSInteger result = block(tableView);

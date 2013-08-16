@@ -62,6 +62,19 @@ static NSString* UIImagePickerControllerDelegateBlocksKey = @"UIImagePickerContr
 @synthesize didShowViewControllerBlock = _didShowViewControllerBlock;
 @synthesize willShowViewControllerBlock = _willShowViewControllerBlock;
 
+-(BOOL)respondsToSelector:(SEL)aSelector {
+    if ( aSelector == @selector(imagePickerController:didFinishPickingMediaWithInfo:) ) {
+        return !!self.didFinishPickingMediaWithInfoBlock;
+    } else if ( aSelector == @selector(imagePickerControllerDidCancel:) ) {
+        return !!self.didCancelBlock;
+    } else if ( aSelector == @selector(navigationController:didShowViewController:animated:) ) {
+        return !!self.didShowViewControllerBlock;
+    } else if ( aSelector == @selector(navigationController:willShowViewController:animated:) ) {
+        return !!self.willShowViewControllerBlock;
+    }
+    return [super respondsToSelector:aSelector];
+}
+
 -(void)imagePickerController:(UIImagePickerController*)picker didFinishPickingMediaWithInfo:(NSDictionary*)info  {
     UIImagePickerControllerDidFinishPickingMediaWithInfoBlock block = [self.didFinishPickingMediaWithInfoBlock copy];
     block(picker, info);

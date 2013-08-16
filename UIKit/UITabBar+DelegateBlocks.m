@@ -67,6 +67,21 @@ static NSString* UITabBarDelegateBlocksKey = @"UITabBarDelegateBlocksKey";
 @synthesize willBeginCustomizingItemsBlock = _willBeginCustomizingItemsBlock;
 @synthesize willEndCustomizingItemsBlock = _willEndCustomizingItemsBlock;
 
+-(BOOL)respondsToSelector:(SEL)aSelector {
+    if ( aSelector == @selector(tabBar:didBeginCustomizingItems:) ) {
+        return !!self.didBeginCustomizingItemsBlock;
+    } else if ( aSelector == @selector(tabBar:didEndCustomizingItems:changed:) ) {
+        return !!self.didEndCustomizingItemsBlock;
+    } else if ( aSelector == @selector(tabBar:didSelectItem:) ) {
+        return !!self.didSelectItemBlock;
+    } else if ( aSelector == @selector(tabBar:willBeginCustomizingItems:) ) {
+        return !!self.willBeginCustomizingItemsBlock;
+    } else if ( aSelector == @selector(tabBar:willEndCustomizingItems:changed:) ) {
+        return !!self.willEndCustomizingItemsBlock;
+    }
+    return [super respondsToSelector:aSelector];
+}
+
 -(void)tabBar:(UITabBar*)tabBar didBeginCustomizingItems:(NSArray*)items  {
     UITabBarDidBeginCustomizingItemsBlock block = [self.didBeginCustomizingItemsBlock copy];
     block(tabBar, items);

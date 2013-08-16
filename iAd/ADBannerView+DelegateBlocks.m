@@ -62,6 +62,19 @@ static NSString* ADBannerViewDelegateBlocksKey = @"ADBannerViewDelegateBlocksKey
 @synthesize actionShouldBeginBlock = _actionShouldBeginBlock;
 @synthesize bannerViewDidLoadAdBlock = _bannerViewDidLoadAdBlock;
 
+-(BOOL)respondsToSelector:(SEL)aSelector {
+    if ( aSelector == @selector(bannerView:didFailToReceiveAdWithError:) ) {
+        return !!self.didFailToReceiveAdWithErrorBlock;
+    } else if ( aSelector == @selector(bannerViewActionDidFinish:) ) {
+        return !!self.actionDidFinishBlock;
+    } else if ( aSelector == @selector(bannerViewActionShouldBegin:willLeaveApplication:) ) {
+        return !!self.actionShouldBeginBlock;
+    } else if ( aSelector == @selector(bannerViewActionShouldBegin:) ) {
+        return !!self.bannerViewDidLoadAdBlock;
+    }
+    return [super respondsToSelector:aSelector];
+}
+
 -(void)bannerView:(ADBannerView*)banner didFailToReceiveAdWithError:(NSError*)error  {
     ADBannerViewDidFailToReceiveAdWithErrorBlock block = [self.didFailToReceiveAdWithErrorBlock copy];
     block(banner, error);

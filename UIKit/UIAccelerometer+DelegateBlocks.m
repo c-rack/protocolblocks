@@ -47,6 +47,13 @@ static NSString* UIAccelerometerDelegateBlocksKey = @"UIAccelerometerDelegateBlo
 
 @synthesize didAccelerateBlock = _didAccelerateBlock;
 
+-(BOOL)respondsToSelector:(SEL)aSelector {
+    if ( aSelector == @selector(accelerometer:didAccelerate:) ) {
+        return !!self.didAccelerateBlock;
+    }
+    return [super respondsToSelector:aSelector];
+}
+
 -(void)accelerometer:(UIAccelerometer*)accelerometer didAccelerate:(UIAcceleration*)acceleration  {
     UIAccelerometerDidAccelerateBlock block = [self.didAccelerateBlock copy];
     block(accelerometer, acceleration);

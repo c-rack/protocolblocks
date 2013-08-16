@@ -62,6 +62,19 @@ static NSString* UINavigationBarDelegateBlocksKey = @"UINavigationBarDelegateBlo
 @synthesize shouldPopItemBlock = _shouldPopItemBlock;
 @synthesize shouldPushItemBlock = _shouldPushItemBlock;
 
+-(BOOL)respondsToSelector:(SEL)aSelector {
+    if ( aSelector == @selector(navigationBar:didPopItem:) ) {
+        return !!self.didPopItemBlock;
+    } else if ( aSelector == @selector(navigationBar:didPushItem:) ) {
+        return !!self.didPushItemBlock;
+    } else if ( aSelector == @selector(navigationBar:shouldPopItem:) ) {
+        return !!self.shouldPopItemBlock;
+    } else if ( aSelector == @selector(navigationBar:shouldPushItem:) ) {
+        return !!self.shouldPushItemBlock;
+    }
+    return [super respondsToSelector:aSelector];
+}
+
 -(void)navigationBar:(UINavigationBar*)navigationBar didPopItem:(UINavigationItem*)item  {
     UINavigationBarDidPopItemBlock block = [self.didPopItemBlock copy];
     block(navigationBar, item);

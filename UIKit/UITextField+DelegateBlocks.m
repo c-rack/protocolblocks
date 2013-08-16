@@ -77,6 +77,25 @@ static NSString* UITextFieldDelegateBlocksKey = @"UITextFieldDelegateBlocksKey";
 @synthesize shouldEndEditingBlock = _shouldEndEditingBlock;
 @synthesize shouldReturnBlock = _shouldReturnBlock;
 
+-(BOOL)respondsToSelector:(SEL)aSelector {
+    if ( aSelector == @selector(textfield:shouldChangeCharactersInRange:replacementString:) ) {
+        return !!self.shouldChangeCharactersInRangeBlock;
+    } else if ( aSelector == @selector(textFieldDidBeginEditing:) ) {
+        return !!self.didBeginEditingBlock;
+    } else if ( aSelector == @selector(textFieldDidEndEditing:) ) {
+        return !!self.didEndEditingBlock;
+    } else if ( aSelector == @selector(textFieldShouldBeginEditing:) ) {
+        return !!self.shouldBeginEditingBlock;
+    } else if ( aSelector == @selector(textFieldShouldClear:) ) {
+        return !!self.shouldClearBlock;
+    } else if ( aSelector == @selector(textFieldShouldEndEditing:) ) {
+        return !!self.shouldEndEditingBlock;
+    } else if ( aSelector == @selector(textFieldShouldReturn:) ) {
+        return !!self.shouldReturnBlock;
+    }
+    return [super respondsToSelector:aSelector];
+}
+
 -(BOOL)textfield:(UITextField*)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string  {
     UITextFieldShouldChangeCharactersInRangeBlock block = [self.shouldChangeCharactersInRangeBlock copy];
     BOOL result = block(textField, range, string);

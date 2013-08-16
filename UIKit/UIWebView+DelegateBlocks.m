@@ -62,6 +62,19 @@ static NSString* UIWebViewDelegateBlocksKey = @"UIWebViewDelegateBlocksKey";
 @synthesize didFinishLoadBlock = _didFinishLoadBlock;
 @synthesize didStartLoadBlock = _didStartLoadBlock;
 
+-(BOOL)respondsToSelector:(SEL)aSelector {
+    if ( aSelector == @selector(webView:didFailLoadWithError:) ) {
+        return !!self.didFailLoadWithErrorBlock;
+    } else if ( aSelector == @selector(webView:shouldStartLoadWithRequest:navigationType:) ) {
+        return !!self.shouldStartLoadWithRequestBlock;
+    } else if ( aSelector == @selector(webViewDidFinishLoad:) ) {
+        return !!self.didFinishLoadBlock;
+    } else if ( aSelector == @selector(webViewDidStartLoad:) ) {
+        return !!self.didStartLoadBlock;
+    }
+    return [super respondsToSelector:aSelector];
+}
+
 -(void)webView:(UIWebView*)webView didFailLoadWithError:(NSError*)error  {
     UIWebViewDidFailLoadWithErrorBlock block = [self.didFailLoadWithErrorBlock copy];
     block(webView, error);

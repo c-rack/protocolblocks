@@ -97,6 +97,33 @@ static NSString* UISearchBarDelegateBlocksKey = @"UISearchBarDelegateBlocksKey";
 @synthesize textDidBeginEditingBlock = _textDidBeginEditingBlock;
 @synthesize textDidEndEditingBlock = _textDidEndEditingBlock;
 
+-(BOOL)respondsToSelector:(SEL)aSelector {
+    if ( aSelector == @selector(searchBar:selectedScopeButtonIndexDidChange:) ) {
+        return !!self.selectedScopeButtonIndexDidChangeBlock;
+    } else if ( aSelector == @selector(searchBar:shouldChangeTextInRange:replacementText:) ) {
+        return !!self.shouldChangeTextInRangeBlock;
+    } else if ( aSelector == @selector(searchBar:textDidChange:) ) {
+        return !!self.textDidChangeBlock;
+    } else if ( aSelector == @selector(searchBarBookmarkButtonClicked:) ) {
+        return !!self.bookmarkButtonClickedBlock;
+    } else if ( aSelector == @selector(searchBarCancelButtonClicked:) ) {
+        return !!self.cancelButtonClickedBlock;
+    } else if ( aSelector == @selector(searchBarResultsListButtonClicked:) ) {
+        return !!self.resultsListButtonClickedBlock;
+    } else if ( aSelector == @selector(searchBarSearchButtonClicked:) ) {
+        return !!self.searchButtonClickedBlock;
+    } else if ( aSelector == @selector(searchBarShouldBeginEditing:) ) {
+        return !!self.shouldBeginEditingBlock;
+    } else if ( aSelector == @selector(searchBarShouldEndEditing:) ) {
+        return !!self.shouldEndEditingBlock;
+    } else if ( aSelector == @selector(searchBarTextDidBeginEditing:) ) {
+        return !!self.textDidBeginEditingBlock;
+    } else if ( aSelector == @selector(searchBarTextDidEndEditing:) ) {
+        return !!self.textDidEndEditingBlock;
+    }
+    return [super respondsToSelector:aSelector];
+}
+
 -(void)searchBar:(UISearchBar*)searchBar selectedScopeButtonIndexDidChange:(NSInteger)selectedScope  {
     UISearchBarSelectedScopeButtonIndexDidChangeBlock block = [self.selectedScopeButtonIndexDidChangeBlock copy];
     block(searchBar, selectedScope);

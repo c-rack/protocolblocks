@@ -67,6 +67,21 @@ static NSString* UITabBarControllerDelegateBlocksKey = @"UITabBarControllerDeleg
 @synthesize willBeginCustomizingViewControllersBlock = _willBeginCustomizingViewControllersBlock;
 @synthesize willEndCustomizingViewControllersBlock = _willEndCustomizingViewControllersBlock;
 
+-(BOOL)respondsToSelector:(SEL)aSelector {
+    if ( aSelector == @selector(tabBarController:didEndCustomizingViewControllers:changed:) ) {
+        return !!self.didEndCustomizingViewControllersBlock;
+    } else if ( aSelector == @selector(tabBarController:didSelectViewController:) ) {
+        return !!self.didSelectViewControllerBlock;
+    } else if ( aSelector == @selector(tabBarController:shouldSelectViewController:) ) {
+        return !!self.shouldSelectViewControllerBlock;
+    } else if ( aSelector == @selector(tabBarController:willBeginCustomizingViewControllers:) ) {
+        return !!self.willBeginCustomizingViewControllersBlock;
+    } else if ( aSelector == @selector(tabBarController:willEndCustomizingViewControllers:changed:) ) {
+        return !!self.willEndCustomizingViewControllersBlock;
+    }
+    return [super respondsToSelector:aSelector];
+}
+
 -(void)tabBarController:(UITabBarController*)tabBarController didEndCustomizingViewControllers:(NSArray*)viewControllers changed:(BOOL)changed  {
     UITabBarControllerDidEndCustomizingViewControllersBlock block = [self.didEndCustomizingViewControllersBlock copy];
     block(tabBarController, viewControllers, changed);

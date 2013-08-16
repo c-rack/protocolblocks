@@ -47,6 +47,13 @@ static NSString* MFMessageComposeViewControllerMessageComposeDelegateBlocksKey =
 
 @synthesize didFinishWithResultBlock = _didFinishWithResultBlock;
 
+-(BOOL)respondsToSelector:(SEL)aSelector {
+    if ( aSelector == @selector(messageComposeViewController:didFinishWithResult:) ) {
+        return !!self.didFinishWithResultBlock;
+    }
+    return [super respondsToSelector:aSelector];
+}
+
 -(void)messageComposeViewController:(MFMessageComposeViewController*)controller didFinishWithResult:(MessageComposeResult)result  {
     MFMessageComposeViewControllerDidFinishWithResultBlock block = [self.didFinishWithResultBlock copy];
     block(controller, result);
