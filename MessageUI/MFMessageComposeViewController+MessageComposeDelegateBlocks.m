@@ -48,7 +48,7 @@ static NSString* MFMessageComposeViewControllerMessageComposeDelegateBlocksKey =
 @synthesize didFinishWithResultBlock = _didFinishWithResultBlock;
 
 -(BOOL)respondsToSelector:(SEL)aSelector {
-    if ( aSelector == @selector(messageComposeViewController:didFinishWithResult:) ) {
+    if ( sel_isEqual(aSelector, @selector(messageComposeViewController:didFinishWithResult:)) ) {
         return !!self.didFinishWithResultBlock;
     }
     return [super respondsToSelector:aSelector];

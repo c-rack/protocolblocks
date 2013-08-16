@@ -63,13 +63,13 @@ static NSString* ADBannerViewDelegateBlocksKey = @"ADBannerViewDelegateBlocksKey
 @synthesize bannerViewDidLoadAdBlock = _bannerViewDidLoadAdBlock;
 
 -(BOOL)respondsToSelector:(SEL)aSelector {
-    if ( aSelector == @selector(bannerView:didFailToReceiveAdWithError:) ) {
+    if ( sel_isEqual(aSelector, @selector(bannerView:didFailToReceiveAdWithError:)) ) {
         return !!self.didFailToReceiveAdWithErrorBlock;
-    } else if ( aSelector == @selector(bannerViewActionDidFinish:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(bannerViewActionDidFinish:)) ) {
         return !!self.actionDidFinishBlock;
-    } else if ( aSelector == @selector(bannerViewActionShouldBegin:willLeaveApplication:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(bannerViewActionShouldBegin:willLeaveApplication:)) ) {
         return !!self.actionShouldBeginBlock;
-    } else if ( aSelector == @selector(bannerViewActionShouldBegin:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(bannerViewActionShouldBegin:)) ) {
         return !!self.bannerViewDidLoadAdBlock;
     }
     return [super respondsToSelector:aSelector];

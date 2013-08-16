@@ -103,29 +103,29 @@ static NSString* UISearchDisplayControllerDelegateBlocksKey = @"UISearchDisplayC
 @synthesize willEndSearchBlock = _willEndSearchBlock;
 
 -(BOOL)respondsToSelector:(SEL)aSelector {
-    if ( aSelector == @selector(searchDisplayController:didHideSearchResultsTableView:) ) {
+    if ( sel_isEqual(aSelector, @selector(searchDisplayController:didHideSearchResultsTableView:)) ) {
         return !!self.didHideSearchResultsTableViewBlock;
-    } else if ( aSelector == @selector(searchDisplayController:didLoadSearchResultsTableView:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(searchDisplayController:didLoadSearchResultsTableView:)) ) {
         return !!self.didLoadSearchResultsTableViewBlock;
-    } else if ( aSelector == @selector(searchDisplayController:didShowSearchResultsTableView:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(searchDisplayController:didShowSearchResultsTableView:)) ) {
         return !!self.didShowSearchResultsTableViewBlock;
-    } else if ( aSelector == @selector(searchDisplayController:shouldReloadTableForSearchScope:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(searchDisplayController:shouldReloadTableForSearchScope:)) ) {
         return !!self.shouldReloadTableForSearchScopeBlock;
-    } else if ( aSelector == @selector(searchDisplayController:shouldReloadTableForSearchString:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(searchDisplayController:shouldReloadTableForSearchString:)) ) {
         return !!self.shouldReloadTableForSearchStringBlock;
-    } else if ( aSelector == @selector(searchDisplayController:willHideSearchResultsTableView:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(searchDisplayController:willHideSearchResultsTableView:)) ) {
         return !!self.willHideSearchResultsTableViewBlock;
-    } else if ( aSelector == @selector(searchDisplayController:willShowSearchResultsTableView:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(searchDisplayController:willShowSearchResultsTableView:)) ) {
         return !!self.willShowSearchResultsTableViewBlock;
-    } else if ( aSelector == @selector(searchDisplayController:willUnloadSearchResultsTableView:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(searchDisplayController:willUnloadSearchResultsTableView:)) ) {
         return !!self.willUnloadSearchResultsTableViewBlock;
-    } else if ( aSelector == @selector(searchDisplayControllerDidBeginSearch:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(searchDisplayControllerDidBeginSearch:)) ) {
         return !!self.didBeginSearchBlock;
-    } else if ( aSelector == @selector(searchDisplayControllerDidEndSearch:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(searchDisplayControllerDidEndSearch:)) ) {
         return !!self.didEndSearchBlock;
-    } else if ( aSelector == @selector(searchDisplayControllerWillBeginSearch:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(searchDisplayControllerWillBeginSearch:)) ) {
         return !!self.willBeginSearchBlock;
-    } else if ( aSelector == @selector(searchDisplayControllerWillEndSearch:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(searchDisplayControllerWillEndSearch:)) ) {
         return !!self.willEndSearchBlock;
     }
     return [super respondsToSelector:aSelector];

@@ -108,31 +108,31 @@ static NSString* UIDocumentInteractionControllerDelegateBlocksKey = @"UIDocument
 @synthesize willPresentOptionsMenuBlock = _willPresentOptionsMenuBlock;
 
 -(BOOL)respondsToSelector:(SEL)aSelector {
-    if ( aSelector == @selector(documentInteractionController:canPerformAction:) ) {
+    if ( sel_isEqual(aSelector, @selector(documentInteractionController:canPerformAction:)) ) {
         return !!self.canPerformActionBlock;
-    } else if ( aSelector == @selector(documentInteractionController:didEndSendingToApplication:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(documentInteractionController:didEndSendingToApplication:)) ) {
         return !!self.didEndSendingToApplicationBlock;
-    } else if ( aSelector == @selector(documentInteractionController:performAction:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(documentInteractionController:performAction:)) ) {
         return !!self.performActionBlock;
-    } else if ( aSelector == @selector(documentInteractionController:willBeginSendingToApplication:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(documentInteractionController:willBeginSendingToApplication:)) ) {
         return !!self.willBeginSendingToApplicationBlock;
-    } else if ( aSelector == @selector(documentInteractionControllerDidDismissOpenInMenu:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(documentInteractionControllerDidDismissOpenInMenu:)) ) {
         return !!self.didDismissOpenInMenuBlock;
-    } else if ( aSelector == @selector(documentInteractionControllerDidDismissOptionsMenu:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(documentInteractionControllerDidDismissOptionsMenu:)) ) {
         return !!self.didDismissOptionsMenuBlock;
-    } else if ( aSelector == @selector(documentInteractionControllerDidEndPreview:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(documentInteractionControllerDidEndPreview:)) ) {
         return !!self.didEndPreviewBlock;
-    } else if ( aSelector == @selector(documentInteractionControllerRectForPreview:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(documentInteractionControllerRectForPreview:)) ) {
         return !!self.rectForPreviewBlock;
-    } else if ( aSelector == @selector(documentInteractionControllerViewControllerForPreview:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(documentInteractionControllerViewControllerForPreview:)) ) {
         return !!self.viewControllerForPreviewBlock;
-    } else if ( aSelector == @selector(documentInteractionControllerViewForPreview:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(documentInteractionControllerViewForPreview:)) ) {
         return !!self.viewForPreviewBlock;
-    } else if ( aSelector == @selector(documentInteractionControllerWillBeginPreview:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(documentInteractionControllerWillBeginPreview:)) ) {
         return !!self.willBeginPreviewBlock;
-    } else if ( aSelector == @selector(documentInteractionControllerWillPresentOpenInMenu:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(documentInteractionControllerWillPresentOpenInMenu:)) ) {
         return !!self.willPresentOpenInMenuBlock;
-    } else if ( aSelector == @selector(documentInteractionControllerWillPresentOptionsMenu:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(documentInteractionControllerWillPresentOptionsMenu:)) ) {
         return !!self.willPresentOptionsMenuBlock;
     }
     return [super respondsToSelector:aSelector];

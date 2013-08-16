@@ -53,9 +53,9 @@ static NSString* EKEventEditViewControllerEditViewDelegateBlocksKey = @"EKEventE
 @synthesize eventEditViewControllerDefaultCalendarForNewEventsBlock = _eventEditViewControllerDefaultCalendarForNewEventsBlock;
 
 -(BOOL)respondsToSelector:(SEL)aSelector {
-    if ( aSelector == @selector(eventEditViewController:didCompleteWithAction:) ) {
+    if ( sel_isEqual(aSelector, @selector(eventEditViewController:didCompleteWithAction:)) ) {
         return !!self.didCompleteWithActionBlock;
-    } else if ( aSelector == @selector(defaultCalendarForNewEvents::) ) {
+    } else if ( sel_isEqual(aSelector, @selector(defaultCalendarForNewEvents:)) ) {
         return !!self.eventEditViewControllerDefaultCalendarForNewEventsBlock;
     }
     return [super respondsToSelector:aSelector];

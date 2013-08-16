@@ -78,19 +78,19 @@ static NSString* UITextFieldDelegateBlocksKey = @"UITextFieldDelegateBlocksKey";
 @synthesize shouldReturnBlock = _shouldReturnBlock;
 
 -(BOOL)respondsToSelector:(SEL)aSelector {
-    if ( aSelector == @selector(textfield:shouldChangeCharactersInRange:replacementString:) ) {
+    if ( sel_isEqual(aSelector, @selector(textfield:shouldChangeCharactersInRange:replacementString:)) ) {
         return !!self.shouldChangeCharactersInRangeBlock;
-    } else if ( aSelector == @selector(textFieldDidBeginEditing:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(textFieldDidBeginEditing:)) ) {
         return !!self.didBeginEditingBlock;
-    } else if ( aSelector == @selector(textFieldDidEndEditing:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(textFieldDidEndEditing:)) ) {
         return !!self.didEndEditingBlock;
-    } else if ( aSelector == @selector(textFieldShouldBeginEditing:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(textFieldShouldBeginEditing:)) ) {
         return !!self.shouldBeginEditingBlock;
-    } else if ( aSelector == @selector(textFieldShouldClear:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(textFieldShouldClear:)) ) {
         return !!self.shouldClearBlock;
-    } else if ( aSelector == @selector(textFieldShouldEndEditing:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(textFieldShouldEndEditing:)) ) {
         return !!self.shouldEndEditingBlock;
-    } else if ( aSelector == @selector(textFieldShouldReturn:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(textFieldShouldReturn:)) ) {
         return !!self.shouldReturnBlock;
     }
     return [super respondsToSelector:aSelector];

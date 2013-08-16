@@ -58,11 +58,11 @@ static NSString* UISplitViewControllerDelegateBlocksKey = @"UISplitViewControlle
 @synthesize willShowViewControllerBlock = _willShowViewControllerBlock;
 
 -(BOOL)respondsToSelector:(SEL)aSelector {
-    if ( aSelector == @selector(splitViewController:popoverController:willPresentViewController:) ) {
+    if ( sel_isEqual(aSelector, @selector(splitViewController:popoverController:willPresentViewController:)) ) {
         return !!self.willPresentViewControllerBlock;
-    } else if ( aSelector == @selector(splitViewController:willHideViewController:withBarButtonItem:forPopoverController:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(splitViewController:willHideViewController:withBarButtonItem:forPopoverController:)) ) {
         return !!self.willHideViewControllerBlock;
-    } else if ( aSelector == @selector(splitViewController:willShowViewController:invalidatingBarButtonItem:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(splitViewController:willShowViewController:invalidatingBarButtonItem:)) ) {
         return !!self.willShowViewControllerBlock;
     }
     return [super respondsToSelector:aSelector];

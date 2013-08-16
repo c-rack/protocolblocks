@@ -63,13 +63,13 @@ static NSString* UINavigationBarDelegateBlocksKey = @"UINavigationBarDelegateBlo
 @synthesize shouldPushItemBlock = _shouldPushItemBlock;
 
 -(BOOL)respondsToSelector:(SEL)aSelector {
-    if ( aSelector == @selector(navigationBar:didPopItem:) ) {
+    if ( sel_isEqual(aSelector, @selector(navigationBar:didPopItem:)) ) {
         return !!self.didPopItemBlock;
-    } else if ( aSelector == @selector(navigationBar:didPushItem:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(navigationBar:didPushItem:)) ) {
         return !!self.didPushItemBlock;
-    } else if ( aSelector == @selector(navigationBar:shouldPopItem:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(navigationBar:shouldPopItem:)) ) {
         return !!self.shouldPopItemBlock;
-    } else if ( aSelector == @selector(navigationBar:shouldPushItem:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(navigationBar:shouldPushItem:)) ) {
         return !!self.shouldPushItemBlock;
     }
     return [super respondsToSelector:aSelector];

@@ -83,21 +83,21 @@ static NSString* UIPrintInteractionControllerDelegateBlocksKey = @"UIPrintIntera
 @synthesize willStartJobBlock = _willStartJobBlock;
 
 -(BOOL)respondsToSelector:(SEL)aSelector {
-    if ( aSelector == @selector(printInteractionController:choosePaper:) ) {
+    if ( sel_isEqual(aSelector, @selector(printInteractionController:choosePaper:)) ) {
         return !!self.choosePaperBlock;
-    } else if ( aSelector == @selector(printInteractionControllerDidDismissPrinterOptions:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(printInteractionControllerDidDismissPrinterOptions:)) ) {
         return !!self.didDismissPrinterOptionsBlock;
-    } else if ( aSelector == @selector(printInteractionControllerDidFinishJob:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(printInteractionControllerDidFinishJob:)) ) {
         return !!self.didFinishJobBlock;
-    } else if ( aSelector == @selector(printInteractionControllerDidPresentPrinterOptions:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(printInteractionControllerDidPresentPrinterOptions:)) ) {
         return !!self.didPresentPrinterOptionsBlock;
-    } else if ( aSelector == @selector(printInteractionControllerParentViewController:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(printInteractionControllerParentViewController:)) ) {
         return !!self.parentViewControllerBlock;
-    } else if ( aSelector == @selector(printInteractionControllerWillDismissPrinterOptions:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(printInteractionControllerWillDismissPrinterOptions:)) ) {
         return !!self.willDismissPrinterOptionsBlock;
-    } else if ( aSelector == @selector(printInteractionControllerWillPresentPrinterOptions:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(printInteractionControllerWillPresentPrinterOptions:)) ) {
         return !!self.willPresentPrinterOptionsBlock;
-    } else if ( aSelector == @selector(printInteractionControllerWillStartJob:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(printInteractionControllerWillStartJob:)) ) {
         return !!self.willStartJobBlock;
     }
     return [super respondsToSelector:aSelector];

@@ -128,39 +128,39 @@ static NSString* UITableViewDelegateBlocksKey = @"UITableViewDelegateBlocksKey";
 @synthesize willSelectRowAtIndexPathBlock = _willSelectRowAtIndexPathBlock;
 
 -(BOOL)respondsToSelector:(SEL)aSelector {
-    if ( aSelector == @selector(tableView:accessoryButtonTappedForRowWithIndexPath:) ) {
+    if ( sel_isEqual(aSelector, @selector(tableView:accessoryButtonTappedForRowWithIndexPath:)) ) {
         return !!self.accessoryButtonTappedForRowWithIndexPathBlock;
-    } else if ( aSelector == @selector(tableView:didDeselectRowAtIndexPath:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(tableView:didDeselectRowAtIndexPath:)) ) {
         return !!self.didDeselectRowAtIndexPathBlock;
-    } else if ( aSelector == @selector(tableView:didEndEditingRowAtIndexPath:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(tableView:didEndEditingRowAtIndexPath:)) ) {
         return !!self.didEndEditingRowAtIndexPathBlock;
-    } else if ( aSelector == @selector(tableView:didSelectRowAtIndexPath:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(tableView:didSelectRowAtIndexPath:)) ) {
         return !!self.didSelectRowAtIndexPathBlock;
-    } else if ( aSelector == @selector(tableView:editingStyleForRowAtIndexPath:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(tableView:editingStyleForRowAtIndexPath:)) ) {
         return !!self.editingStyleForRowAtIndexPathBlock;
-    } else if ( aSelector == @selector(tableView:heightForFooterInSection:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(tableView:heightForFooterInSection:)) ) {
         return !!self.heightForFooterInSectionBlock;
-    } else if ( aSelector == @selector(tableView:heightForHeaderInSection:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(tableView:heightForHeaderInSection:)) ) {
         return !!self.heightForHeaderInSectionBlock;
-    } else if ( aSelector == @selector(tableView:heightForRowAtIndexPath:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(tableView:heightForRowAtIndexPath:)) ) {
         return !!self.heightForRowAtIndexPathBlock;
-    } else if ( aSelector == @selector(tableView:shouldIndentWhileEditingRowAtIndexPath:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(tableView:shouldIndentWhileEditingRowAtIndexPath:)) ) {
         return !!self.shouldIndentWhileEditingRowAtIndexPathBlock;
-    } else if ( aSelector == @selector(tableView:targetIndexPathForMoveFromRowAtIndexPath:toProposedIndexPath:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(tableView:targetIndexPathForMoveFromRowAtIndexPath:toProposedIndexPath:)) ) {
         return !!self.targetIndexPathForMoveFromRowAtIndexPathBlock;
-    } else if ( aSelector == @selector(tableView:titleForDeleteConfirmationButtonForRowAtIndexPath:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(tableView:titleForDeleteConfirmationButtonForRowAtIndexPath:)) ) {
         return !!self.titleForDeleteConfirmationButtonForRowAtIndexPathBlock;
-    } else if ( aSelector == @selector(tableView:viewForFooterInSection:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(tableView:viewForFooterInSection:)) ) {
         return !!self.viewForFooterInSectionBlock;
-    } else if ( aSelector == @selector(tableView:viewForHeaderInSection:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(tableView:viewForHeaderInSection:)) ) {
         return !!self.viewForHeaderInSectionBlock;
-    } else if ( aSelector == @selector(tableView:willBeginEditingRowAtIndexPath:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(tableView:willBeginEditingRowAtIndexPath:)) ) {
         return !!self.willBeginEditingRowAtIndexPathBlock;
-    } else if ( aSelector == @selector(tableView:willDeselectRowAtIndexPath:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(tableView:willDeselectRowAtIndexPath:)) ) {
         return !!self.willDeselectRowAtIndexPathBlock;
-    } else if ( aSelector == @selector(tableView:willDisplayCell:forRowAtIndexPath:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(tableView:willDisplayCell:forRowAtIndexPath:)) ) {
         return !!self.willDisplayCellBlock;
-    } else if ( aSelector == @selector(tableView:willSelectRowAtIndexPath:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(tableView:willSelectRowAtIndexPath:)) ) {
         return !!self.willSelectRowAtIndexPathBlock;
     }
     return [super respondsToSelector:aSelector];

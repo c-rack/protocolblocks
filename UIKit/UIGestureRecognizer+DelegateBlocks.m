@@ -58,11 +58,11 @@ static NSString* UIGestureRecognizerDelegateBlocksKey = @"UIGestureRecognizerDel
 @synthesize shouldBeginBlock = _shouldBeginBlock;
 
 -(BOOL)respondsToSelector:(SEL)aSelector {
-    if ( aSelector == @selector(gestureRecognizer:shouldReceiveTouch:) ) {
+    if ( sel_isEqual(aSelector, @selector(gestureRecognizer:shouldReceiveTouch:)) ) {
         return !!self.shouldReceiveTouchBlock;
-    } else if ( aSelector == @selector(gestureRecognizer:shouldRecognizeSimultaneouslyWithGestureRecognizer:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(gestureRecognizer:shouldRecognizeSimultaneouslyWithGestureRecognizer:)) ) {
         return !!self.shouldRecognizeSimultaneouslyWithGestureRecognizerBlock;
-    } else if ( aSelector == @selector(gestureRecognizerShouldBegin:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(gestureRecognizerShouldBegin:)) ) {
         return !!self.shouldBeginBlock;
     }
     return [super respondsToSelector:aSelector];

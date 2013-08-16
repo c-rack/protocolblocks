@@ -68,15 +68,15 @@ static NSString* UIPickerViewDelegateBlocksKey = @"UIPickerViewDelegateBlocksKey
 @synthesize widthForComponentBlock = _widthForComponentBlock;
 
 -(BOOL)respondsToSelector:(SEL)aSelector {
-    if ( aSelector == @selector(pickerView:didSelectRow:inComponent:) ) {
+    if ( sel_isEqual(aSelector, @selector(pickerView:didSelectRow:inComponent:)) ) {
         return !!self.didSelectRowBlock;
-    } else if ( aSelector == @selector(pickerView:rowHeightForComponent:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(pickerView:rowHeightForComponent:)) ) {
         return !!self.rowHeightForComponentBlock;
-    } else if ( aSelector == @selector(pickerView:titleForRow:forComponent:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(pickerView:titleForRow:forComponent:)) ) {
         return !!self.titleForRowBlock;
-    } else if ( aSelector == @selector(pickerView:viewForRow:forComponent:reusingView:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(pickerView:viewForRow:forComponent:reusingView:)) ) {
         return !!self.viewForRowBlock;
-    } else if ( aSelector == @selector(pickerView:widthForComponent:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(pickerView:widthForComponent:)) ) {
         return !!self.widthForComponentBlock;
     }
     return [super respondsToSelector:aSelector];

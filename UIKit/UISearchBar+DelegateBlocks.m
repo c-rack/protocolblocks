@@ -98,27 +98,27 @@ static NSString* UISearchBarDelegateBlocksKey = @"UISearchBarDelegateBlocksKey";
 @synthesize textDidEndEditingBlock = _textDidEndEditingBlock;
 
 -(BOOL)respondsToSelector:(SEL)aSelector {
-    if ( aSelector == @selector(searchBar:selectedScopeButtonIndexDidChange:) ) {
+    if ( sel_isEqual(aSelector, @selector(searchBar:selectedScopeButtonIndexDidChange:)) ) {
         return !!self.selectedScopeButtonIndexDidChangeBlock;
-    } else if ( aSelector == @selector(searchBar:shouldChangeTextInRange:replacementText:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(searchBar:shouldChangeTextInRange:replacementText:)) ) {
         return !!self.shouldChangeTextInRangeBlock;
-    } else if ( aSelector == @selector(searchBar:textDidChange:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(searchBar:textDidChange:)) ) {
         return !!self.textDidChangeBlock;
-    } else if ( aSelector == @selector(searchBarBookmarkButtonClicked:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(searchBarBookmarkButtonClicked:)) ) {
         return !!self.bookmarkButtonClickedBlock;
-    } else if ( aSelector == @selector(searchBarCancelButtonClicked:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(searchBarCancelButtonClicked:)) ) {
         return !!self.cancelButtonClickedBlock;
-    } else if ( aSelector == @selector(searchBarResultsListButtonClicked:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(searchBarResultsListButtonClicked:)) ) {
         return !!self.resultsListButtonClickedBlock;
-    } else if ( aSelector == @selector(searchBarSearchButtonClicked:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(searchBarSearchButtonClicked:)) ) {
         return !!self.searchButtonClickedBlock;
-    } else if ( aSelector == @selector(searchBarShouldBeginEditing:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(searchBarShouldBeginEditing:)) ) {
         return !!self.shouldBeginEditingBlock;
-    } else if ( aSelector == @selector(searchBarShouldEndEditing:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(searchBarShouldEndEditing:)) ) {
         return !!self.shouldEndEditingBlock;
-    } else if ( aSelector == @selector(searchBarTextDidBeginEditing:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(searchBarTextDidBeginEditing:)) ) {
         return !!self.textDidBeginEditingBlock;
-    } else if ( aSelector == @selector(searchBarTextDidEndEditing:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(searchBarTextDidEndEditing:)) ) {
         return !!self.textDidEndEditingBlock;
     }
     return [super respondsToSelector:aSelector];

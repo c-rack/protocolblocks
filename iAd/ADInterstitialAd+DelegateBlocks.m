@@ -63,13 +63,13 @@ static NSString* ADInterstitialAdDelegateBlocksKey = @"ADInterstitialAdDelegateB
 @synthesize didUnloadBlock = _didUnloadBlock;
 
 -(BOOL)respondsToSelector:(SEL)aSelector {
-    if ( aSelector == @selector(interstitialAd:didFailWithError:) ) {
+    if ( sel_isEqual(aSelector, @selector(interstitialAd:didFailWithError:)) ) {
         return !!self.didFailWithErrorBlock;
-    } if ( aSelector == @selector(interstitialAdActionDidFinish:) ) {
+    } if ( sel_isEqual(aSelector, @selector(interstitialAdActionDidFinish:)) ) {
         return !!self.actionDidFinishBlock;
-    } if ( aSelector == @selector(interstitialAdDidLoad:) ) {
+    } if ( sel_isEqual(aSelector, @selector(interstitialAdDidLoad:)) ) {
         return !!self.didLoadBlock;
-    } if ( aSelector == @selector(interstitialAdDidUnload:) ) {
+    } if ( sel_isEqual(aSelector, @selector(interstitialAdDidUnload:)) ) {
         return !!self.didUnloadBlock;
     }
     return [super respondsToSelector:aSelector];

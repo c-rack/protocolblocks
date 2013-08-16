@@ -103,29 +103,29 @@ static NSString* UIScrollViewDelegateBlocksKey = @"UIScrollViewDelegateBlocksKey
 @synthesize viewForZoomingInScrollViewBlock = _viewForZoomingInScrollViewBlock;
 
 -(BOOL)respondsToSelector:(SEL)aSelector {
-    if ( aSelector == @selector(scrollViewDidEndDecelerating:) ) {
+    if ( sel_isEqual(aSelector, @selector(scrollViewDidEndDecelerating:)) ) {
         return !!self.didEndDeceleratingBlock;
-    } else if ( aSelector == @selector(scrollViewDidEndDragging:willDecelerate:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(scrollViewDidEndDragging:willDecelerate:)) ) {
         return !!self.didEndDraggingBlock;
-    } else if ( aSelector == @selector(scrollViewDidEndScrollingAnimation:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(scrollViewDidEndScrollingAnimation:)) ) {
         return !!self.didEndScrollingAnimationBlock;
-    } else if ( aSelector == @selector(scrollViewDidEndZooming:withView:atScale:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(scrollViewDidEndZooming:withView:atScale:)) ) {
         return !!self.didEndZoomingBlock;
-    } else if ( aSelector == @selector(scrollViewDidScroll:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(scrollViewDidScroll:)) ) {
         return !!self.didScrollBlock;
-    } else if ( aSelector == @selector(scrollViewDidScrollToTop:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(scrollViewDidScrollToTop:)) ) {
         return !!self.didScrollToTopBlock;
-    } else if ( aSelector == @selector(scrollViewDidZoom:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(scrollViewDidZoom:)) ) {
         return !!self.didZoomBlock;
-    } else if ( aSelector == @selector(scrollViewShouldScrollToTop:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(scrollViewShouldScrollToTop:)) ) {
         return !!self.shouldScrollToTopBlock;
-    } else if ( aSelector == @selector(scrollViewWillBeginDecelerating:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(scrollViewWillBeginDecelerating:)) ) {
         return !!self.willBeginDeceleratingBlock;
-    } else if ( aSelector == @selector(scrollViewWillBeginDragging:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(scrollViewWillBeginDragging:)) ) {
         return !!self.willBeginDraggingBlock;
-    } else if ( aSelector == @selector(scrollViewWillBeginZooming:withView:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(scrollViewWillBeginZooming:withView:)) ) {
         return !!self.willBeginZoomingBlock;
-    } else if ( aSelector == @selector(viewForZoomingInScrollView:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(viewForZoomingInScrollView:)) ) {
         return !!self.viewForZoomingInScrollViewBlock;
     }
     return [super respondsToSelector:aSelector];

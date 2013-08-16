@@ -98,27 +98,27 @@ static NSString* UITableViewDataSourceBlocksKey = @"UITableViewDataSourceBlocksK
 @synthesize titleForHeaderInSectionBlock = _titleForHeaderInSectionBlock;
 
 -(BOOL)respondsToSelector:(SEL)aSelector {
-    if ( aSelector == @selector(numberOfSectionsInTableView:) ) {
+    if ( sel_isEqual(aSelector, @selector(numberOfSectionsInTableView:)) ) {
         return !!self.numberOfSectionsInTableViewBlock;
-    } else if ( aSelector == @selector(sectionIndexTitlesForTableView:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(sectionIndexTitlesForTableView:)) ) {
         return !!self.sectionIndexTitlesForTableViewBlock;
-    } else if ( aSelector == @selector(tableView:canEditRowAtIndexPath:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(tableView:canEditRowAtIndexPath:)) ) {
         return !!self.canEditRowAtIndexPathBlock;
-    } else if ( aSelector == @selector(tableView:canMoveRowAtIndexPath:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(tableView:canMoveRowAtIndexPath:)) ) {
         return !!self.canMoveRowAtIndexPathBlock;
-    } else if ( aSelector == @selector(tableView:cellForRowAtIndexPath:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(tableView:cellForRowAtIndexPath:)) ) {
         return !!self.cellForRowAtIndexPathBlock;
-    } else if ( aSelector == @selector(tableView:commitEditingStyle:forRowAtIndexPath:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(tableView:commitEditingStyle:forRowAtIndexPath:)) ) {
         return !!self.commitEditingStyleBlock;
-    } else if ( aSelector == @selector(tableView:moveRowAtIndexPath:toIndexPath:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(tableView:moveRowAtIndexPath:toIndexPath:)) ) {
         return !!self.moveRowAtIndexPathBlock;
-    } else if ( aSelector == @selector(tableView:numberOfRowsInSection:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(tableView:numberOfRowsInSection:)) ) {
         return !!self.numberOfRowsInSectionBlock;
-    } else if ( aSelector == @selector(tableView:sectionForSectionIndexTitle:atIndex:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(tableView:sectionForSectionIndexTitle:atIndex:)) ) {
         return !!self.sectionForSectionIndexTitleBlock;
-    } else if ( aSelector == @selector(tableView:titleForFooterInSection:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(tableView:titleForFooterInSection:)) ) {
         return !!self.titleForFooterInSectionBlock;
-    } else if ( aSelector == @selector(tableView:titleForHeaderInSection:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(tableView:titleForHeaderInSection:)) ) {
         return !!self.titleForHeaderInSectionBlock;
     }
     return [super respondsToSelector:aSelector];

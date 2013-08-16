@@ -68,15 +68,15 @@ static NSString* UIVideoEditorControllerDelegateBlocksKey = @"UIVideoEditorContr
 @synthesize willShowViewControllerBlock = _willShowViewControllerBlock;
 
 -(BOOL)respondsToSelector:(SEL)aSelector {
-    if ( aSelector == @selector(videoEditorController:didFailWithError:) ) {
+    if ( sel_isEqual(aSelector, @selector(videoEditorController:didFailWithError:)) ) {
         return !!self.didFailWithErrorBlock;
-    } else if ( aSelector == @selector(videoEditorController:didSaveEditedVideoToPath:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(videoEditorController:didSaveEditedVideoToPath:)) ) {
         return !!self.didSaveEditedVideoToPathBlock;
-    } else if ( aSelector == @selector(videoEditorControllerDidCancel:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(videoEditorControllerDidCancel:)) ) {
         return !!self.didCancelBlock;
-    } else if ( aSelector == @selector(navigationController:didShowViewController:animated:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(navigationController:didShowViewController:animated:)) ) {
         return !!self.didShowViewControllerBlock;
-    } else if ( aSelector == @selector(navigationController:willShowViewController:animated:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(navigationController:willShowViewController:animated:)) ) {
         return !!self.willShowViewControllerBlock;
     }
     return [super respondsToSelector:aSelector];

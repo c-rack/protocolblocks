@@ -73,17 +73,17 @@ static NSString* UIActionSheetDelegateBlocksKey = @"UIActionSheetDelegateBlocksK
 @synthesize willPresentActionSheetBlock = _willPresentActionSheetBlock;
 
 -(BOOL)respondsToSelector:(SEL)aSelector {
-    if ( aSelector == @selector(actionSheet:clickedButtonAtIndex:) ) {
+    if ( sel_isEqual(aSelector, @selector(actionSheet:willDismissWithButtonIndex:)) ) {
         return !!self.clickedButtonAtIndexBlock;
-    } else if ( aSelector == @selector(actionSheet:didDismissWithButtonIndex:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(actionSheet:willDismissWithButtonIndex:)) ) {
         return !!self.didDismissWithButtonIndexBlock;
-    } else if ( aSelector == @selector(actionSheet:willDismissWithButtonIndex:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(actionSheet:willDismissWithButtonIndex:)) ) {
         return !!self.willDismissWithButtonIndexBlock;
-    } else if ( aSelector == @selector(actionSheetCancel:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(actionSheetCancel:)) ) {
         return !!self.cancelBlock;
-    } else if ( aSelector == @selector(didPresentActionSheet:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(didPresentActionSheet:)) ) {
         return !!self.didPresentActionSheetBlock;
-    } else if ( aSelector == @selector(willPresentActionSheet:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(willPresentActionSheet:)) ) {
         return !!self.willPresentActionSheetBlock;
     }
     return [super respondsToSelector:aSelector];

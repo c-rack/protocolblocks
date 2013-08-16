@@ -78,19 +78,19 @@ static NSString* UITextViewDelegateBlocksKey = @"UITextViewDelegateBlocksKey";
 @synthesize shouldEndEditingBlock = _shouldEndEditingBlock;
 
 -(BOOL)respondsToSelector:(SEL)aSelector {
-    if ( aSelector == @selector(textView:shouldChangeTextInRange:replacementText:) ) {
+    if ( sel_isEqual(aSelector, @selector(textView:shouldChangeTextInRange:replacementText:)) ) {
         return !!self.shouldChangeTextInRangeBlock;
-    } else if ( aSelector == @selector(textViewDidBeginEditing:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(textViewDidBeginEditing:)) ) {
         return !!self.shouldChangeTextInRangeBlock;
-    } else if ( aSelector == @selector(textViewDidChange:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(textViewDidChange:)) ) {
         return !!self.didChangeBlock;
-    } else if ( aSelector == @selector(textViewDidChangeSelection:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(textViewDidChangeSelection:)) ) {
         return !!self.didChangeSelectionBlock;
-    } else if ( aSelector == @selector(textViewDidEndEditing:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(textViewDidEndEditing:)) ) {
         return !!self.didEndEditingBlock;
-    } else if ( aSelector == @selector(textViewShouldBeginEditing:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(textViewShouldBeginEditing:)) ) {
         return !!self.shouldBeginEditingBlock;
-    } else if ( aSelector == @selector(textViewShouldEndEditing:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(textViewShouldEndEditing:)) ) {
         return !!self.shouldEndEditingBlock;
     }
     return [super respondsToSelector:aSelector];

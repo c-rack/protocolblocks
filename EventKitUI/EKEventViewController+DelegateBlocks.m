@@ -48,7 +48,7 @@ static NSString* EKEventViewControllerDelegateBlocksKey = @"EKEventViewControlle
 @synthesize didCompleteWithActionBlock = _didCompleteWithActionBlock;
 
 -(BOOL)respondsToSelector:(SEL)aSelector {
-    if ( aSelector == @selector(eventViewController:didCompleteWithAction:) ) {
+    if ( sel_isEqual(aSelector, @selector(eventViewController:didCompleteWithAction:)) ) {
         return !!self.didCompleteWithActionBlock;
     }
     return [super respondsToSelector:aSelector];

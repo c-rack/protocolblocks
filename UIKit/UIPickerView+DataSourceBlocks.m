@@ -53,9 +53,9 @@ static NSString* UIPickerViewDataSourceBlocksKey = @"UIPickerViewDataSourceBlock
 @synthesize numberOfRowsInComponentBlock = _numberOfRowsInComponentBlock;
 
 -(BOOL)respondsToSelector:(SEL)aSelector {
-    if ( aSelector == @selector(numberOfComponentsInPickerView:) ) {
+    if ( sel_isEqual(aSelector, @selector(numberOfComponentsInPickerView:)) ) {
         return !!self.numberOfComponentsInPickerViewBlock;
-    } else if ( aSelector == @selector(pickerView:numberOfRowsInComponent:) ) {
+    } else if ( sel_isEqual(aSelector, @selector(pickerView:numberOfRowsInComponent:)) ) {
         return !!self.numberOfRowsInComponentBlock;
     }
     return [super respondsToSelector:aSelector];
