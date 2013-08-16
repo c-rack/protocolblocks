@@ -78,7 +78,7 @@ static NSString* UITextFieldDelegateBlocksKey = @"UITextFieldDelegateBlocksKey";
 @synthesize shouldReturnBlock = _shouldReturnBlock;
 
 -(BOOL)respondsToSelector:(SEL)aSelector {
-    if ( sel_isEqual(aSelector, @selector(textfield:shouldChangeCharactersInRange:replacementString:)) ) {
+    if ( sel_isEqual(aSelector, @selector(textField:shouldChangeCharactersInRange:replacementString:)) ) {
         return !!self.shouldChangeCharactersInRangeBlock;
     } else if ( sel_isEqual(aSelector, @selector(textFieldDidBeginEditing:)) ) {
         return !!self.didBeginEditingBlock;
@@ -96,7 +96,7 @@ static NSString* UITextFieldDelegateBlocksKey = @"UITextFieldDelegateBlocksKey";
     return [super respondsToSelector:aSelector];
 }
 
--(BOOL)textfield:(UITextField*)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string  {
+-(BOOL)textField:(UITextField*)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string  {
     UITextFieldShouldChangeCharactersInRangeBlock block = [self.shouldChangeCharactersInRangeBlock copy];
     BOOL result = block(textField, range, string);
     [block release];
