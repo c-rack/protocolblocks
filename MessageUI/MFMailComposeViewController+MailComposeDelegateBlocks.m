@@ -47,9 +47,16 @@ static NSString* MFMailComposeViewControllerMailComposeDelegateBlocksKey = @"MFM
 
 @synthesize didFinishWithResultBlock = _didFinishWithResultBlock;
 
--(void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result  {
+-(BOOL)respondsToSelector:(SEL)aSelector {
+    if ( sel_isEqual(aSelector, @selector(mailComposeController:didFinishWithResult:error:)) ) {
+        return !!self.didFinishWithResultBlock;
+    }
+    return [super respondsToSelector:aSelector];
+}
+
+-(void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error  {
     MFMailComposeViewControllerDidFinishWithResultBlock block = [self.didFinishWithResultBlock copy];
-    block(controller, result);
+    block(controller, result, error);
     [block release];
 }
 

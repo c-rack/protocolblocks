@@ -97,6 +97,33 @@ static NSString* UISearchBarDelegateBlocksKey = @"UISearchBarDelegateBlocksKey";
 @synthesize textDidBeginEditingBlock = _textDidBeginEditingBlock;
 @synthesize textDidEndEditingBlock = _textDidEndEditingBlock;
 
+-(BOOL)respondsToSelector:(SEL)aSelector {
+    if ( sel_isEqual(aSelector, @selector(searchBar:selectedScopeButtonIndexDidChange:)) ) {
+        return !!self.selectedScopeButtonIndexDidChangeBlock;
+    } else if ( sel_isEqual(aSelector, @selector(searchBar:shouldChangeTextInRange:replacementText:)) ) {
+        return !!self.shouldChangeTextInRangeBlock;
+    } else if ( sel_isEqual(aSelector, @selector(searchBar:textDidChange:)) ) {
+        return !!self.textDidChangeBlock;
+    } else if ( sel_isEqual(aSelector, @selector(searchBarBookmarkButtonClicked:)) ) {
+        return !!self.bookmarkButtonClickedBlock;
+    } else if ( sel_isEqual(aSelector, @selector(searchBarCancelButtonClicked:)) ) {
+        return !!self.cancelButtonClickedBlock;
+    } else if ( sel_isEqual(aSelector, @selector(searchBarResultsListButtonClicked:)) ) {
+        return !!self.resultsListButtonClickedBlock;
+    } else if ( sel_isEqual(aSelector, @selector(searchBarSearchButtonClicked:)) ) {
+        return !!self.searchButtonClickedBlock;
+    } else if ( sel_isEqual(aSelector, @selector(searchBarShouldBeginEditing:)) ) {
+        return !!self.shouldBeginEditingBlock;
+    } else if ( sel_isEqual(aSelector, @selector(searchBarShouldEndEditing:)) ) {
+        return !!self.shouldEndEditingBlock;
+    } else if ( sel_isEqual(aSelector, @selector(searchBarTextDidBeginEditing:)) ) {
+        return !!self.textDidBeginEditingBlock;
+    } else if ( sel_isEqual(aSelector, @selector(searchBarTextDidEndEditing:)) ) {
+        return !!self.textDidEndEditingBlock;
+    }
+    return [super respondsToSelector:aSelector];
+}
+
 -(void)searchBar:(UISearchBar*)searchBar selectedScopeButtonIndexDidChange:(NSInteger)selectedScope  {
     UISearchBarSelectedScopeButtonIndexDidChangeBlock block = [self.selectedScopeButtonIndexDidChangeBlock copy];
     block(searchBar, selectedScope);

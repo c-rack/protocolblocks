@@ -72,6 +72,23 @@ static NSString* UIAlertViewDelegateBlocksKey = @"UIAlertViewDelegateBlocksKey";
 @synthesize didPresentAlertViewBlock = _didPresentAlertViewBlock;
 @synthesize willPresentAlertViewBlock = _willPresentAlertViewBlock;
 
+-(BOOL)respondsToSelector:(SEL)aSelector {
+    if ( sel_isEqual(aSelector, @selector(alertView:clickedButtonAtIndex:)) ) {
+        return !!self.clickedButtonAtIndexBlock;
+    } else if ( sel_isEqual(aSelector, @selector(alertView:didDissmissWithButtonIndex:)) ) {
+        return !!self.didDismissWithButtonIndexBlock;
+    } else if ( sel_isEqual(aSelector, @selector(alertView:willDissmissWithButtonIndex:)) ) {
+        return !!self.willDismissWithButtonIndexBlock;
+    } else if ( sel_isEqual(aSelector, @selector(alertViewCancel:)) ) {
+        return !!self.cancelBlock;
+    } else if ( sel_isEqual(aSelector, @selector(didPresentAlertView:)) ) {
+        return !!self.didPresentAlertViewBlock;
+    } else if ( sel_isEqual(aSelector, @selector(willPresentAlertView:)) ) {
+        return !!self.willPresentAlertViewBlock;
+    }
+    return [super respondsToSelector:aSelector];
+}
+
 -(void)alertView:(UIAlertView*)alertView clickedButtonAtIndex:(NSInteger)buttonIndex  {
     UIAlertViewClickedButtonAtIndexBlock block = [self.clickedButtonAtIndexBlock copy];
     block(alertView, buttonIndex);

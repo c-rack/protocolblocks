@@ -82,6 +82,27 @@ static NSString* UIPrintInteractionControllerDelegateBlocksKey = @"UIPrintIntera
 @synthesize willPresentPrinterOptionsBlock = _willPresentPrinterOptionsBlock;
 @synthesize willStartJobBlock = _willStartJobBlock;
 
+-(BOOL)respondsToSelector:(SEL)aSelector {
+    if ( sel_isEqual(aSelector, @selector(printInteractionController:choosePaper:)) ) {
+        return !!self.choosePaperBlock;
+    } else if ( sel_isEqual(aSelector, @selector(printInteractionControllerDidDismissPrinterOptions:)) ) {
+        return !!self.didDismissPrinterOptionsBlock;
+    } else if ( sel_isEqual(aSelector, @selector(printInteractionControllerDidFinishJob:)) ) {
+        return !!self.didFinishJobBlock;
+    } else if ( sel_isEqual(aSelector, @selector(printInteractionControllerDidPresentPrinterOptions:)) ) {
+        return !!self.didPresentPrinterOptionsBlock;
+    } else if ( sel_isEqual(aSelector, @selector(printInteractionControllerParentViewController:)) ) {
+        return !!self.parentViewControllerBlock;
+    } else if ( sel_isEqual(aSelector, @selector(printInteractionControllerWillDismissPrinterOptions:)) ) {
+        return !!self.willDismissPrinterOptionsBlock;
+    } else if ( sel_isEqual(aSelector, @selector(printInteractionControllerWillPresentPrinterOptions:)) ) {
+        return !!self.willPresentPrinterOptionsBlock;
+    } else if ( sel_isEqual(aSelector, @selector(printInteractionControllerWillStartJob:)) ) {
+        return !!self.willStartJobBlock;
+    }
+    return [super respondsToSelector:aSelector];
+}
+
 -(UIPrintPaper*)printInteractionController:(UIPrintInteractionController*)printInteractionController choosePaper:(NSArray*)paperList  {
     UIPrintInteractionControllerChoosePaperBlock block = [self.choosePaperBlock copy];
     UIPrintPaper* result = block(printInteractionController, paperList);

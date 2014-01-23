@@ -127,6 +127,45 @@ static NSString* UITableViewDelegateBlocksKey = @"UITableViewDelegateBlocksKey";
 @synthesize willDisplayCellBlock = _willDisplayCellBlock;
 @synthesize willSelectRowAtIndexPathBlock = _willSelectRowAtIndexPathBlock;
 
+-(BOOL)respondsToSelector:(SEL)aSelector {
+    if ( sel_isEqual(aSelector, @selector(tableView:accessoryButtonTappedForRowWithIndexPath:)) ) {
+        return !!self.accessoryButtonTappedForRowWithIndexPathBlock;
+    } else if ( sel_isEqual(aSelector, @selector(tableView:didDeselectRowAtIndexPath:)) ) {
+        return !!self.didDeselectRowAtIndexPathBlock;
+    } else if ( sel_isEqual(aSelector, @selector(tableView:didEndEditingRowAtIndexPath:)) ) {
+        return !!self.didEndEditingRowAtIndexPathBlock;
+    } else if ( sel_isEqual(aSelector, @selector(tableView:didSelectRowAtIndexPath:)) ) {
+        return !!self.didSelectRowAtIndexPathBlock;
+    } else if ( sel_isEqual(aSelector, @selector(tableView:editingStyleForRowAtIndexPath:)) ) {
+        return !!self.editingStyleForRowAtIndexPathBlock;
+    } else if ( sel_isEqual(aSelector, @selector(tableView:heightForFooterInSection:)) ) {
+        return !!self.heightForFooterInSectionBlock;
+    } else if ( sel_isEqual(aSelector, @selector(tableView:heightForHeaderInSection:)) ) {
+        return !!self.heightForHeaderInSectionBlock;
+    } else if ( sel_isEqual(aSelector, @selector(tableView:heightForRowAtIndexPath:)) ) {
+        return !!self.heightForRowAtIndexPathBlock;
+    } else if ( sel_isEqual(aSelector, @selector(tableView:shouldIndentWhileEditingRowAtIndexPath:)) ) {
+        return !!self.shouldIndentWhileEditingRowAtIndexPathBlock;
+    } else if ( sel_isEqual(aSelector, @selector(tableView:targetIndexPathForMoveFromRowAtIndexPath:toProposedIndexPath:)) ) {
+        return !!self.targetIndexPathForMoveFromRowAtIndexPathBlock;
+    } else if ( sel_isEqual(aSelector, @selector(tableView:titleForDeleteConfirmationButtonForRowAtIndexPath:)) ) {
+        return !!self.titleForDeleteConfirmationButtonForRowAtIndexPathBlock;
+    } else if ( sel_isEqual(aSelector, @selector(tableView:viewForFooterInSection:)) ) {
+        return !!self.viewForFooterInSectionBlock;
+    } else if ( sel_isEqual(aSelector, @selector(tableView:viewForHeaderInSection:)) ) {
+        return !!self.viewForHeaderInSectionBlock;
+    } else if ( sel_isEqual(aSelector, @selector(tableView:willBeginEditingRowAtIndexPath:)) ) {
+        return !!self.willBeginEditingRowAtIndexPathBlock;
+    } else if ( sel_isEqual(aSelector, @selector(tableView:willDeselectRowAtIndexPath:)) ) {
+        return !!self.willDeselectRowAtIndexPathBlock;
+    } else if ( sel_isEqual(aSelector, @selector(tableView:willDisplayCell:forRowAtIndexPath:)) ) {
+        return !!self.willDisplayCellBlock;
+    } else if ( sel_isEqual(aSelector, @selector(tableView:willSelectRowAtIndexPath:)) ) {
+        return !!self.willSelectRowAtIndexPathBlock;
+    }
+    return [super respondsToSelector:aSelector];
+}
+
 -(void)tableView:(UITableView*)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath*)indexPath  {
     UITableViewAccessoryButtonTappedForRowWithIndexPathBlock block = [self.accessoryButtonTappedForRowWithIndexPathBlock copy];
     block(tableView, indexPath);

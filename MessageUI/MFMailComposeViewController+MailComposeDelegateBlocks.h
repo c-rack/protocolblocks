@@ -25,7 +25,7 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void (^MFMailComposeViewControllerDidFinishWithResultBlock)(MFMailComposeViewController* controller, MFMailComposeResult result);
+typedef void (^MFMailComposeViewControllerDidFinishWithResultBlock)(MFMailComposeViewController* controller, MFMailComposeResult result, NSError *error);
 
 @interface MFMailComposeViewController (MailComposeDelegateBlocks)
 

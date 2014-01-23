@@ -62,6 +62,19 @@ static NSString* ADInterstitialAdDelegateBlocksKey = @"ADInterstitialAdDelegateB
 @synthesize didLoadBlock = _didLoadBlock;
 @synthesize didUnloadBlock = _didUnloadBlock;
 
+-(BOOL)respondsToSelector:(SEL)aSelector {
+    if ( sel_isEqual(aSelector, @selector(interstitialAd:didFailWithError:)) ) {
+        return !!self.didFailWithErrorBlock;
+    } if ( sel_isEqual(aSelector, @selector(interstitialAdActionDidFinish:)) ) {
+        return !!self.actionDidFinishBlock;
+    } if ( sel_isEqual(aSelector, @selector(interstitialAdDidLoad:)) ) {
+        return !!self.didLoadBlock;
+    } if ( sel_isEqual(aSelector, @selector(interstitialAdDidUnload:)) ) {
+        return !!self.didUnloadBlock;
+    }
+    return [super respondsToSelector:aSelector];
+}
+
 -(void)interstitialAd:(ADInterstitialAd*)interstitialAd didFailWithError:(NSError*)error  {
     ADInterstitialAdDidFailWithErrorBlock block = [self.didFailWithErrorBlock copy];
     block(interstitialAd, error);

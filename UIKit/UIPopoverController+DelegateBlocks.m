@@ -52,6 +52,15 @@ static NSString* UIPopoverControllerDelegateBlocksKey = @"UIPopoverControllerDel
 @synthesize didDismissPopoverBlock = _didDismissPopoverBlock;
 @synthesize shouldDismissPopoverBlock = _shouldDismissPopoverBlock;
 
+-(BOOL)respondsToSelector:(SEL)aSelector {
+    if ( sel_isEqual(aSelector, @selector(popoverControllerDidDismissPopover:)) ) {
+        return !!self.didDismissPopoverBlock;
+    } else if ( sel_isEqual(aSelector, @selector(popoverControllerShouldDismissPopover:)) ) {
+        return !!self.shouldDismissPopoverBlock;
+    }
+    return [super respondsToSelector:aSelector];
+}
+
 -(void)popoverControllerDidDismissPopover:(UIPopoverController*)popoverController  {
     UIPopoverControllerDidDismissPopoverBlock block = [self.didDismissPopoverBlock copy];
     block(popoverController);

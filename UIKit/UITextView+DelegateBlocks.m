@@ -77,6 +77,25 @@ static NSString* UITextViewDelegateBlocksKey = @"UITextViewDelegateBlocksKey";
 @synthesize shouldBeginEditingBlock = _shouldBeginEditingBlock;
 @synthesize shouldEndEditingBlock = _shouldEndEditingBlock;
 
+-(BOOL)respondsToSelector:(SEL)aSelector {
+    if ( sel_isEqual(aSelector, @selector(textView:shouldChangeTextInRange:replacementText:)) ) {
+        return !!self.shouldChangeTextInRangeBlock;
+    } else if ( sel_isEqual(aSelector, @selector(textViewDidBeginEditing:)) ) {
+        return !!self.shouldChangeTextInRangeBlock;
+    } else if ( sel_isEqual(aSelector, @selector(textViewDidChange:)) ) {
+        return !!self.didChangeBlock;
+    } else if ( sel_isEqual(aSelector, @selector(textViewDidChangeSelection:)) ) {
+        return !!self.didChangeSelectionBlock;
+    } else if ( sel_isEqual(aSelector, @selector(textViewDidEndEditing:)) ) {
+        return !!self.didEndEditingBlock;
+    } else if ( sel_isEqual(aSelector, @selector(textViewShouldBeginEditing:)) ) {
+        return !!self.shouldBeginEditingBlock;
+    } else if ( sel_isEqual(aSelector, @selector(textViewShouldEndEditing:)) ) {
+        return !!self.shouldEndEditingBlock;
+    }
+    return [super respondsToSelector:aSelector];
+}
+
 -(BOOL)textView:(UITextView*)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text  {
     UITextViewShouldChangeTextInRangeBlock block = [self.shouldChangeTextInRangeBlock copy];
     BOOL result = block(textView, range, text);

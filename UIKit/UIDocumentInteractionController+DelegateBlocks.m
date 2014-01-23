@@ -107,6 +107,37 @@ static NSString* UIDocumentInteractionControllerDelegateBlocksKey = @"UIDocument
 @synthesize willPresentOpenInMenuBlock = _willPresentOpenInMenuBlock;
 @synthesize willPresentOptionsMenuBlock = _willPresentOptionsMenuBlock;
 
+-(BOOL)respondsToSelector:(SEL)aSelector {
+    if ( sel_isEqual(aSelector, @selector(documentInteractionController:canPerformAction:)) ) {
+        return !!self.canPerformActionBlock;
+    } else if ( sel_isEqual(aSelector, @selector(documentInteractionController:didEndSendingToApplication:)) ) {
+        return !!self.didEndSendingToApplicationBlock;
+    } else if ( sel_isEqual(aSelector, @selector(documentInteractionController:performAction:)) ) {
+        return !!self.performActionBlock;
+    } else if ( sel_isEqual(aSelector, @selector(documentInteractionController:willBeginSendingToApplication:)) ) {
+        return !!self.willBeginSendingToApplicationBlock;
+    } else if ( sel_isEqual(aSelector, @selector(documentInteractionControllerDidDismissOpenInMenu:)) ) {
+        return !!self.didDismissOpenInMenuBlock;
+    } else if ( sel_isEqual(aSelector, @selector(documentInteractionControllerDidDismissOptionsMenu:)) ) {
+        return !!self.didDismissOptionsMenuBlock;
+    } else if ( sel_isEqual(aSelector, @selector(documentInteractionControllerDidEndPreview:)) ) {
+        return !!self.didEndPreviewBlock;
+    } else if ( sel_isEqual(aSelector, @selector(documentInteractionControllerRectForPreview:)) ) {
+        return !!self.rectForPreviewBlock;
+    } else if ( sel_isEqual(aSelector, @selector(documentInteractionControllerViewControllerForPreview:)) ) {
+        return !!self.viewControllerForPreviewBlock;
+    } else if ( sel_isEqual(aSelector, @selector(documentInteractionControllerViewForPreview:)) ) {
+        return !!self.viewForPreviewBlock;
+    } else if ( sel_isEqual(aSelector, @selector(documentInteractionControllerWillBeginPreview:)) ) {
+        return !!self.willBeginPreviewBlock;
+    } else if ( sel_isEqual(aSelector, @selector(documentInteractionControllerWillPresentOpenInMenu:)) ) {
+        return !!self.willPresentOpenInMenuBlock;
+    } else if ( sel_isEqual(aSelector, @selector(documentInteractionControllerWillPresentOptionsMenu:)) ) {
+        return !!self.willPresentOptionsMenuBlock;
+    }
+    return [super respondsToSelector:aSelector];
+}
+
 -(BOOL)documentInteractionController:(UIDocumentInteractionController*)controller canPerformAction:(SEL)action  {
     UIDocumentInteractionControllerCanPerformActionBlock block = [self.canPerformActionBlock copy];
     BOOL result = block(controller, action);

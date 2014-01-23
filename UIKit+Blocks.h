@@ -23,7 +23,6 @@
 // THE SOFTWARE.
 //
 
-#import "UIKit/UIAccelerometer+DelegateBlocks.h"
 #import "UIKit/UIActionSheet+DelegateBlocks.h"
 #import "UIKit/UIAlertView+DelegateBlocks.h"
 #import "UIKit/UIDocumentInteractionController+DelegateBlocks.h"

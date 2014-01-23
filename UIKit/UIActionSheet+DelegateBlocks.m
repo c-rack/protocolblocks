@@ -72,6 +72,23 @@ static NSString* UIActionSheetDelegateBlocksKey = @"UIActionSheetDelegateBlocksK
 @synthesize didPresentActionSheetBlock = _didPresentActionSheetBlock;
 @synthesize willPresentActionSheetBlock = _willPresentActionSheetBlock;
 
+-(BOOL)respondsToSelector:(SEL)aSelector {
+    if ( sel_isEqual(aSelector, @selector(actionSheet:willDismissWithButtonIndex:)) ) {
+        return !!self.clickedButtonAtIndexBlock;
+    } else if ( sel_isEqual(aSelector, @selector(actionSheet:willDismissWithButtonIndex:)) ) {
+        return !!self.didDismissWithButtonIndexBlock;
+    } else if ( sel_isEqual(aSelector, @selector(actionSheet:willDismissWithButtonIndex:)) ) {
+        return !!self.willDismissWithButtonIndexBlock;
+    } else if ( sel_isEqual(aSelector, @selector(actionSheetCancel:)) ) {
+        return !!self.cancelBlock;
+    } else if ( sel_isEqual(aSelector, @selector(didPresentActionSheet:)) ) {
+        return !!self.didPresentActionSheetBlock;
+    } else if ( sel_isEqual(aSelector, @selector(willPresentActionSheet:)) ) {
+        return !!self.willPresentActionSheetBlock;
+    }
+    return [super respondsToSelector:aSelector];
+}
+
 -(void)actionSheet:(UIActionSheet*)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex  {
     UIActionSheetClickedButtonAtIndexBlock block = [self.clickedButtonAtIndexBlock copy];
     block(actionSheet, buttonIndex);
