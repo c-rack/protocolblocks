@@ -72,56 +72,51 @@ static NSString* UIAlertViewDelegateBlocksKey = @"UIAlertViewDelegateBlocksKey";
 @synthesize didPresentAlertViewBlock = _didPresentAlertViewBlock;
 @synthesize willPresentAlertViewBlock = _willPresentAlertViewBlock;
 
--(BOOL)respondsToSelector:(SEL)aSelector {
-    if ( sel_isEqual(aSelector, @selector(alertView:clickedButtonAtIndex:)) ) {
-        return !!self.clickedButtonAtIndexBlock;
-    } else if ( sel_isEqual(aSelector, @selector(alertView:didDissmissWithButtonIndex:)) ) {
-        return !!self.didDismissWithButtonIndexBlock;
-    } else if ( sel_isEqual(aSelector, @selector(alertView:willDissmissWithButtonIndex:)) ) {
-        return !!self.willDismissWithButtonIndexBlock;
-    } else if ( sel_isEqual(aSelector, @selector(alertViewCancel:)) ) {
-        return !!self.cancelBlock;
-    } else if ( sel_isEqual(aSelector, @selector(didPresentAlertView:)) ) {
-        return !!self.didPresentAlertViewBlock;
-    } else if ( sel_isEqual(aSelector, @selector(willPresentAlertView:)) ) {
-        return !!self.willPresentAlertViewBlock;
-    }
-    return [super respondsToSelector:aSelector];
-}
-
 -(void)alertView:(UIAlertView*)alertView clickedButtonAtIndex:(NSInteger)buttonIndex  {
     UIAlertViewClickedButtonAtIndexBlock block = [self.clickedButtonAtIndexBlock copy];
-    block(alertView, buttonIndex);
+    if ( block ) {
+        block(alertView, buttonIndex);
+    }
     [block release];
 }
 
 -(void)alertView:(UIAlertView*)alertView didDissmissWithButtonIndex:(NSInteger)buttonIndex  {
     UIAlertViewDidDismissWithButtonIndexBlock block = [self.didDismissWithButtonIndexBlock copy];
-    block(alertView, buttonIndex);
+    if ( block ) {
+        block(alertView, buttonIndex);
+    }
     [block release];
 }
 
 -(void)alertView:(UIAlertView*)alertView willDissmissWithButtonIndex:(NSInteger)buttonIndex  {
     UIAlertViewWillDismissWithButtonIndexBlock block = [self.willDismissWithButtonIndexBlock copy];
-    block(alertView, buttonIndex);
+    if ( block ) {
+        block(alertView, buttonIndex);
+    }
     [block release];
 }
 
 -(void)alertViewCancel:(UIAlertView*)alertView  {
     UIAlertViewCancelBlock block = [self.cancelBlock copy];
-    block(alertView);
+    if ( block ) {
+        block(alertView);
+    }
     [block release];
 }
 
 -(void)didPresentAlertView:(UIAlertView*)alertView  {
     UIAlertViewDidPresentAlertViewBlock block = [self.didPresentAlertViewBlock copy];
-    block(alertView);
+    if ( block ) {
+        block(alertView);
+    }
     [block release];
 }
 
 -(void)willPresentAlertView:(UIAlertView*)alertView  {
     UIAlertViewWillPresentAlertViewBlock block = [self.willPresentAlertViewBlock copy];
-    block(alertView);
+    if ( block ) {
+        block(alertView);
+    }
     [block release];
 }
 
