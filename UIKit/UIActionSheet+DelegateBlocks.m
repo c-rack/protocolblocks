@@ -72,56 +72,51 @@ static NSString* UIActionSheetDelegateBlocksKey = @"UIActionSheetDelegateBlocksK
 @synthesize didPresentActionSheetBlock = _didPresentActionSheetBlock;
 @synthesize willPresentActionSheetBlock = _willPresentActionSheetBlock;
 
--(BOOL)respondsToSelector:(SEL)aSelector {
-    if ( sel_isEqual(aSelector, @selector(actionSheet:willDismissWithButtonIndex:)) ) {
-        return !!self.clickedButtonAtIndexBlock;
-    } else if ( sel_isEqual(aSelector, @selector(actionSheet:willDismissWithButtonIndex:)) ) {
-        return !!self.didDismissWithButtonIndexBlock;
-    } else if ( sel_isEqual(aSelector, @selector(actionSheet:willDismissWithButtonIndex:)) ) {
-        return !!self.willDismissWithButtonIndexBlock;
-    } else if ( sel_isEqual(aSelector, @selector(actionSheetCancel:)) ) {
-        return !!self.cancelBlock;
-    } else if ( sel_isEqual(aSelector, @selector(didPresentActionSheet:)) ) {
-        return !!self.didPresentActionSheetBlock;
-    } else if ( sel_isEqual(aSelector, @selector(willPresentActionSheet:)) ) {
-        return !!self.willPresentActionSheetBlock;
-    }
-    return [super respondsToSelector:aSelector];
-}
-
 -(void)actionSheet:(UIActionSheet*)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex  {
     UIActionSheetClickedButtonAtIndexBlock block = [self.clickedButtonAtIndexBlock copy];
-    block(actionSheet, buttonIndex);
+    if ( block ) {
+        block(actionSheet, buttonIndex);
+    }
     [block release];
 }
 
 -(void)actionSheet:(UIActionSheet*)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex  {
     UIActionSheetDidDismissWithButtonIndexBlock block = [self.didDismissWithButtonIndexBlock copy];
-    block(actionSheet, buttonIndex);
+    if ( block ) {
+        block(actionSheet, buttonIndex);
+    }
     [block release];
 }
 
 -(void)actionSheet:(UIActionSheet*)actionSheet willDismissWithButtonIndex:(NSInteger)buttonIndex  {
     UIActionSheetWillDismissWithButtonIndexBlock block = [self.willDismissWithButtonIndexBlock copy];
-    block(actionSheet, buttonIndex);
+    if ( block ) {
+        block(actionSheet, buttonIndex);
+    }
     [block release];
 }
 
 -(void)actionSheetCancel:(UIActionSheet*)actionSheet  {
     UIActionSheetCancelBlock block = [self.cancelBlock copy];
-    block(actionSheet);
+    if ( block ) {
+        block(actionSheet);
+    }
     [block release];
 }
 
 -(void)didPresentActionSheet:(UIActionSheet*)actionSheet  {
     UIActionSheetDidPresentActionSheetBlock block = [self.didPresentActionSheetBlock copy];
-    block(actionSheet);
+    if ( block ) {
+        block(actionSheet);
+    }
     [block release];
 }
 
 -(void)willPresentActionSheet:(UIActionSheet*)actionSheet  {
     UIActionSheetWillPresentActionSheetBlock block = [self.willPresentActionSheetBlock copy];
-    block(actionSheet);
+    if ( block ) {
+        block(actionSheet);
+    }
     [block release];
 }
 
