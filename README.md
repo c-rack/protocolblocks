@@ -1,8 +1,10 @@
-# protocolblocks
+protocolblocks
+==============
 
-### Replacing delegates in iOS with blocks..
+Replacing delegates in iOS with blocks..
 
-## Motivation
+Motivation
+----------
 
 With iOS 4, Apple introduced [blocks](http://developer.apple.com/library/ios/#documentation/cocoa/Conceptual/Blocks/Articles/00_Introduction.html) (also known as [closures](https://secure.wikimedia.org/wikipedia/en/wiki/Closure_%28computer_science%29)) to Objective-C and iOS.
 
@@ -10,7 +12,8 @@ Unfortunately, this leads to [some confusion](http://stackoverflow.com/questions
 
 This projects aims to backport blocks for all *old* delegates of iOS.
 
-## Features
+Features
+--------
 
 * **Easiest usage:**
   only one file to import and one line per object to activate block programming support.
@@ -19,7 +22,8 @@ This projects aims to backport blocks for all *old* delegates of iOS.
 * **Standard naming:**
   block names are equivalent to protocol method names
 
-## Implementation Status
+Implementation Status
+---------------------
 
 Currently, blocks have been backported for the following delegates:
 
@@ -58,51 +62,60 @@ Currently, blocks have been backported for the following delegates:
   * UIVideoEditorController delegate
   * UIWebView delegate
 
-## Usage Example
+Usage Example
+-------------
 
-### 1. Import the header
+1. Import the header
 
-    #import "UIKit+Blocks.h"
+```
+#import "UIKit+Blocks.h"
+```
+2. Initialize your object as usual
 
-### 2. Initialize your object as usual
+```
+UIActionSheet* actionSheet = [[UIActionSheet alloc]
+                               initWithTitle:@"Title"
+                               delegate:nil // no need for self or similar
+                               cancelButtonTitle:@"Cancel"
+                               destructiveButtonTitle:@"Destruct"
+                               otherButtonTitles:nil];
+```
 
-    UIActionSheet* actionSheet = [[UIActionSheet alloc]
-                                   initWithTitle:@"Title"
-                                   delegate:nil // no need for self or similar
-                                   cancelButtonTitle:@"Cancel"
-                                   destructiveButtonTitle:@"Destruct"
-                                   otherButtonTitles:nil];
+3. Enable blocks instead of providing a delegate
 
-### 3. Enable blocks instead of providing a delegate
-
-    [actionSheet useBlocksForDelegate];
+```
+[actionSheet useBlocksForDelegate];
+```
 
 The automatically created delegate object is autoreleased thanks to Objective-C's [Associate Reference](http://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/ObjectiveC/Chapters/ocAssociativeReferences.html) magic.
 
-### 4. Implement delegate methods with blocks
+4. Implement delegate methods with blocks
 
-    [actionSheet onCancel:^(UIActionSheet *actionSheet) {
-        // your code here
-    }];
-    [actionSheet onClickedButtonAtIndex:^(UIActionSheet *actionSheet, NSInteger buttonIndex) {
-        // your code here
-    }];
-    [actionSheet onDidDismissWithButtonIndex:^(UIActionSheet *actionSheet, NSInteger buttonIndex) {
-        // your code here
-    }];
-    [actionSheet onDidPresentActionSheet:^(UIActionSheet *actionSheet) {
-        // your code here
-    }];
-    [actionSheet onWillDismissWithButtonIndex:^(UIActionSheet *actionSheet, NSInteger buttonIndex) {
-        // your code here
-    }];
-    [actionSheet onWillPresentActionSheet:^(UIActionSheet *actionSheet) {
-        // your code here
-    }];
+```
+[actionSheet onCancel:^(UIActionSheet *actionSheet) {
+    // your code here
+}];
+[actionSheet onClickedButtonAtIndex:^(UIActionSheet *actionSheet, NSInteger buttonIndex) {
+    // your code here
+}];
+[actionSheet onDidDismissWithButtonIndex:^(UIActionSheet *actionSheet, NSInteger buttonIndex) {
+    // your code here
+}];
+[actionSheet onDidPresentActionSheet:^(UIActionSheet *actionSheet) {
+    // your code here
+}];
+[actionSheet onWillDismissWithButtonIndex:^(UIActionSheet *actionSheet, NSInteger buttonIndex) {
+    // your code here
+}];
+[actionSheet onWillPresentActionSheet:^(UIActionSheet *actionSheet) {
+    // your code here
+}];
+```
 
-## Related Work
+Related Work
+------------
 
-### in chronological order:
+in chronological order:
 
 * 2009-10-18: [How blocks are implemented (and the consequences)](http://cocoawithlove.com/2009/10/how-blocks-are-implemented-and.html) by Matt Gallagher
 * 2010-07-07: [Programming with C Blocks On Apple Devices](http://thirdcog.eu/pwcblocks/) by Joachim Bengtsson
@@ -113,11 +126,12 @@ The automatically created delegate object is autoreleased thanks to Objective-C'
 * 2011-03-20: [EMKAssociateDelegate](http://benedictcohen.co.uk/blog/archives/189) by Benedict Cohen
 * 2011-03-22: [iOS Code: Block Based UIAlertView and UIActionSheet](http://blog.mugunthkumar.com/coding/ios-code-block-based-uialertview-and-uiactionsheet/) by Mugunth Kumar
 
-## License
+License
+-------
 
-### This project is licensed under the [MIT License](http://www.opensource.org/licenses/mit-license.php):
+This project is licensed under the [MIT License](http://www.opensource.org/licenses/mit-license.php):
 
-Copyright (C) 2011 by [Constantin Rack](http://www.constantin-rack.de/), [VIGOS AG](http://www.vigos.com/).
+Copyright (C) 2011-2014 by [Constantin Rack](http://www.constantin-rack.de/), [VIGOS AG](http://www.vigos.com/).
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
