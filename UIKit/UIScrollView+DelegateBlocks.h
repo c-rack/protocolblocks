@@ -28,7 +28,7 @@
 typedef void (^UIScrollViewDidEndDeceleratingBlock)(UIScrollView* scrollView);
 typedef void (^UIScrollViewDidEndDraggingBlock)(UIScrollView* scrollView, BOOL decelerate);
 typedef void (^UIScrollViewDidEndScrollingAnimationBlock)(UIScrollView* scrollView);
-typedef void (^UIScrollViewDidEndZoomingBlock)(UIScrollView* scrollView, UIView* view, float scale);
+typedef void (^UIScrollViewDidEndZoomingBlock)(UIScrollView* scrollView, UIView* view, CGFloat scale);
 typedef void (^UIScrollViewDidScrollBlock)(UIScrollView* scrollView);
 typedef void (^UIScrollViewDidScrollToTopBlock)(UIScrollView* scrollView);
 typedef void (^UIScrollViewDidZoomBlock)(UIScrollView* scrollView);
