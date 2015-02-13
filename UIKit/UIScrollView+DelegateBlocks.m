@@ -149,7 +149,7 @@ static NSString* UIScrollViewDelegateBlocksKey = @"UIScrollViewDelegateBlocksKey
     [block release];
 }
 
--(void)scrollViewDidEndZooming:(UIScrollView*)scrollView withView:(UIView*)view atScale:(float)scale  {
+-(void)scrollViewDidEndZooming:(UIScrollView*)scrollView withView:(UIView*)view atScale:(CGFloat)scale  {
     UIScrollViewDidEndZoomingBlock block = [self.didEndZoomingBlock copy];
     block(scrollView, view, scale);
     [block release];
