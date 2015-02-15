@@ -131,7 +131,7 @@ License
 
 This project is licensed under the [MIT License](http://www.opensource.org/licenses/mit-license.php):
 
-Copyright (C) 2011-2014 by [Constantin Rack](http://www.constantin-rack.de/), [VIGOS AG](http://www.vigos.com/).
+Copyright (C) 2011-2015 [Constantin Rack](http://www.constantin-rack.com/)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
