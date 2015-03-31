@@ -1,6 +1,5 @@
 //
 // protocolblocks: UIKit/UIAlertView+DelegateBlocks.m
-// http://protocolblocks.org/
 //
 // Copyright (C) 2011 by Constantin Rack, VIGOS AG.
 //
