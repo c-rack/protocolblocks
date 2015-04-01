@@ -1,10 +1,8 @@
-protocolblocks
-==============
+# protocolblocks
 
 Replacing delegates in iOS with blocks..
 
-Motivation
-----------
+## Motivation
 
 With iOS 4, Apple introduced [blocks](http://developer.apple.com/library/ios/#documentation/cocoa/Conceptual/Blocks/Articles/00_Introduction.html) (also known as [closures](https://secure.wikimedia.org/wikipedia/en/wiki/Closure_%28computer_science%29)) to Objective-C and iOS.
 
@@ -12,8 +10,7 @@ Unfortunately, this leads to [some confusion](http://stackoverflow.com/questions
 
 This projects aims to backport blocks for all *old* delegates of iOS.
 
-Features
---------
+## Features
 
 * **Easiest usage:**
   only one file to import and one line per object to activate block programming support.
@@ -22,8 +19,7 @@ Features
 * **Standard naming:**
   block names are equivalent to protocol method names
 
-Implementation Status
----------------------
+## Implementation Status
 
 Currently, blocks have been backported for the following delegates:
 
@@ -62,16 +58,13 @@ Currently, blocks have been backported for the following delegates:
   * UIVideoEditorController delegate
   * UIWebView delegate
 
-Usage Example
--------------
+## Usage Example
 
-1. Import the header
-
+#### 1. Import the header
 ```
 #import "UIKit+Blocks.h"
 ```
-2. Initialize your object as usual
-
+#### 2. Initialize your object as usual
 ```
 UIActionSheet* actionSheet = [[UIActionSheet alloc]
                                initWithTitle:@"Title"
@@ -80,16 +73,13 @@ UIActionSheet* actionSheet = [[UIActionSheet alloc]
                                destructiveButtonTitle:@"Destruct"
                                otherButtonTitles:nil];
 ```
-
-3. Enable blocks instead of providing a delegate
-
+#### 3. Enable blocks instead of providing a delegate
 ```
 [actionSheet useBlocksForDelegate];
 ```
-
 The automatically created delegate object is autoreleased thanks to Objective-C's [Associate Reference](http://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/ObjectiveC/Chapters/ocAssociativeReferences.html) magic.
 
-4. Implement delegate methods with blocks
+#### 4. Implement delegate methods with blocks
 
 ```
 [actionSheet onCancel:^(UIActionSheet *actionSheet) {
@@ -112,8 +102,7 @@ The automatically created delegate object is autoreleased thanks to Objective-C'
 }];
 ```
 
-Related Work
-------------
+## Related Work
 
 in chronological order:
 
@@ -126,8 +115,7 @@ in chronological order:
 * 2011-03-20: [EMKAssociateDelegate](http://benedictcohen.co.uk/blog/archives/189) by Benedict Cohen
 * 2011-03-22: [iOS Code: Block Based UIAlertView and UIActionSheet](http://blog.mugunthkumar.com/coding/ios-code-block-based-uialertview-and-uiactionsheet/) by Mugunth Kumar
 
-License
--------
+## License
 
 This project is licensed under the [MIT License](http://www.opensource.org/licenses/mit-license.php):
 
