@@ -1,6 +1,6 @@
 # protocolblocks
 
-Replacing delegates in iOS with blocks..
+Replacing delegates in iOS with blocks.
 
 ## Motivation
 
