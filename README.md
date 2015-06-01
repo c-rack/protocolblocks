@@ -115,26 +115,42 @@ in chronological order:
 * 2011-03-20: [EMKAssociateDelegate](http://benedictcohen.co.uk/blog/archives/189) by Benedict Cohen
 * 2011-03-22: [iOS Code: Block Based UIAlertView and UIActionSheet](http://blog.mugunthkumar.com/coding/ios-code-block-based-uialertview-and-uiactionsheet/) by Mugunth Kumar
 
+## Contribution Process
+
+This project uses the [C4.1 process](http://rfc.zeromq.org/spec:22) for all code changes.
+
+> "Everyone, without distinction or discrimination, SHALL have an equal right to become a Contributor under the
+terms of this contract."
+
+### tl;dr
+
+1. Check for [open issues](https://github.com/c-rack/protocolblocks/issues) or [open a new issue](https://github.com/c-rack/protocolblocks/issues/new) to start a discussion around a feature idea or a bug
+2. Fork the [protocolblocks repository on Github](https://github.com/c-rack/protocolblocks) to start making your changes
+3. Write a test which shows that the bug was fixed or that the feature works as expected
+4. Send a pull request
+5. Your pull request is merged and you are added to the [list of contributors](https://github.com/c-rack/protocolblocks/graphs/contributors)
+
+
 ## License
 
 This project is licensed under the [MIT License](http://www.opensource.org/licenses/mit-license.php):
 
-Copyright (C) 2011-2015 [Constantin Rack](http://www.constantin-rack.com/)
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
+    Copyright (C) 2011-2015 Constantin Rack
+    
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+    
+    The above copyright notice and this permission notice shall be included in
+    all copies or substantial portions of the Software.
+    
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+    THE SOFTWARE.
