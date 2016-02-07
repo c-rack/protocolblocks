@@ -135,7 +135,7 @@ terms of this contract."
 
 This project is licensed under the [MIT License](http://www.opensource.org/licenses/mit-license.php):
 
-    Copyright (C) 2011-2015 Constantin Rack
+    Copyright (C) 2011-2016 Constantin Rack
     
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
